@@ -186,6 +186,51 @@
   if (amountBtns[0]) amountBtns[0].click();
 })();
 
+/* ---------- Slideshows ---------- */
+(function () {
+  document.querySelectorAll('.slideshow').forEach(function (ss) {
+    const track   = ss.querySelector('.slideshow-track');
+    const slides  = Array.from(ss.querySelectorAll('.slide'));
+    const dots    = Array.from(ss.querySelectorAll('.dot'));
+    const caption = ss.querySelector('.slide-caption-text');
+    if (!slides.length || !track) return;
+
+    let current = 0;
+    let timer   = null;
+    const DELAY = 3800;
+
+    function goTo(i) {
+      current = ((i % slides.length) + slides.length) % slides.length;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dots.forEach(function (d, idx) { d.classList.toggle('active', idx === current); });
+      if (caption) caption.textContent = slides[current].dataset.caption || '';
+    }
+
+    function start() { if (!timer) timer = setInterval(function () { goTo(current + 1); }, DELAY); }
+    function stop()  { clearInterval(timer); timer = null; }
+
+    var prevBtn = ss.querySelector('.slideshow-prev');
+    var nextBtn = ss.querySelector('.slideshow-next');
+    if (prevBtn) prevBtn.addEventListener('click', function () { stop(); goTo(current - 1); start(); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { stop(); goTo(current + 1); start(); });
+    dots.forEach(function (d, i) { d.addEventListener('click', function () { stop(); goTo(i); start(); }); });
+
+    ss.addEventListener('mouseenter', stop);
+    ss.addEventListener('mouseleave', start);
+
+    var touchStartX = 0;
+    ss.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; stop(); }, { passive: true });
+    ss.addEventListener('touchend', function (e) {
+      var diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) goTo(current + (diff > 0 ? 1 : -1));
+      start();
+    }, { passive: true });
+
+    goTo(0);
+    start();
+  });
+})();
+
 /* ---------- Contact form char count ---------- */
 (function () {
   const textarea = document.querySelector('.form-textarea[maxlength]');

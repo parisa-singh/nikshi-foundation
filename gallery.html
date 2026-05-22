@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Gallery — Nikshi Foundation for Humanity. See our work in Bangalore: Project Gyaan, Gerizim Trust Drive, meal distribution, and more." />
+  <meta name="description" content="Gallery — Nikshi Foundation for Humanity. Photos from Project Gyaan, Fighting for Hunger, Trans Community, Old Age Homes, Tech Talk Series, and Gerizim Trust Drive in Bangalore." />
   <title>Gallery | Nikshi Foundation for Humanity</title>
   <link rel="icon" type="image/jpeg" href="images/logo.jpeg" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -28,7 +28,7 @@
         <a href="programs.html" class="nav-link">Programs</a>
         <a href="gallery.html"  class="nav-link active">Gallery</a>
         <a href="contact.html"  class="nav-link">Contact</a>
-        <a href="https://www.facebook.com/share/18pNZXoWaK/?mibextid=wwXIfr" class="nav-link" target="_blank" rel="noopener" style="color:#4da3ff;" aria-label="Facebook"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style="display:inline-block;vertical-align:middle;margin-right:0.3rem;"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a><a href="donate.html"   class="nav-link nav-cta" style="margin-left:0.5rem;">Donate Now</a>
+        <a href="https://www.facebook.com/share/18pNZXoWaK/?mibextid=wwXIfr" class="nav-link" target="_blank" rel="noopener" style="color:#4da3ff;" aria-label="Facebook"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style="display:inline-block;vertical-align:middle;margin-right:0.3rem;"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a><a href="https://www.instagram.com/nikshi_foundation_for_humanity" class="nav-link" target="_blank" rel="noopener" style="color:#e1306c;" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:0.3rem;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Instagram</a><a href="donate.html" class="nav-link nav-cta" style="margin-left:0.5rem;">Donate Now</a>
       </div>
       <button id="hamburger" class="hamburger show-mobile" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -41,6 +41,8 @@
     <a href="programs.html" class="nav-link" role="menuitem">Programs</a>
     <a href="gallery.html" class="nav-link" role="menuitem">Gallery</a>
     <a href="contact.html" class="nav-link" role="menuitem">Contact</a>
+    <a href="https://www.instagram.com/nikshi_foundation_for_humanity" class="nav-link" role="menuitem" target="_blank" rel="noopener" style="color:#e1306c;">Instagram</a>
+    <a href="mailto:Nikshifoundation@gmail.com" class="nav-link" role="menuitem">Email Us</a>
     <a href="donate.html"  class="nav-link nav-cta" role="menuitem">Donate Now</a>
   </div>
 </nav>
@@ -53,7 +55,7 @@
     <span style="color:#fff;">Gallery</span>
   </div>
   <h1 class="fade-in">Our Gallery</h1>
-  <p class="fade-in" data-delay="100">Real moments, real impact — a window into our projects and drives across Bangalore.</p>
+  <p class="fade-in" data-delay="100">Real moments, real impact — a window into our programs and drives across Bangalore.</p>
 </div>
 
 <!-- ===== GALLERY ===== -->
@@ -61,145 +63,340 @@
   <div class="max-w-site">
 
     <!-- Filter buttons -->
-    <div class="fade-in" style="display:flex; flex-wrap:wrap; gap:0.75rem; margin-bottom:3rem; justify-content:center;" id="filter-bar">
-      <button class="filter-btn" data-filter="all"      style="padding:0.5rem 1.25rem; border-radius:50px; font-family:'Poppins',sans-serif; font-weight:600; font-size:0.85rem; cursor:pointer; border:2px solid var(--primary); background:var(--primary); color:#fff; transition:all 0.2s;">All Photos</button>
-      <button class="filter-btn" data-filter="gerizim"  style="padding:0.5rem 1.25rem; border-radius:50px; font-family:'Poppins',sans-serif; font-weight:600; font-size:0.85rem; cursor:pointer; border:2px solid #E5E7EB; background:#fff; color:var(--gray); transition:all 0.2s;">Gerizim Trust Drive</button>
-      <button class="filter-btn" data-filter="gyaan"    style="padding:0.5rem 1.25rem; border-radius:50px; font-family:'Poppins',sans-serif; font-weight:600; font-size:0.85rem; cursor:pointer; border:2px solid #E5E7EB; background:#fff; color:var(--gray); transition:all 0.2s;">Project Gyaan</button>
-      <button class="filter-btn" data-filter="hunger"   style="padding:0.5rem 1.25rem; border-radius:50px; font-family:'Poppins',sans-serif; font-weight:600; font-size:0.85rem; cursor:pointer; border:2px solid #E5E7EB; background:#fff; color:var(--gray); transition:all 0.2s;">Fighting for Hunger</button>
-      <button class="filter-btn" data-filter="techtalk" style="padding:0.5rem 1.25rem; border-radius:50px; font-family:'Poppins',sans-serif; font-weight:600; font-size:0.85rem; cursor:pointer; border:2px solid #E5E7EB; background:#fff; color:var(--gray); transition:all 0.2s;">Tech Talk Series</button>
+    <div class="fade-in" style="display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:3rem; justify-content:center;" id="filter-bar">
+      <button class="filter-btn active-filter" data-filter="all"      style="padding:0.5rem 1.2rem; border-radius:50px; font-family:'Poppins',sans-serif; font-weight:600; font-size:0.82rem; cursor:pointer; border:2px solid var(--primary); background:var(--primary); color:#fff; transition:all 0.2s;">All Photos</button>
+      <button class="filter-btn" data-filter="hunger"   style="padding:0.5rem 1.2rem; border-radius:50px; font-family:'Poppins',sans-serif; font-weight:600; font-size:0.82rem; cursor:pointer; border:2px solid #E5E7EB; background:#fff; color:var(--gray); transition:all 0.2s;">🍱 Hunger Relief</button>
+      <button class="filter-btn" data-filter="gyaan"    style="padding:0.5rem 1.2rem; border-radius:50px; font-family:'Poppins',sans-serif; font-weight:600; font-size:0.82rem; cursor:pointer; border:2px solid #E5E7EB; background:#fff; color:var(--gray); transition:all 0.2s;">📚 Project Gyaan</button>
+      <button class="filter-btn" data-filter="trans"    style="padding:0.5rem 1.2rem; border-radius:50px; font-family:'Poppins',sans-serif; font-weight:600; font-size:0.82rem; cursor:pointer; border:2px solid #E5E7EB; background:#fff; color:var(--gray); transition:all 0.2s;">🏳️‍⚧️ Trans Community</button>
+      <button class="filter-btn" data-filter="oldage"   style="padding:0.5rem 1.2rem; border-radius:50px; font-family:'Poppins',sans-serif; font-weight:600; font-size:0.82rem; cursor:pointer; border:2px solid #E5E7EB; background:#fff; color:var(--gray); transition:all 0.2s;">🏠 Old Age Homes</button>
+      <button class="filter-btn" data-filter="techtalk" style="padding:0.5rem 1.2rem; border-radius:50px; font-family:'Poppins',sans-serif; font-weight:600; font-size:0.82rem; cursor:pointer; border:2px solid #E5E7EB; background:#fff; color:var(--gray); transition:all 0.2s;">🎤 Tech Talk Series</button>
+      <button class="filter-btn" data-filter="gerizim"  style="padding:0.5rem 1.2rem; border-radius:50px; font-family:'Poppins',sans-serif; font-weight:600; font-size:0.82rem; cursor:pointer; border:2px solid #E5E7EB; background:#fff; color:var(--gray); transition:all 0.2s;">💛 Gerizim Trust</button>
     </div>
 
-    <!-- ============================================================
-         GERIZIM TRUST DRIVE — real photos available now
-         ============================================================ -->
-    <div id="gerizim" style="margin-bottom:3rem;">
-      <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;">
-        <span class="badge badge-past">○ 2024</span>
-        <h3 style="font-family:'Poppins',sans-serif; font-weight:700; color:var(--dark); font-size:1.15rem; margin:0;">Gerizim Trust Drive</h3>
+    <!-- Gallery grid -->
+    <div class="gallery-grid" id="gallery-grid">
+
+      <!-- ======================================
+           FIGHTING FOR HUNGER (15 photos)
+           ====================================== -->
+      <div data-filter="hunger" style="grid-column:1/-1; padding:1.25rem 0 0.6rem; font-family:'Poppins',sans-serif; font-weight:700; font-size:1.05rem; color:var(--dark); display:flex; align-items:center; gap:0.6rem; border-bottom:2px solid var(--primary); margin-bottom:0.25rem;">
+        🍱 Fighting for Hunger <span style="font-size:0.75rem; font-weight:500; color:var(--gray); margin-left:0.25rem;">15 photos</span>
       </div>
 
-      <div class="gallery-grid" id="gallery-grid">
-
-        <div class="gallery-item fade-in" data-filter="gerizim"
-             data-src="images/Gerizim%20Trust/differently-abled%20kids%20making%20bags%20%28boys%29%201.jpeg"
-             data-caption="Gerizim Trust Drive — Boys crafting bags as part of their skill-building programme">
-          <img src="images/Gerizim%20Trust/differently-abled%20kids%20making%20bags%20%28boys%29%201.jpeg"
-               alt="Differently-abled boys making bags" loading="lazy" />
-          <div class="gallery-overlay">
-            <svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
-        </div>
-
-        <div class="gallery-item fade-in" data-delay="60" data-filter="gerizim"
-             data-src="images/Gerizim%20Trust/differently-abled%20kids%20making%20bags%20%28boys%29%202.jpeg"
-             data-caption="Gerizim Trust Drive — Boys working on bag crafting activity">
-          <img src="images/Gerizim%20Trust/differently-abled%20kids%20making%20bags%20%28boys%29%202.jpeg"
-               alt="Differently-abled boys making bags" loading="lazy" />
-          <div class="gallery-overlay">
-            <svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
-        </div>
-
-        <div class="gallery-item fade-in" data-delay="120" data-filter="gerizim"
-             data-src="images/Gerizim%20Trust/differently-abled%20kids%20making%20bags%20%28girls%29%201.jpeg"
-             data-caption="Gerizim Trust Drive — Girls crafting bags at the Gerizim Trust home">
-          <img src="images/Gerizim%20Trust/differently-abled%20kids%20making%20bags%20%28girls%29%201.jpeg"
-               alt="Differently-abled girls making bags" loading="lazy" />
-          <div class="gallery-overlay">
-            <svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
-        </div>
-
-        <div class="gallery-item fade-in" data-delay="180" data-filter="gerizim"
-             data-src="images/Gerizim%20Trust/differently-abled%20kids%20making%20bags%20%28girls%29%202.jpeg"
-             data-caption="Gerizim Trust Drive — Girls engaged in the bag-making skill activity">
-          <img src="images/Gerizim%20Trust/differently-abled%20kids%20making%20bags%20%28girls%29%202.jpeg"
-               alt="Differently-abled girls making bags" loading="lazy" />
-          <div class="gallery-overlay">
-            <svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
-        </div>
-
-        <div class="gallery-item fade-in" data-delay="240" data-filter="gerizim"
-             data-src="images/Gerizim%20Trust/older%20kid%20sorting%20out%20newspapers%201.jpeg"
-             data-caption="Gerizim Trust Drive — Older children sorting newspapers as a life-skills activity">
-          <img src="images/Gerizim%20Trust/older%20kid%20sorting%20out%20newspapers%201.jpeg"
-               alt="Older child sorting newspapers" loading="lazy" />
-          <div class="gallery-overlay">
-            <svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
-        </div>
-
-        <div class="gallery-item fade-in" data-delay="300" data-filter="gerizim"
-             data-src="images/Gerizim%20Trust/older%20kid%20sorting%20out%20newspapers%202.jpeg"
-             data-caption="Gerizim Trust Drive — Newspaper sorting activity at Gerizim Trust">
-          <img src="images/Gerizim%20Trust/older%20kid%20sorting%20out%20newspapers%202.jpeg"
-               alt="Older child sorting newspapers" loading="lazy" />
-          <div class="gallery-overlay">
-            <svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
-        </div>
-
-        <div class="gallery-item fade-in" data-delay="360" data-filter="gerizim"
-             data-src="images/Gerizim%20Trust/older%20kid%20sorting%20out%20newspapers%203.jpeg"
-             data-caption="Gerizim Trust Drive — Children developing practical skills at the trust">
-          <img src="images/Gerizim%20Trust/older%20kid%20sorting%20out%20newspapers%203.jpeg"
-               alt="Children at Gerizim Trust" loading="lazy" />
-          <div class="gallery-overlay">
-            <svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
-        </div>
-
-        <!-- ============================================================
-             UPCOMING PROJECTS — placeholder tiles
-             Photos will be added once uploaded by the team
-             ============================================================ -->
-
-        <!-- Project Gyaan -->
-        <div class="gallery-item fade-in" data-delay="60" data-filter="gyaan"
-             data-src="images/project-gyaan.jpg"
-             data-caption="Project Gyaan — teaching students at a government school in Bangalore">
-          <img src="images/project-gyaan.jpg" alt="Project Gyaan" loading="lazy"
-               onerror="this.parentElement.querySelector('.gallery-overlay').style.opacity='1'; this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#4A9038,#5DB04A)'; this.parentElement.innerHTML+='<div style=\'position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;\'><span style=\'font-size:2.5rem;\'>📚</span><span style=\'color:#fff;font-family:Poppins,sans-serif;font-weight:700;font-size:0.8rem;\'>Project Gyaan</span><span style=\'color:rgba(255,255,255,0.7);font-size:0.72rem;\'>Photos coming soon</span></div>';" />
-          <div class="gallery-overlay">
-            <svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
-        </div>
-
-        <!-- Tech Talk -->
-        <div class="gallery-item fade-in" data-delay="120" data-filter="techtalk"
-             data-src="images/tech-talk.jpg"
-             data-caption="Nikshi Tech Talk Series — industry experts speaking at Bangalore University">
-          <img src="images/tech-talk.jpg" alt="Nikshi Tech Talk Series" loading="lazy"
-               onerror="this.parentElement.querySelector('.gallery-overlay').style.opacity='1'; this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#162348,#1B3068)'; this.parentElement.innerHTML+='<div style=\'position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;\'><span style=\'font-size:2.5rem;\'>🎤</span><span style=\'color:#fff;font-family:Poppins,sans-serif;font-weight:700;font-size:0.8rem;\'>Tech Talk Series</span><span style=\'color:rgba(255,255,255,0.7);font-size:0.72rem;\'>Photos coming soon</span></div>';" />
-          <div class="gallery-overlay">
-            <svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
-        </div>
-
-        <!-- Hunger -->
-        <div class="gallery-item fade-in" data-delay="180" data-filter="hunger"
-             data-src="images/program-hunger.jpg"
-             data-caption="Fighting for Hunger — meal distribution across Bangalore">
-          <img src="images/program-hunger.jpg" alt="Fighting for Hunger" loading="lazy"
-               onerror="this.parentElement.querySelector('.gallery-overlay').style.opacity='1'; this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#D98A0A,#F5A623)'; this.parentElement.innerHTML+='<div style=\'position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;\'><span style=\'font-size:2.5rem;\'>🍱</span><span style=\'color:#fff;font-family:Poppins,sans-serif;font-weight:700;font-size:0.8rem;\'>Fighting for Hunger</span><span style=\'color:rgba(255,255,255,0.7);font-size:0.72rem;\'>Photos coming soon</span></div>';" />
-          <div class="gallery-overlay">
-            <svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
-        </div>
-
+      <div class="gallery-item fade-in" data-filter="hunger" data-src="images/Hunger%20Food%20Distribution/1.jpg" data-caption="Fighting for Hunger — food distribution across Bangalore's streets">
+        <img src="images/Hunger%20Food%20Distribution/1.jpg" alt="Hunger relief drive" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
       </div>
-    </div>
-
-    <!-- Upload reminder -->
-    <div id="upload-reminder" style="background:#F0FDF4; border:1px solid #BBF7D0; border-radius:12px; padding:1.25rem 1.5rem; display:flex; gap:0.75rem; align-items:flex-start; margin-top:1rem;">
-      <span style="font-size:1.3rem; flex-shrink:0;">📸</span>
-      <div>
-        <strong style="font-family:'Poppins',sans-serif; color:#166534; font-size:0.9rem;">More photos coming soon</strong>
-        <div style="color:#166534; font-size:0.85rem; margin-top:0.25rem;">When the remaining project photos are ready, drop them into <code style="background:#DCFCE7; padding:0.1rem 0.4rem; border-radius:4px;">images/</code> and the gallery will update automatically.</div>
+      <div class="gallery-item fade-in" data-filter="hunger" data-src="images/Hunger%20Food%20Distribution/2.jpg" data-caption="Fighting for Hunger — reaching families in need">
+        <img src="images/Hunger%20Food%20Distribution/2.jpg" alt="Hunger relief drive" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
       </div>
-    </div>
+      <div class="gallery-item fade-in" data-filter="hunger" data-src="images/Hunger%20Food%20Distribution/3.jpg" data-caption="Fighting for Hunger — freshly cooked meals distributed daily">
+        <img src="images/Hunger%20Food%20Distribution/3.jpg" alt="Hunger relief drive" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="hunger" data-src="images/Hunger%20Food%20Distribution/4.jpg" data-caption="Fighting for Hunger — volunteers serving meals in Bangalore">
+        <img src="images/Hunger%20Food%20Distribution/4.jpg" alt="Hunger relief drive" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="hunger" data-src="images/Hunger%20Food%20Distribution/5.jpg" data-caption="Fighting for Hunger — community members receiving ration kits">
+        <img src="images/Hunger%20Food%20Distribution/5.jpg" alt="Hunger relief drive" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="hunger" data-src="images/Hunger%20Food%20Distribution/6.jpg" data-caption="Fighting for Hunger — ₹400 feeds a family for a month">
+        <img src="images/Hunger%20Food%20Distribution/6.jpg" alt="Hunger relief drive" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="hunger" data-src="images/Hunger%20Food%20Distribution/7.jpg" data-caption="Fighting for Hunger — hunger relief on the streets of Bangalore">
+        <img src="images/Hunger%20Food%20Distribution/7.jpg" alt="Hunger relief drive" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="hunger" data-src="images/Hunger%20Food%20Distribution/8.jpg" data-caption="Fighting for Hunger — ensuring no one sleeps hungry">
+        <img src="images/Hunger%20Food%20Distribution/8.jpg" alt="Hunger relief drive" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="hunger" data-src="images/Hunger%20Food%20Distribution/9.jpg" data-caption="Fighting for Hunger — community food distribution drive">
+        <img src="images/Hunger%20Food%20Distribution/9.jpg" alt="Hunger relief drive" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="hunger" data-src="images/Hunger%20Food%20Distribution/10.jpg" data-caption="Fighting for Hunger — food reaching vulnerable families">
+        <img src="images/Hunger%20Food%20Distribution/10.jpg" alt="Hunger relief drive" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="hunger" data-src="images/Hunger%20Food%20Distribution/11.jpg" data-caption="Fighting for Hunger — every meal matters">
+        <img src="images/Hunger%20Food%20Distribution/11.jpg" alt="Hunger relief drive" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="hunger" data-src="images/Hunger%20Food%20Distribution/12.jpg" data-caption="Fighting for Hunger — Bangalore hunger relief initiative">
+        <img src="images/Hunger%20Food%20Distribution/12.jpg" alt="Hunger relief drive" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="hunger" data-src="images/Hunger%20Food%20Distribution/13.jpg" data-caption="Fighting for Hunger — distributing nutritious meals">
+        <img src="images/Hunger%20Food%20Distribution/13.jpg" alt="Hunger relief drive" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="hunger" data-src="images/Hunger%20Food%20Distribution/14.jpg" data-caption="Fighting for Hunger — ration kits for food-insecure families">
+        <img src="images/Hunger%20Food%20Distribution/14.jpg" alt="Hunger relief drive" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="hunger" data-src="images/Hunger%20Food%20Distribution/15.jpg" data-caption="Fighting for Hunger — feeding Bangalore one family at a time">
+        <img src="images/Hunger%20Food%20Distribution/15.jpg" alt="Hunger relief drive" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
 
+      <!-- ======================================
+           PROJECT GYAAN (17 photos)
+           ====================================== -->
+      <div data-filter="gyaan" style="grid-column:1/-1; padding:2rem 0 0.6rem; font-family:'Poppins',sans-serif; font-weight:700; font-size:1.05rem; color:var(--dark); display:flex; align-items:center; gap:0.6rem; border-bottom:2px solid var(--secondary); margin-bottom:0.25rem;">
+        📚 Project Gyaan <span style="font-size:0.75rem; font-weight:500; color:var(--gray); margin-left:0.25rem;">17 photos</span>
+      </div>
+
+      <div class="gallery-item fade-in" data-filter="gyaan" data-src="images/Project%20Gyaan/1.jpg" data-caption="Project Gyaan — teaching at a government school in Bangalore">
+        <img src="images/Project%20Gyaan/1.jpg" alt="Project Gyaan" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="gyaan" data-src="images/Project%20Gyaan/2.jpg" data-caption="Project Gyaan — students engaged in learning">
+        <img src="images/Project%20Gyaan/2.jpg" alt="Project Gyaan" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="gyaan" data-src="images/Project%20Gyaan/3.jpg" data-caption="Project Gyaan — volunteers working with school children">
+        <img src="images/Project%20Gyaan/3.jpg" alt="Project Gyaan" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="gyaan" data-src="images/Project%20Gyaan/4.jpg" data-caption="Project Gyaan — education for every child regardless of background">
+        <img src="images/Project%20Gyaan/4.jpg" alt="Project Gyaan" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="gyaan" data-src="images/Project%20Gyaan/5.jpg" data-caption="Project Gyaan — core subjects taught by trained volunteers">
+        <img src="images/Project%20Gyaan/5.jpg" alt="Project Gyaan" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="gyaan" data-src="images/Project%20Gyaan/6.jpg" data-caption="Project Gyaan — distributing school supplies to children">
+        <img src="images/Project%20Gyaan/6.jpg" alt="Project Gyaan" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="gyaan" data-src="images/Project%20Gyaan/7.jpg" data-caption="Project Gyaan — books and notebooks provided at no cost">
+        <img src="images/Project%20Gyaan/7.jpg" alt="Project Gyaan" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="gyaan" data-src="images/Project%20Gyaan/8.jpg" alt="Project Gyaan" data-caption="Project Gyaan — building futures one classroom at a time">
+        <img src="images/Project%20Gyaan/8.jpg" alt="Project Gyaan" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="gyaan" data-src="images/Project%20Gyaan/9.jpg" data-caption="Project Gyaan — no child left behind because of where they were born">
+        <img src="images/Project%20Gyaan/9.jpg" alt="Project Gyaan" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="gyaan" data-src="images/Project%20Gyaan/10.jpg" data-caption="Project Gyaan — quality education for government school students">
+        <img src="images/Project%20Gyaan/10.jpg" alt="Project Gyaan" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="gyaan" data-src="images/Project%20Gyaan/11.jpg" data-caption="Project Gyaan — Bangalore government school partnership">
+        <img src="images/Project%20Gyaan/11.jpg" alt="Project Gyaan" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="gyaan" data-src="images/Project%20Gyaan/poster.jpg" data-caption="Project Gyaan — program poster">
+        <img src="images/Project%20Gyaan/poster.jpg" alt="Project Gyaan poster" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="gyaan" data-src="images/Project%20Gyaan/end%20of%20the%20year/1.jpg" data-caption="Project Gyaan — end-of-year celebration with students">
+        <img src="images/Project%20Gyaan/end%20of%20the%20year/1.jpg" alt="Project Gyaan year-end" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="gyaan" data-src="images/Project%20Gyaan/end%20of%20the%20year/2.jpg" data-caption="Project Gyaan — end-of-year event">
+        <img src="images/Project%20Gyaan/end%20of%20the%20year/2.jpg" alt="Project Gyaan year-end" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="gyaan" data-src="images/Project%20Gyaan/end%20of%20the%20year/3.jpg" data-caption="Project Gyaan — celebrating student achievements">
+        <img src="images/Project%20Gyaan/end%20of%20the%20year/3.jpg" alt="Project Gyaan year-end" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="gyaan" data-src="images/Project%20Gyaan/end%20of%20the%20year/4.jpg" data-caption="Project Gyaan — end-of-year gathering with students and volunteers">
+        <img src="images/Project%20Gyaan/end%20of%20the%20year/4.jpg" alt="Project Gyaan year-end" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="gyaan" data-src="images/Project%20Gyaan/end%20of%20the%20year/5.jpg" data-caption="Project Gyaan — year-end milestone">
+        <img src="images/Project%20Gyaan/end%20of%20the%20year/5.jpg" alt="Project Gyaan year-end" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+
+      <!-- ======================================
+           TRANS COMMUNITY (17 photos)
+           ====================================== -->
+      <div data-filter="trans" style="grid-column:1/-1; padding:2rem 0 0.6rem; font-family:'Poppins',sans-serif; font-weight:700; font-size:1.05rem; color:var(--dark); display:flex; align-items:center; gap:0.6rem; border-bottom:2px solid #5B6BF5; margin-bottom:0.25rem;">
+        🏳️‍⚧️ Transgender Empowerment <span style="font-size:0.75rem; font-weight:500; color:var(--gray); margin-left:0.25rem;">17 photos</span>
+      </div>
+
+      <div class="gallery-item fade-in" data-filter="trans" data-src="images/Trans%20Community/1.jpg" data-caption="Transgender Empowerment — community members in Bangalore">
+        <img src="images/Trans%20Community/1.jpg" alt="Transgender empowerment" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="trans" data-src="images/Trans%20Community/2.jpg" data-caption="Transgender Empowerment — vocational training and skills development">
+        <img src="images/Trans%20Community/2.jpg" alt="Transgender empowerment" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="trans" data-src="images/Trans%20Community/3.jpg" data-caption="Transgender Empowerment — building independence and dignity">
+        <img src="images/Trans%20Community/3.jpg" alt="Transgender empowerment" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="trans" data-src="images/Trans%20Community/4.jpg" data-caption="Transgender Empowerment — enterprise setup and community support">
+        <img src="images/Trans%20Community/4.jpg" alt="Transgender empowerment" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="trans" data-src="images/Trans%20Community/5.jpg" data-caption="Transgender Empowerment — real stories of resilience in Bangalore">
+        <img src="images/Trans%20Community/5.jpg" alt="Transgender empowerment" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="trans" data-src="images/Trans%20Community/6.jpg" data-caption="Transgender Empowerment — employment and livelihood support">
+        <img src="images/Trans%20Community/6.jpg" alt="Transgender empowerment" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="trans" data-src="images/Trans%20Community/7.jpg" data-caption="Transgender Empowerment — community gathering and solidarity">
+        <img src="images/Trans%20Community/7.jpg" alt="Transgender empowerment" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="trans" data-src="images/Trans%20Community/8.jpg" data-caption="Transgender Empowerment — independence, not charity">
+        <img src="images/Trans%20Community/8.jpg" alt="Transgender empowerment" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="trans" data-src="images/Trans%20Community/9.jpg" data-caption="Transgender Empowerment — skills workshops and training">
+        <img src="images/Trans%20Community/9.jpg" alt="Transgender empowerment" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="trans" data-src="images/Trans%20Community/10.jpg" data-caption="Transgender Empowerment — building lasting self-sufficiency">
+        <img src="images/Trans%20Community/10.jpg" alt="Transgender empowerment" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="trans" data-src="images/Trans%20Community/11.jpg" data-caption="Transgender Empowerment — community empowerment program">
+        <img src="images/Trans%20Community/11.jpg" alt="Transgender empowerment" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="trans" data-src="images/Trans%20Community/poster.jpg" data-caption="Transgender Empowerment — program poster">
+        <img src="images/Trans%20Community/poster.jpg" alt="Transgender empowerment poster" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="trans" data-src="images/Trans%20Community/15.jpeg" data-caption="Transgender Empowerment — growing the community together">
+        <img src="images/Trans%20Community/15.jpeg" alt="Transgender empowerment" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="trans" data-src="images/Trans%20Community/16.jpeg" data-caption="Transgender Empowerment — inclusive enterprise and business support">
+        <img src="images/Trans%20Community/16.jpeg" alt="Transgender empowerment" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="trans" data-src="images/Trans%20Community/17.jpeg" data-caption="Transgender Empowerment — connecting community members with opportunity">
+        <img src="images/Trans%20Community/17.jpeg" alt="Transgender empowerment" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="trans" data-src="images/Trans%20Community/18.jpeg" data-caption="Transgender Empowerment — dignity through economic independence">
+        <img src="images/Trans%20Community/18.jpeg" alt="Transgender empowerment" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="trans" data-src="images/Trans%20Community/19.jpeg" data-caption="Transgender Empowerment — a community that lifts each other up">
+        <img src="images/Trans%20Community/19.jpeg" alt="Transgender empowerment" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+
+      <!-- ======================================
+           OLD AGE HOMES (8 photos)
+           ====================================== -->
+      <div data-filter="oldage" style="grid-column:1/-1; padding:2rem 0 0.6rem; font-family:'Poppins',sans-serif; font-weight:700; font-size:1.05rem; color:var(--dark); display:flex; align-items:center; gap:0.6rem; border-bottom:2px solid #8B5CF6; margin-bottom:0.25rem;">
+        🏠 Community Outreach — Old Age Homes <span style="font-size:0.75rem; font-weight:500; color:var(--gray); margin-left:0.25rem;">8 photos</span>
+      </div>
+
+      <div class="gallery-item fade-in" data-filter="oldage" data-src="images/Old%20Age%20Homes/1.jpg" data-caption="Old Age Home visit — Kamalamma Ramakrishnappa Old Age Home Trust, Bangalore">
+        <img src="images/Old%20Age%20Homes/1.jpg" alt="Old age home visit" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="oldage" data-src="images/Old%20Age%20Homes/2.jpg" data-caption="Old Age Home visit — bringing joy and support to elders">
+        <img src="images/Old%20Age%20Homes/2.jpg" alt="Old age home visit" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="oldage" data-src="images/Old%20Age%20Homes/3.jpg" data-caption="Old Age Home visit — every elder deserves dignity and care">
+        <img src="images/Old%20Age%20Homes/3.jpg" alt="Old age home visit" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="oldage" data-src="images/Old%20Age%20Homes/4.jpg" data-caption="Old Age Home visit — community engagement and support">
+        <img src="images/Old%20Age%20Homes/4.jpg" alt="Old age home visit" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="oldage" data-src="images/Old%20Age%20Homes/5.jpg" data-caption="Old Age Home visit — time spent with elders across Bangalore">
+        <img src="images/Old%20Age%20Homes/5.jpg" alt="Old age home visit" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="oldage" data-src="images/Old%20Age%20Homes/6.jpg" data-caption="Old Age Home visit — compassion for the elderly in Bangalore">
+        <img src="images/Old%20Age%20Homes/6.jpg" alt="Old age home visit" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="oldage" data-src="images/Old%20Age%20Homes/7.jpg" data-caption="Old Age Home visit — spreading warmth and connection">
+        <img src="images/Old%20Age%20Homes/7.jpg" alt="Old age home visit" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="oldage" data-src="images/Old%20Age%20Homes/8.jpg" data-caption="Old Age Home visit — because everyone deserves to be seen and valued">
+        <img src="images/Old%20Age%20Homes/8.jpg" alt="Old age home visit" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+
+      <!-- ======================================
+           NIKSHI TECH TALK SERIES (4 photos)
+           ====================================== -->
+      <div data-filter="techtalk" style="grid-column:1/-1; padding:2rem 0 0.6rem; font-family:'Poppins',sans-serif; font-weight:700; font-size:1.05rem; color:var(--dark); display:flex; align-items:center; gap:0.6rem; border-bottom:2px solid var(--dark); margin-bottom:0.25rem;">
+        🎤 Nikshi Tech Talk Series <span style="font-size:0.75rem; font-weight:500; color:var(--gray); margin-left:0.25rem;">4 photos</span>
+      </div>
+
+      <div class="gallery-item fade-in" data-filter="techtalk" data-src="images/NTTS/1.jpg" data-caption="Nikshi Tech Talk Series — inspiring students at Bangalore University">
+        <img src="images/NTTS/1.jpg" alt="Nikshi Tech Talk Series" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="techtalk" data-src="images/NTTS/2.jpg" data-caption="Nikshi Tech Talk Series — technology experts mentoring the next generation">
+        <img src="images/NTTS/2.jpg" alt="Nikshi Tech Talk Series" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="techtalk" data-src="images/NTTS/3.jpg" data-caption="Nikshi Tech Talk Series — opening doors for students in tech">
+        <img src="images/NTTS/3.jpg" alt="Nikshi Tech Talk Series" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="techtalk" data-src="images/NTTS/poster%204.jpg" data-caption="Nikshi Tech Talk Series — event poster">
+        <img src="images/NTTS/poster%204.jpg" alt="Nikshi Tech Talk Series poster" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+
+      <!-- ======================================
+           GERIZIM TRUST DRIVE (7 photos)
+           ====================================== -->
+      <div id="gerizim" data-filter="gerizim" style="grid-column:1/-1; padding:2rem 0 0.6rem; font-family:'Poppins',sans-serif; font-weight:700; font-size:1.05rem; color:var(--dark); display:flex; align-items:center; gap:0.6rem; border-bottom:2px solid var(--gray); margin-bottom:0.25rem;">
+        💛 Gerizim Trust Drive <span class="badge badge-past" style="margin-left:0.5rem; font-size:0.68rem;">○ 2024</span> <span style="font-size:0.75rem; font-weight:500; color:var(--gray); margin-left:0.25rem;">7 photos</span>
+      </div>
+
+      <div class="gallery-item fade-in" data-filter="gerizim" data-src="images/Gerizim%20Trust/differently-abled%20kids%20making%20bags%20%28boys%29%201.jpeg" data-caption="Gerizim Trust Drive — Boys crafting bags as part of their skill-building programme">
+        <img src="images/Gerizim%20Trust/differently-abled%20kids%20making%20bags%20%28boys%29%201.jpeg" alt="Differently-abled boys making bags" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="gerizim" data-src="images/Gerizim%20Trust/differently-abled%20kids%20making%20bags%20%28boys%29%202.jpeg" data-caption="Gerizim Trust Drive — Boys working on bag crafting activity">
+        <img src="images/Gerizim%20Trust/differently-abled%20kids%20making%20bags%20%28boys%29%202.jpeg" alt="Differently-abled boys making bags" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="gerizim" data-src="images/Gerizim%20Trust/differently-abled%20kids%20making%20bags%20%28girls%29%201.jpeg" data-caption="Gerizim Trust Drive — Girls crafting bags at the Gerizim Trust home">
+        <img src="images/Gerizim%20Trust/differently-abled%20kids%20making%20bags%20%28girls%29%201.jpeg" alt="Differently-abled girls making bags" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="gerizim" data-src="images/Gerizim%20Trust/differently-abled%20kids%20making%20bags%20%28girls%29%202.jpeg" data-caption="Gerizim Trust Drive — Girls engaged in the bag-making skill activity">
+        <img src="images/Gerizim%20Trust/differently-abled%20kids%20making%20bags%20%28girls%29%202.jpeg" alt="Differently-abled girls making bags" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="gerizim" data-src="images/Gerizim%20Trust/older%20kid%20sorting%20out%20newspapers%201.jpeg" data-caption="Gerizim Trust Drive — Older children sorting newspapers as a life-skills activity">
+        <img src="images/Gerizim%20Trust/older%20kid%20sorting%20out%20newspapers%201.jpeg" alt="Older child sorting newspapers" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="gerizim" data-src="images/Gerizim%20Trust/older%20kid%20sorting%20out%20newspapers%202.jpeg" data-caption="Gerizim Trust Drive — Newspaper sorting activity at Gerizim Trust">
+        <img src="images/Gerizim%20Trust/older%20kid%20sorting%20out%20newspapers%202.jpeg" alt="Older child sorting newspapers" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item fade-in" data-filter="gerizim" data-src="images/Gerizim%20Trust/older%20kid%20sorting%20out%20newspapers%203.jpeg" data-caption="Gerizim Trust Drive — Children developing practical skills at the trust">
+        <img src="images/Gerizim%20Trust/older%20kid%20sorting%20out%20newspapers%203.jpeg" alt="Children at Gerizim Trust" loading="lazy" />
+        <div class="gallery-overlay"><svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+
+    </div><!-- end gallery-grid -->
   </div>
 </section>
 
@@ -213,13 +410,14 @@
 </div>
 
 <!-- ===== CTA ===== -->
-<section style="background:var(--bg); padding:4rem 1.5rem; text-align:center;">
+<section style="background:var(--dark); padding:4rem 1.5rem; text-align:center;">
   <div class="max-w-site">
-    <h2 class="fade-in" style="font-family:'Poppins',sans-serif; font-weight:700; font-size:clamp(1.5rem,3vw,2rem); color:var(--dark); margin-bottom:1rem;">Follow Us for More</h2>
-    <p class="fade-in" data-delay="100" style="color:var(--gray); font-size:1rem; margin-bottom:2rem; max-width:450px; margin-left:auto; margin-right:auto; line-height:1.7;">Stay updated with our daily work, new drives, and stories from the ground on our Facebook page.</p>
-    <a href="https://www.facebook.com/share/18pNZXoWaK/?mibextid=wwXIfr" target="_blank" rel="noopener" class="btn btn-primary fade-in" data-delay="200">
-      Follow on Facebook &rarr;
-    </a>
+    <h2 class="fade-in" style="font-family:'Poppins',sans-serif; font-weight:700; font-size:clamp(1.5rem,3vw,2rem); color:#fff; margin-bottom:1rem;">Follow Us for Daily Updates</h2>
+    <p class="fade-in" data-delay="100" style="color:rgba(255,255,255,0.7); font-size:1rem; margin-bottom:2rem; max-width:450px; margin-left:auto; margin-right:auto; line-height:1.7;">Stay updated with our daily work, new drives, and stories from the ground.</p>
+    <div class="fade-in" data-delay="200" style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
+      <a href="https://www.facebook.com/share/18pNZXoWaK/?mibextid=wwXIfr" target="_blank" rel="noopener" class="btn btn-primary">Follow on Facebook &rarr;</a>
+      <a href="https://www.instagram.com/nikshi_foundation_for_humanity" target="_blank" rel="noopener" class="btn btn-outline">Follow on Instagram</a>
+    </div>
   </div>
 </section>
 
@@ -227,9 +425,28 @@
 <footer>
   <div class="max-w-site" style="padding:4rem 1.5rem 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:2.5rem;">
     <div>
-      <div style="font-family:'Poppins',sans-serif; font-weight:800; color:#fff; font-size:1rem; margin-bottom:0.25rem;">Nikshi Foundation for Humanity</div>
-      <div style="font-size:0.72rem; color:rgba(255,255,255,0.4); font-family:'Poppins',sans-serif; letter-spacing:0.05em; text-transform:uppercase; margin-bottom:1rem;">Because Everyone is Unique</div>
-      <p style="font-size:0.9rem; line-height:1.7; color:rgba(255,255,255,0.6);">Equality · Empowerment · Fight Against Hunger</p>
+      <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem;">
+        <img src="images/logo.jpeg" alt="Nikshi Logo" style="height:40px; width:40px; object-fit:contain; border-radius:8px;" onerror="this.style.display='none'" />
+        <div>
+          <div style="font-family:'Poppins',sans-serif; font-weight:800; color:#fff; font-size:1rem;">Nikshi Foundation</div>
+          <div style="font-size:0.7rem; color:rgba(255,255,255,0.5); font-family:'Poppins',sans-serif; letter-spacing:0.1em; text-transform:uppercase;">For Humanity</div>
+        </div>
+      </div>
+      <p style="font-size:0.9rem; line-height:1.7; color:rgba(255,255,255,0.6); margin-bottom:1.25rem;">Equality · Empowerment · Fight Against Hunger</p>
+      <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+        <a href="https://www.facebook.com/share/18pNZXoWaK/?mibextid=wwXIfr" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/nikshi_foundation_for_humanity" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://wa.me/919742562006" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        </a>
+        <a href="mailto:Nikshifoundation@gmail.com" class="social-link" aria-label="Email">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
     </div>
     <div>
       <div class="footer-title">Quick Links</div>
@@ -242,10 +459,11 @@
     </div>
     <div>
       <div class="footer-title">Contact</div>
-      <p style="font-size:0.9rem; color:rgba(255,255,255,0.6); line-height:1.8;">
+      <p style="font-size:0.9rem; color:rgba(255,255,255,0.6); line-height:1.9;">
         Bangalore, Karnataka, India<br>
         <a href="tel:+919742562006" style="color:rgba(255,255,255,0.6); text-decoration:none;">+91 97425 62006</a><br>
-        <a href="https://wa.me/919742562006" style="color:rgba(255,255,255,0.6); text-decoration:none;">WhatsApp Us</a>
+        <a href="https://wa.me/919742562006" style="color:rgba(255,255,255,0.6); text-decoration:none;">WhatsApp Us</a><br>
+        <a href="mailto:Nikshifoundation@gmail.com" style="color:rgba(255,255,255,0.6); text-decoration:none;">Nikshifoundation@gmail.com</a>
       </p>
     </div>
   </div>
@@ -257,11 +475,11 @@
 <script>
 (function () {
   const buttons = document.querySelectorAll('.filter-btn');
-  const items   = document.querySelectorAll('.gallery-item[data-filter]');
+  const items   = document.querySelectorAll('#gallery-grid [data-filter]');
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => {
+  buttons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      buttons.forEach(function(b) {
         b.style.background = '#fff';
         b.style.color = 'var(--gray)';
         b.style.borderColor = '#E5E7EB';
@@ -270,8 +488,8 @@
       btn.style.color = '#fff';
       btn.style.borderColor = 'var(--primary)';
 
-      const filter = btn.dataset.filter;
-      items.forEach(item => {
+      var filter = btn.dataset.filter;
+      items.forEach(function(item) {
         item.style.display = (filter === 'all' || item.dataset.filter === filter) ? '' : 'none';
       });
     });
