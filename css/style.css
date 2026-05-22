@@ -13,7 +13,7 @@
   --primary-dark: #D98A0A;
   --secondary:    #5DB04A;  /* leaf green — logo icon */
   --secondary-dark:#4A9038;
-  --accent:       #F5C842;  /* warm gold highlight */
+  --accent:       #F5A623;  /* same orange as primary — no yellow on this site */
   --bg:           #F4F6F8;
   --dark:         #162348;  /* deep navy — logo background */
   --dark-alt:     #1B3068;
@@ -227,7 +227,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
   font-size: clamp(2.2rem, 4vw, 3.5rem);
   font-weight: 800;
-  color: var(--accent);
+  color: var(--primary);
   line-height: 1;
 }
 .counter-label {
@@ -490,7 +490,7 @@ h1, h2, h3, h4, h5, h6 {
 .value-card:hover { transform: translateY(-4px); }
 .value-card:nth-child(1) { border-top-color: var(--primary); }
 .value-card:nth-child(2) { border-top-color: var(--secondary); }
-.value-card:nth-child(3) { border-top-color: var(--accent); }
+.value-card:nth-child(3) { border-top-color: var(--dark); }
 .value-icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
 
 /* ---------- Program Section Blocks ---------- */

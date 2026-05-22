@@ -46,7 +46,7 @@
 </nav>
 
 <!-- ===== PAGE HERO ===== -->
-<div class="page-hero" style="background:linear-gradient(135deg,#1A1A2E,#E8610A);">
+<div class="page-hero">
   <div class="breadcrumb">
     <a href="index.html">Home</a>
     <span>/</span>
@@ -61,22 +61,22 @@
   <div class="max-w-site" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:1.5rem; text-align:center;">
     <div class="fade-in" style="color:#fff;">
       <div style="font-size:1.75rem; margin-bottom:0.3rem;">🍽️</div>
-      <div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:1.1rem; color:var(--accent);">₹400</div>
+      <div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:1.1rem; color:var(--primary);">₹400</div>
       <div style="font-size:0.8rem; color:rgba(255,255,255,0.6); margin-top:0.2rem;">Feeds a Family</div>
     </div>
     <div class="fade-in" data-delay="100" style="color:#fff;">
       <div style="font-size:1.75rem; margin-bottom:0.3rem;">📚</div>
-      <div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:1.1rem; color:var(--accent);">₹1,000</div>
+      <div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:1.1rem; color:var(--primary);">₹1,000</div>
       <div style="font-size:0.8rem; color:rgba(255,255,255,0.6); margin-top:0.2rem;">Educates a Child</div>
     </div>
     <div class="fade-in" data-delay="200" style="color:#fff;">
       <div style="font-size:1.75rem; margin-bottom:0.3rem;">💼</div>
-      <div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:1.1rem; color:var(--accent);">₹2,500</div>
+      <div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:1.1rem; color:var(--primary);">₹2,500</div>
       <div style="font-size:0.8rem; color:rgba(255,255,255,0.6); margin-top:0.2rem;">Empowers Livelihood</div>
     </div>
     <div class="fade-in" data-delay="300" style="color:#fff;">
       <div style="font-size:1.75rem; margin-bottom:0.3rem;">🏠</div>
-      <div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:1.1rem; color:var(--accent);">₹5,000</div>
+      <div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:1.1rem; color:var(--primary);">₹5,000</div>
       <div style="font-size:0.8rem; color:rgba(255,255,255,0.6); margin-top:0.2rem;">Supports a Program</div>
     </div>
   </div>
@@ -251,7 +251,7 @@ function openRazorpay() {
       alert('Thank you for your generous donation! ❤️\nPayment ID: ' + response.razorpay_payment_id + '\nYour support makes a real difference.');
     },
     prefill: { contact: '+919742562006' },
-    theme: { color: '#E8610A' },
+    theme: { color: '#F5A623' },
     modal: { ondismiss: function() {} }
   };
   const rzp = new Razorpay(options);
