@@ -150,7 +150,7 @@
           Sign up free at formspree.io → New Form → copy the form ID
           Example: action="https://formspree.io/f/abcdefgh"
         -->
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contact-form" novalidate>
+        <form action="https://formspree.io/f/xwvzbjyj" method="POST" id="contact-form" novalidate>
 
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-bottom:1.25rem;">
             <div class="form-group">
@@ -264,7 +264,7 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
 });
 /* Handle Formspree AJAX (optional enhancement) */
 const form = document.getElementById('contact-form');
-if (form && form.action.includes('formspree') && !form.action.includes('YOUR_FORM_ID')) {
+if (form && form.action.includes('formspree') && !form.action.includes('xwvzbjyj')) {
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
