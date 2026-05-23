@@ -252,12 +252,9 @@ Implemented in `css/style.css` (`.slideshow`, `.slideshow-track`, `.slide`, `.sl
 ## Third-Party Integrations — What Still Needs Activating
 
 ### 1. Formspree (contact form)
-1. Sign up / log in at `https://formspree.io`
-2. Create a new form → copy the 8-character form ID
-3. In `contact.html`, replace `YOUR_FORM_ID` in:
-   ```html
-   <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-   ```
+**Status: ACTIVE** — Form ID `xwvzbjyj` is live.
+Endpoint: `https://formspree.io/f/xwvzbjyj`
+To change the receiving email, log in at `https://formspree.io` and update the form settings there — no code change needed.
 
 ### 2. Razorpay (donation button)
 1. Sign up / log in at `https://razorpay.com`
@@ -333,6 +330,6 @@ git push origin main
 - [ ] **Trans Community 15–19.jpeg** — these 5 files are in the gallery but the programs.html Trans Community slideshow only uses 1–11.jpg + poster.jpg. Add more slides if desired.
 - [ ] **`images/founder.jpg`** — not yet uploaded; `about.html` has `onerror` fallback so it degrades gracefully.
 - [ ] **`images/upi-qr.png`** — not yet uploaded; `donate.html` shows a placeholder box.
-- [ ] **Formspree ID** — `contact.html` form uses `YOUR_FORM_ID` placeholder; replace to activate.
+- [x] **Formspree ID** — `contact.html` form is live with ID `xwvzbjyj`.
 - [ ] **Razorpay Key** — `donate.html` uses `YOUR_RAZORPAY_KEY_ID` placeholder; replace to activate.
 - [ ] **Custom domain CNAME** — not yet set up; site is live at GitHub Pages URL only.
