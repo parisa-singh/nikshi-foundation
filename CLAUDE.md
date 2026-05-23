@@ -1,7 +1,7 @@
 # CLAUDE.md — Nikshi Foundation for Humanity Website
 
 Full developer reference for continuing work in a new Claude Code session.
-Last updated: 2026-05-23.
+Last updated: 2026-05-23 (session 3).
 
 ---
 
@@ -101,13 +101,13 @@ nikshi/
 
 Sections (top to bottom):
 1. **Sticky nav** — hamburger on mobile, full name "Nikshi Foundation for Humanity" at 0.9rem
-2. **Hero** — centered text, location pin icon + "Bangalore, India" tagline, expanded mission paragraph including transgender communities, underprivileged women, Down syndrome, visually impaired
-3. **Impact counter strip** — animated counters (meals, families, children, trans lives), JS in `main.js`
-4. **Program cards** — 4 cards (Project Gyaan, Tech Talk, Hunger, Trans Empowerment). Description updated to name all beneficiary groups.
-5. **Project Showcase** — 4 poster cards in a responsive grid (CSR Uplift, Project Uplift, Project Gyaan, NTTS). Hover lift animation. Click opens poster full-size in new tab. Hint text "Click any poster to view full size."
-6. **Photos from the Field** — 13-slide featured slideshow on dark `#0f172a` background, with `data-caption` captions per slide
-7. **Founder Quote** — Shilpa Singh blockquote with avatar photo (`images/founder.JPEG`)
-8. **Certificate of Appreciation** — 2-column section (text + certificate image). Image: `images/Certificate%20of%20Appreciation%20.jpeg`
+2. **Hero** — centered text, location pin icon + "Bangalore, India" tagline. No scroll indicator (removed).
+3. **Founder Quote** — Shilpa Singh blockquote with avatar photo (`images/founder.JPEG`) — **2nd section, immediately after hero**
+4. **Impact counter strip** — animated counters (meals, families, children, trans lives), JS in `main.js`
+5. **Program cards** — 4 cards (Project Gyaan, Tech Talk, Hunger, Trans Empowerment). Each card image is the program's poster: `Posters/Project%20Gyaan%20Poster%20.jpeg`, `Posters/NTTS%20Poster%20.jpeg`, `Posters/CSR%20Poster%20.jpeg`, `Posters/Project%20Uplift%20Poster%20.jpeg`
+6. **Certificate of Appreciation** — 2-column section (text + certificate image). Image: `images/Certificate%20of%20Appreciation%20.jpeg` — **appears before Project Showcase**
+7. **Project Showcase** — 4 poster cards in a responsive grid (CSR Uplift, Project Uplift, Project Gyaan, NTTS). Hover lift animation. Click opens poster full-size in new tab. Hint text "Click any poster to view full size."
+8. **Photos from the Field** — 13-slide featured slideshow on dark `#0f172a` background, with `data-caption` captions per slide
 9. **How Your Donation Helps** — rupee impact rows + `images/Project%20Gyaan/11.jpg` photo (no ₹400 badge — was removed)
 10. **CTA banner** — orange background, volunteer/donate CTAs
 11. **Follow Our Journey** — Facebook + Instagram CTA buttons. No Facebook plugin embed.
@@ -120,6 +120,11 @@ Sections (top to bottom):
 - IN flag emoji → location pin SVG in hero tagline
 - Donation section image changed from emoji placeholder to `Project Gyaan/11.jpg`
 - ₹400 badge overlay removed from donation section
+- Scroll indicator (text + vertical line) removed from hero
+- fb-float Facebook bubble removed
+- Founder Quote moved to 2nd section (was after Photos from the Field)
+- Certificate of Appreciation moved to before Project Showcase (was after Founder Quote)
+- Program card broken images + emojis replaced with actual poster images
 
 ### about.html — About Us
 **Status: Complete**
@@ -139,11 +144,13 @@ Five program sections, each with a slideshow. Nav shows full name.
 
 | Program | Accent Color | Slideshow Images | Slide Count |
 |---------|-------------|-----------------|-------------|
-| Transgender Empowerment | `#E8610A` orange | `images/Trans Community/` — 1–11.jpg + poster.jpg | 12 slides |
-| Hunger Relief | `#0D6E6E` teal | `images/Hunger Food Distribution/` — 1–15.jpg | 15 slides |
-| Project Gyaan (Education) | `#162348` navy | `images/Project Gyaan/` — 1–11.jpg + poster.jpg | 12 slides |
-| Community Outreach — Old Age Homes | `#7C3AED` purple | `images/Old Age Homes/` — 1–8.jpg | 8 slides |
-| Nikshi Tech Talk Series (NTTS) | `#0D6E6E` teal | `images/NTTS/` — 1.jpg, 2.jpg, 3.jpg, poster 4.jpg | 4 slides |
+| Transgender Empowerment | `#E8610A` orange | **`Posters/Project Uplift Poster .jpeg` (1st)** + `Trans Community/` 1–11.jpg + poster.jpg | 13 slides |
+| Hunger Relief | `#0D6E6E` teal | **`Posters/CSR Poster .jpeg` (1st)** + `Hunger Food Distribution/` 1–15.jpg | 16 slides |
+| Project Gyaan (Education) | `#162348` navy | **`Posters/Project Gyaan Poster .jpeg` (1st)** + `Project Gyaan/` 1–11.jpg + poster.jpg | 13 slides |
+| Community Outreach — Old Age Homes | `#7C3AED` purple | `images/Old Age Homes/` — 1–8.jpg (no poster) | 8 slides |
+| Nikshi Tech Talk Series (NTTS) | `#0D6E6E` teal | **`Posters/NTTS Poster .jpeg` (1st)** + `NTTS/` 1.jpg, 2.jpg, 3.jpg, poster 4.jpg | 5 slides |
+
+**Poster-first rule:** Each program slideshow shows the relevant Posters/ folder image as slide 1.
 
 Intro text says "Five ongoing initiatives" — update if programs change.
 Also has a "Past Drives" section at the bottom (COVID ration drive, Gerizim Trust).
@@ -155,12 +162,14 @@ Filter buttons: All Photos | Hunger Relief | Project Gyaan | Trans Community | O
 
 | Category | `data-filter` | Count | Source |
 |----------|--------------|-------|--------|
-| Hunger Relief | `hunger` | 15 | `Hunger Food Distribution/` 1–15.jpg |
-| Project Gyaan | `gyaan` | 17 | `Project Gyaan/` 1–11 + poster + `end of the year/` 1–5 |
-| Trans Community | `trans` | 17 | `Trans Community/` 1–11 + poster + 15–19.jpeg |
-| Old Age Homes | `oldage` | 8 | `Old Age Homes/` 1–8.jpg |
-| Tech Talk Series | `techtalk` | 4 | `NTTS/` 1.jpg, 2.jpg, 3.jpg, `poster 4.jpg` |
+| Hunger Relief | `hunger` | 16 | **`Posters/CSR Poster .jpeg` (1st)** + `Hunger Food Distribution/` 1–15.jpg |
+| Project Gyaan | `gyaan` | 18 | **`Posters/Project Gyaan Poster .jpeg` (1st)** + `Project Gyaan/` 1–11 + poster + `end of the year/` 1–5 |
+| Trans Community | `trans` | 18 | **`Posters/Project Uplift Poster .jpeg` (1st)** + `Trans Community/` 1–11 + poster + 15–19.jpeg |
+| Old Age Homes | `oldage` | 8 | `Old Age Homes/` 1–8.jpg (no poster) |
+| Tech Talk Series | `techtalk` | 5 | **`Posters/NTTS Poster .jpeg` (1st)** + `NTTS/` 1.jpg, 2.jpg, 3.jpg, `poster 4.jpg` |
 | Gerizim Trust | `gerizim` | 7 | `Gerizim Trust/` (spaces + parentheses — URL-encoded) |
+
+**Poster-first rule:** Each program category in the gallery starts with the relevant poster from `images/Posters/`.
 
 **Filter JS uses:** `document.querySelectorAll('#gallery-grid [data-filter]')` — targets both image items AND category section headers so headers hide with their category.
 
@@ -353,3 +362,10 @@ git push origin main
 - [x] **Project Showcase (posters)** — 4 posters shown on index.html, click to open full size
 - [x] **Mission text** — updated across index.html and about.html to include all beneficiary groups
 - [x] **Mobile responsive** — slideshows capped at 260px, 2-col grids stack on mobile
+- [x] **fb-float removed** — Facebook floating bubble removed from all 6 pages + CSS deleted from style.css
+- [x] **Scroll indicator removed** — "Scroll" text + vertical gradient line removed from hero on index.html
+- [x] **Founder Quote repositioned** — now 2nd section on index.html (immediately after hero)
+- [x] **Certificate above Project Showcase** — Certificate of Appreciation now appears before Project Showcase on index.html
+- [x] **Program card posters** — all 4 program cards on index.html show actual poster images instead of broken images + emojis
+- [x] **Poster-first slideshows** — programs.html: each program slideshow opens with its poster (Project Gyaan, NTTS, Hunger, Trans; Old Age Homes has no poster)
+- [x] **Poster-first gallery** — gallery.html: each program category starts with its poster image (Hunger, Gyaan, Trans, Tech Talk)
