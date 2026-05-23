@@ -542,9 +542,10 @@
     });
   });
 
-  var hash = window.location.hash.slice(1);
-  if (hash && hash !== 'all') {
-    var target = document.querySelector('.filter-btn[data-filter="' + hash + '"]');
+  var params = new URLSearchParams(window.location.search);
+  var filterParam = params.get('filter');
+  if (filterParam && filterParam !== 'all') {
+    var target = document.querySelector('.filter-btn[data-filter="' + filterParam + '"]');
     if (target) target.click();
   }
 })();
