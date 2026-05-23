@@ -80,7 +80,7 @@
       <!-- ======================================
            FIGHTING FOR HUNGER (15 photos)
            ====================================== -->
-      <div data-filter="hunger" style="grid-column:1/-1; padding:1.25rem 0 0.6rem; font-family:'Poppins',sans-serif; font-weight:700; font-size:1.05rem; color:var(--dark); display:flex; align-items:center; gap:0.6rem; border-bottom:2px solid var(--primary); margin-bottom:0.25rem;">
+      <div id="hunger" data-filter="hunger" style="grid-column:1/-1; padding:1.25rem 0 0.6rem; font-family:'Poppins',sans-serif; font-weight:700; font-size:1.05rem; color:var(--dark); display:flex; align-items:center; gap:0.6rem; border-bottom:2px solid var(--primary); margin-bottom:0.25rem;">
         🍱 Fighting for Hunger <span style="font-size:0.75rem; font-weight:500; color:var(--gray); margin-left:0.25rem;">15 photos</span>
       </div>
 
@@ -148,7 +148,7 @@
       <!-- ======================================
            PROJECT GYAAN (17 photos)
            ====================================== -->
-      <div data-filter="gyaan" style="grid-column:1/-1; padding:2rem 0 0.6rem; font-family:'Poppins',sans-serif; font-weight:700; font-size:1.05rem; color:var(--dark); display:flex; align-items:center; gap:0.6rem; border-bottom:2px solid var(--secondary); margin-bottom:0.25rem;">
+      <div id="gyaan" data-filter="gyaan" style="grid-column:1/-1; padding:2rem 0 0.6rem; font-family:'Poppins',sans-serif; font-weight:700; font-size:1.05rem; color:var(--dark); display:flex; align-items:center; gap:0.6rem; border-bottom:2px solid var(--secondary); margin-bottom:0.25rem;">
         📚 Project Gyaan <span style="font-size:0.75rem; font-weight:500; color:var(--gray); margin-left:0.25rem;">17 photos</span>
       </div>
 
@@ -229,7 +229,7 @@
       <!-- ======================================
            TRANS COMMUNITY (17 photos)
            ====================================== -->
-      <div data-filter="trans" style="grid-column:1/-1; padding:2rem 0 0.6rem; font-family:'Poppins',sans-serif; font-weight:700; font-size:1.05rem; color:var(--dark); display:flex; align-items:center; gap:0.6rem; border-bottom:2px solid #5B6BF5; margin-bottom:0.25rem;">
+      <div id="trans" data-filter="trans" style="grid-column:1/-1; padding:2rem 0 0.6rem; font-family:'Poppins',sans-serif; font-weight:700; font-size:1.05rem; color:var(--dark); display:flex; align-items:center; gap:0.6rem; border-bottom:2px solid #5B6BF5; margin-bottom:0.25rem;">
         🏳️‍⚧️ Transgender Empowerment <span style="font-size:0.75rem; font-weight:500; color:var(--gray); margin-left:0.25rem;">17 photos</span>
       </div>
 
@@ -310,7 +310,7 @@
       <!-- ======================================
            OLD AGE HOMES (8 photos)
            ====================================== -->
-      <div data-filter="oldage" style="grid-column:1/-1; padding:2rem 0 0.6rem; font-family:'Poppins',sans-serif; font-weight:700; font-size:1.05rem; color:var(--dark); display:flex; align-items:center; gap:0.6rem; border-bottom:2px solid #8B5CF6; margin-bottom:0.25rem;">
+      <div id="oldage" data-filter="oldage" style="grid-column:1/-1; padding:2rem 0 0.6rem; font-family:'Poppins',sans-serif; font-weight:700; font-size:1.05rem; color:var(--dark); display:flex; align-items:center; gap:0.6rem; border-bottom:2px solid #8B5CF6; margin-bottom:0.25rem;">
         🏠 Community Outreach — Old Age Homes <span style="font-size:0.75rem; font-weight:500; color:var(--gray); margin-left:0.25rem;">8 photos</span>
       </div>
 
@@ -350,7 +350,7 @@
       <!-- ======================================
            NIKSHI TECH TALK SERIES (4 photos)
            ====================================== -->
-      <div data-filter="techtalk" style="grid-column:1/-1; padding:2rem 0 0.6rem; font-family:'Poppins',sans-serif; font-weight:700; font-size:1.05rem; color:var(--dark); display:flex; align-items:center; gap:0.6rem; border-bottom:2px solid var(--dark); margin-bottom:0.25rem;">
+      <div id="techtalk" data-filter="techtalk" style="grid-column:1/-1; padding:2rem 0 0.6rem; font-family:'Poppins',sans-serif; font-weight:700; font-size:1.05rem; color:var(--dark); display:flex; align-items:center; gap:0.6rem; border-bottom:2px solid var(--dark); margin-bottom:0.25rem;">
         🎤 Nikshi Tech Talk Series <span style="font-size:0.75rem; font-weight:500; color:var(--gray); margin-left:0.25rem;">4 photos</span>
       </div>
 
@@ -541,6 +541,12 @@
       });
     });
   });
+
+  var hash = window.location.hash.slice(1);
+  if (hash && hash !== 'all') {
+    var target = document.querySelector('.filter-btn[data-filter="' + hash + '"]');
+    if (target) target.click();
+  }
 })();
 </script>
 <style>
