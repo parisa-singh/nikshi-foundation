@@ -649,8 +649,26 @@ footer {
   .hero { min-height: 100svh; }
   .page-hero { padding: 7rem 1rem 3.5rem; }
 }
+@media (max-width: 640px) {
+  /* Cap fixed-height slideshows — programs page had height:420px which was overwhelming on mobile */
+  .slideshow { max-height: 260px !important; }
+  /* Stack 2-col program block grids */
+  [style*="grid-template-columns:1.5fr 1fr"],
+  [style*="grid-template-columns: 1.5fr 1fr"],
+  [style*="grid-template-columns:1fr 1.5fr"],
+  [style*="grid-template-columns: 1fr 1.5fr"],
+  [style*="grid-template-columns:1fr 1fr;"],
+  [style*="grid-template-columns: 1fr 1fr;"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  /* Program blocks: reduce padding and image area */
+  .program-block { padding: 2.5rem 1rem !important; }
+}
 @media (max-width: 480px) {
   .btn { padding: 0.75rem 1.5rem; font-size: 0.9rem; }
+  /* Shrink nav logo text further on very small screens */
+  .nav-logo-text { font-size: 0.78rem !important; }
 }
 
 /* ---------- Placeholder image fallback ---------- */
