@@ -1,7 +1,7 @@
 # CLAUDE.md — Nikshi Foundation for Humanity Website
 
 Full developer reference for continuing work in a new Claude Code session.
-Last updated: 2026-05-23 (session 3).
+Last updated: 2026-05-23 (session 4).
 
 ---
 
@@ -36,7 +36,7 @@ nikshi/
 ├── CLAUDE.md              ← this file
 ├── index.html             ← Home
 ├── about.html             ← About Us
-├── programs.html          ← Programs (5 programs)
+├── programs.html          ← Programs (6 programs)
 ├── gallery.html           ← Photo gallery with filters
 ├── donate.html            ← Donation page
 ├── contact.html           ← Contact form + map
@@ -58,7 +58,8 @@ nikshi/
 │   ├── NTTS/              ← 4 images: 1.jpg, 2.jpg, 3.jpg, poster 4.jpg
 │   ├── Old Age Homes/     ← 8 images: 1.jpg–8.jpg
 │   ├── Project Gyaan/     ← 11 images (1.jpg–11.jpg) + poster.jpg + end of the year/ (1–5.jpg)
-│   └── Trans Community/   ← 11 .jpg (1–11) + poster.jpg + 5 .jpeg (15–19)
+│   ├── Trans Community/   ← 11 .jpg (1–11) + poster.jpg + 5 .jpeg (15–19)
+│   └── CSR/               ← 5 images: 1.jpeg–5.jpeg + Approval Letter for form CSR1.pdf
 └── .nojekyll              ← Required for GitHub Pages
 ```
 
@@ -104,7 +105,7 @@ Sections (top to bottom):
 2. **Hero** — centered text, location pin icon + "Bangalore, India" tagline. No scroll indicator (removed).
 3. **Founder Quote** — Shilpa Singh blockquote with avatar photo (`images/founder.JPEG`) — **2nd section, immediately after hero**
 4. **Impact counter strip** — animated counters (meals, families, children, trans lives), JS in `main.js`
-5. **Program cards** — 4 cards (Project Gyaan, Tech Talk, Hunger, Trans Empowerment). Each card image is the program's poster: `Posters/Project%20Gyaan%20Poster%20.jpeg`, `Posters/NTTS%20Poster%20.jpeg`, `Posters/CSR%20Poster%20.jpeg`, `Posters/Project%20Uplift%20Poster%20.jpeg`
+5. **Program cards** — 5 cards (Project Gyaan, Tech Talk, Hunger, Trans Empowerment, CSR Initiative). Images: `Posters/Project%20Gyaan%20Poster%20.jpeg`, `Posters/NTTS%20Poster%20.jpeg`, `Hunger%20Food%20Distribution/1.jpg`, `Posters/Project%20Uplift%20Poster%20.jpeg`, `Posters/CSR%20Poster%20.jpeg`
 6. **Certificate of Appreciation** — 2-column section (text + certificate image). Image: `images/Certificate%20of%20Appreciation%20.jpeg` — **appears before Project Showcase**
 7. **Project Showcase** — 4 poster cards in a responsive grid (CSR Uplift, Project Uplift, Project Gyaan, NTTS). Hover lift animation. Click opens poster full-size in new tab. Hint text "Click any poster to view full size."
 8. **Photos from the Field** — 13-slide featured slideshow on dark `#0f172a` background, with `data-caption` captions per slide
@@ -134,39 +135,50 @@ Sections:
 2. **Mission / Vision / Values** cards — Mission text updated to include all beneficiary groups: "transgender communities, underprivileged women, children with Down syndrome, the visually impaired, food-insecure families, and every person whose talents and heart deserve to be seen, loved, and supported"
 3. Founder section — `images/founder.JPEG` (already uploaded)
 4. Timeline of milestones
-5. Trust signals strip (dark background)
+5. Trust signals strip (dark background) — 5 items: Registered NGO, ICICI Bank Verified, Community-Led, 100% Transparent, **Govt. CSR Registered (No. CSR00069983 · MCA, India)**
 6. Footer — social icons: Facebook, WhatsApp, Instagram, Email. Contact column shows `Nikshifoundation@gmail.com` (was previously showing `nikshifoundation@icici` UPI ID by mistake — fixed).
 
 ### programs.html — Programs
 **Status: Complete**
 
-Five program sections, each with a slideshow. Nav shows full name.
+Six program sections, each with a slideshow. Nav shows full name.
 
 | Program | Accent Color | Slideshow Images | Slide Count |
 |---------|-------------|-----------------|-------------|
 | Transgender Empowerment | `#E8610A` orange | **`Posters/Project Uplift Poster .jpeg` (1st)** + `Trans Community/` 1–11.jpg + poster.jpg | 13 slides |
-| Hunger Relief | `#0D6E6E` teal | **`Posters/CSR Poster .jpeg` (1st)** + `Hunger Food Distribution/` 1–15.jpg | 16 slides |
+| Hunger Relief | `#0D6E6E` teal | `Hunger Food Distribution/` 1–15.jpg (no poster — Hunger starts with 1.jpg) | 15 slides |
 | Project Gyaan (Education) | `#162348` navy | **`Posters/Project Gyaan Poster .jpeg` (1st)** + `Project Gyaan/` 1–11.jpg + poster.jpg | 13 slides |
-| Community Outreach — Old Age Homes | `#7C3AED` purple | `images/Old Age Homes/` — 1–8.jpg (no poster) | 8 slides |
+| Community Outreach — Old Age Homes | `#7C3AED` purple | `Old Age Homes/` 1–8.jpg (no poster) | 8 slides |
 | Nikshi Tech Talk Series (NTTS) | `#0D6E6E` teal | **`Posters/NTTS Poster .jpeg` (1st)** + `NTTS/` 1.jpg, 2.jpg, 3.jpg, poster 4.jpg | 5 slides |
+| **CSR Initiative** | `#0369A1` blue | **`Posters/CSR Poster .jpeg` (1st)** + `CSR/` 1–5.jpeg | 6 slides |
 
-**Poster-first rule:** Each program slideshow shows the relevant Posters/ folder image as slide 1.
+**Poster-first rule:** Each program slideshow shows the relevant Posters/ folder image as slide 1 (except Hunger Relief and Old Age Homes which have no dedicated poster).
 
-Intro text says "Five ongoing initiatives" — update if programs change.
+**CSR Initiative details:**
+- `id="csr"` — anchor used in footer and index.html card link
+- Reg. No. **CSR00069983**, Ministry of Corporate Affairs, Government of India
+- Approved: **26 March 2024**, PAN: **AAHCN6111H**
+- Accent color: `#0369A1` (professional blue)
+- Buttons: "Partner With Us" → contact.html, "Support This Initiative" → donate.html
+- Images are in `images/CSR/` — filenames are `1.jpeg` through `5.jpeg` (no spaces, no URL-encoding needed)
+
+Intro text says "Six ongoing initiatives" — update if programs change.
 Also has a "Past Drives" section at the bottom (COVID ration drive, Gerizim Trust).
+Footer "Active Projects" column links to all 6 programs including `#csr`.
 
 ### gallery.html — Gallery
 **Status: Complete**
 
-Filter buttons: All Photos | Hunger Relief | Project Gyaan | Trans Community | Old Age Homes | Tech Talk Series | Gerizim Trust
+Filter buttons: All Photos | Hunger Relief | Project Gyaan | Trans Community | Old Age Homes | Tech Talk Series | CSR Initiative | Gerizim Trust
 
 | Category | `data-filter` | Count | Source |
 |----------|--------------|-------|--------|
-| Hunger Relief | `hunger` | 16 | **`Posters/CSR Poster .jpeg` (1st)** + `Hunger Food Distribution/` 1–15.jpg |
+| Hunger Relief | `hunger` | 15 | `Hunger Food Distribution/` 1–15.jpg (no poster — starts with 1.jpg) |
 | Project Gyaan | `gyaan` | 18 | **`Posters/Project Gyaan Poster .jpeg` (1st)** + `Project Gyaan/` 1–11 + poster + `end of the year/` 1–5 |
 | Trans Community | `trans` | 18 | **`Posters/Project Uplift Poster .jpeg` (1st)** + `Trans Community/` 1–11 + poster + 15–19.jpeg |
 | Old Age Homes | `oldage` | 8 | `Old Age Homes/` 1–8.jpg (no poster) |
 | Tech Talk Series | `techtalk` | 5 | **`Posters/NTTS Poster .jpeg` (1st)** + `NTTS/` 1.jpg, 2.jpg, 3.jpg, `poster 4.jpg` |
+| CSR Initiative | `csr` | 6 | **`Posters/CSR Poster .jpeg` (1st)** + `CSR/` 1–5.jpeg |
 | Gerizim Trust | `gerizim` | 7 | `Gerizim Trust/` (spaces + parentheses — URL-encoded) |
 
 **Poster-first rule:** Each program category in the gallery starts with the relevant poster from `images/Posters/`.
@@ -351,7 +363,7 @@ git push origin main
 - [ ] **UPI QR code** — `donate.html` shows placeholder box; add `images/upi-qr.png`
 - [ ] **Custom domain CNAME** — site is live at GitHub Pages URL only; set up when ready to go live at nikshifoundation.org
 - [ ] **80G / tax exemption** — section in `donate.html` not yet added; add once certificate is obtained
-- [ ] **Registration number** — not displayed anywhere; add to `about.html` trust signals once available
+- [ ] **NGO registration number** — not yet displayed; add to `about.html` trust signals once full registration cert is available
 - [ ] **End-of-year Project Gyaan photos** — `images/Project Gyaan/end of the year/` (5 images) in gallery but not in programs.html slideshow; add slides if desired
 - [ ] **Trans Community 15–19.jpeg** — in gallery but not in programs.html slideshow; add slides if desired
 - [ ] **Hero background image** — `images/hero.jpg` optional; currently using CSS gradient fallback
@@ -368,4 +380,5 @@ git push origin main
 - [x] **Certificate above Project Showcase** — Certificate of Appreciation now appears before Project Showcase on index.html
 - [x] **Program card posters** — all 4 program cards on index.html show actual poster images instead of broken images + emojis
 - [x] **Poster-first slideshows** — programs.html: each program slideshow opens with its poster (Project Gyaan, NTTS, Hunger, Trans; Old Age Homes has no poster)
-- [x] **Poster-first gallery** — gallery.html: each program category starts with its poster image (Hunger, Gyaan, Trans, Tech Talk)
+- [x] **Poster-first gallery** — gallery.html: each program category starts with its poster image (Gyaan, Trans, Tech Talk, CSR; Hunger + Old Age Homes have no poster)
+- [x] **CSR Initiative** — full program section added to programs.html; card on index.html; CSR filter + section in gallery.html; Govt. CSR Registered trust signal on about.html; footer links updated on programs.html and index.html
