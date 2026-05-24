@@ -16,7 +16,7 @@
   --accent:       #F5A623;  /* same orange as primary — no yellow on this site */
   --bg:           #F4F6F8;
   --dark:         #162348;  /* deep navy — logo background */
-  --dark-alt:     #1B3068;
+  --dark-alt:     #162348;
   --gray:         #6B7280;
   --light-gray:   #F3F4F6;
 }
@@ -55,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 2px 20px rgba(0,0,0,0.08);
 }
 #navbar.scrolled .nav-link { color: var(--dark); }
-#navbar.scrolled .nav-logo-text { color: var(--primary); }
+#navbar.scrolled .nav-logo-text { color: var(--dark) !important; }
 
 .nav-link {
   font-family: 'Poppins', sans-serif;

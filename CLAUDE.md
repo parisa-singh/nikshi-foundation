@@ -1,7 +1,7 @@
 # CLAUDE.md — Nikshi Foundation for Humanity Website
 
 Full developer reference for continuing work in a new Claude Code session.
-Last updated: 2026-05-23 (session 4).
+Last updated: 2026-05-23 (session 5).
 
 ---
 
@@ -88,10 +88,13 @@ nikshi/
 --primary:      #F5A623   /* golden orange — CTAs, highlights */
 --primary-dark: #D98A0A
 --secondary:    #5DB04A   /* leaf green — accents, trust signals */
---dark:         #162348   /* deep navy — headers, footer background */
+--dark:         #162348   /* deep navy — logo background, headers, footer */
+--dark-alt:     #162348   /* same as --dark — gradients use this for consistency */
 --bg:           #F4F6F8   /* off-white — section backgrounds */
 --gray:         #6B7280   /* body text */
 ```
+
+**Color rule:** All blues/navies must use `var(--dark)` (#162348). Do NOT introduce `#1B3068`, `#0369A1`, or any other non-logo blue. The only brand colors are navy, orange, and green.
 
 ---
 
@@ -102,88 +105,102 @@ nikshi/
 
 Sections (top to bottom):
 1. **Sticky nav** — hamburger on mobile, full name "Nikshi Foundation for Humanity" at 0.9rem
-2. **Hero** — centered text, location pin icon + "Bangalore, India" tagline. No scroll indicator (removed).
+2. **Hero** — centered text, location pin icon + "Bangalore, India" tagline. "Equality." white, "Empowerment." orange, "Fight Against Hunger." green (`#5DB04A`) with `white-space:nowrap`. Font size `clamp(2rem,5.5vw,4rem)`.
 3. **Founder Quote** — Shilpa Singh blockquote with avatar photo (`images/founder.JPEG`) — **2nd section, immediately after hero**
 4. **Impact counter strip** — animated counters (meals, families, children, trans lives), JS in `main.js`
-5. **Program cards** — 5 cards (Project Gyaan, Tech Talk, Hunger, Trans Empowerment, CSR Initiative). Images: `Posters/Project%20Gyaan%20Poster%20.jpeg`, `Posters/NTTS%20Poster%20.jpeg`, `Hunger%20Food%20Distribution/1.jpg`, `Posters/Project%20Uplift%20Poster%20.jpeg`, `Posters/CSR%20Poster%20.jpeg`
-6. **Certificate of Appreciation** — 2-column section (text + certificate image). Image: `images/Certificate%20of%20Appreciation%20.jpeg` — **appears before Project Showcase**
-7. **Project Showcase** — 4 poster cards in a responsive grid (CSR Uplift, Project Uplift, Project Gyaan, NTTS). Hover lift animation. Click opens poster full-size in new tab. Hint text "Click any poster to view full size."
-8. **Photos from the Field** — 13-slide featured slideshow on dark `#0f172a` background, with `data-caption` captions per slide
-9. **How Your Donation Helps** — rupee impact rows + `images/Project%20Gyaan/11.jpg` photo (no ₹400 badge — was removed)
-10. **CTA banner** — orange background, volunteer/donate CTAs
-11. **Follow Our Journey** — Facebook + Instagram CTA buttons. No Facebook plugin embed.
-12. **Footer** — social icons: Facebook, WhatsApp, Instagram, Email. Bank details in Support Us column.
+5. **Program cards** — 5 cards in a **flexbox 3-per-row centered layout** (`id="programs-cards"`). Each card: `flex:0 0 calc(33.333% - 1.34rem)`. Image container: `aspect-ratio:3/4; object-fit:contain; background:var(--bg)` — shows full poster. Responsive: 2-col at ≤820px, 1-col at ≤500px. Images: `Posters/Project%20Gyaan%20Poster%20.jpeg`, `Posters/NTTS%20Poster%20.jpeg`, `Hunger%20Food%20Distribution/1.jpg`, `Posters/Project%20Uplift%20Poster%20.jpeg`, `Posters/CSR%20Poster%20.jpeg`
+6. **Certificate of Appreciation** — 2-column section (text + certificate image). Image: `images/Certificate%20of%20Appreciation%20.jpeg`
+7. **Photos from the Field** — 13-slide featured slideshow on dark `#0f172a` background, with `data-caption` captions per slide
+8. **How Your Donation Helps** — rupee impact rows + `images/Project%20Gyaan/11.jpg` photo
+9. **CTA banner** — orange background, volunteer/donate CTAs
+10. **Follow Our Journey** — Facebook + Instagram CTA buttons. No Facebook plugin embed.
+11. **Footer** — 4 columns: logo+social icons | Quick Links | Our Programs | Support Us (bank details)
 
 **Key past fixes on this page:**
 - Hero text was left-aligned — now centered
+- Hero "Fight Against Hunger." green `#5DB04A` + `white-space:nowrap` to prevent 4-line wrapping
+- Project Showcase section (4 poster cards) — **removed entirely** (session 5)
+- Program cards changed from `repeat(auto-fit,minmax(260px,1fr))` grid to flexbox 3-per-row centered
+- Program card images changed from `height:180px; object-fit:cover` to `aspect-ratio:3/4; object-fit:contain` to show full posters
 - Facebook plugin embed replaced with clean social CTA buttons
-- Donate Now button removed from Support Us footer banner (redundant with nav)
-- IN flag emoji → location pin SVG in hero tagline
-- Donation section image changed from emoji placeholder to `Project Gyaan/11.jpg`
-- ₹400 badge overlay removed from donation section
-- Scroll indicator (text + vertical line) removed from hero
 - fb-float Facebook bubble removed
-- Founder Quote moved to 2nd section (was after Photos from the Field)
-- Certificate of Appreciation moved to before Project Showcase (was after Founder Quote)
-- Program card broken images + emojis replaced with actual poster images
+- Scroll indicator removed from hero
+- Founder Quote moved to 2nd section
 
 ### about.html — About Us
 **Status: Complete**
 
 Sections:
-1. Nav — full name in logo, Facebook + Instagram links (was missing Facebook — fixed)
-2. **Mission / Vision / Values** cards — Mission text updated to include all beneficiary groups: "transgender communities, underprivileged women, children with Down syndrome, the visually impaired, food-insecure families, and every person whose talents and heart deserve to be seen, loved, and supported"
-3. Founder section — `images/founder.JPEG` (already uploaded)
+1. Nav — full name in logo, Facebook + Instagram icon-only links
+2. **Mission / Vision / Values** cards — Mission text updated to include all beneficiary groups
+3. Founder section — `images/founder.JPEG`; structured layout with intro, 6 award badges, LinkedIn/Facebook personal links, 3 pillar cards (Social Activist / Tech Leader & Counselling Psychologist / Model, Biker & Marathoner)
 4. Timeline of milestones
-5. Trust signals strip (dark background) — 5 items: Registered NGO, ICICI Bank Verified, Community-Led, 100% Transparent, **Govt. CSR Registered (No. CSR00069983 · MCA, India)**
-6. Footer — social icons: Facebook, WhatsApp, Instagram, Email. Contact column shows `Nikshifoundation@gmail.com` (was previously showing `nikshifoundation@icici` UPI ID by mistake — fixed).
+5. Trust signals strip (dark background) — 5 items including **Govt. CSR Registered (No. CSR00069983 · MCA, India)**
+6. Footer — 4-column canonical footer (logo+social | Quick Links | Our Programs | Support Us)
 
 ### programs.html — Programs
 **Status: Complete**
 
-Six program sections, each with a slideshow. Nav shows full name.
+Six program sections — each now shows a **static poster image** (no slideshow) + a "View Photos in Gallery →" button linking to `gallery.html?filter=X`. Nav shows full name.
 
-| Program | Accent Color | Slideshow Images | Slide Count |
-|---------|-------------|-----------------|-------------|
-| Transgender Empowerment | `#E8610A` orange | **`Posters/Project Uplift Poster .jpeg` (1st)** + `Trans Community/` 1–11.jpg + poster.jpg | 13 slides |
-| Hunger Relief | `#0D6E6E` teal | `Hunger Food Distribution/` 1–15.jpg (no poster — Hunger starts with 1.jpg) | 15 slides |
-| Project Gyaan (Education) | `#162348` navy | **`Posters/Project Gyaan Poster .jpeg` (1st)** + `Project Gyaan/` 1–11.jpg + poster.jpg | 13 slides |
-| Community Outreach — Old Age Homes | `#7C3AED` purple | `Old Age Homes/` 1–8.jpg (no poster) | 8 slides |
-| Nikshi Tech Talk Series (NTTS) | `#0D6E6E` teal | **`Posters/NTTS Poster .jpeg` (1st)** + `NTTS/` 1.jpg, 2.jpg, 3.jpg, poster 4.jpg | 5 slides |
-| **CSR Initiative** | `#0369A1` blue | **`Posters/CSR Poster .jpeg` (1st)** + `CSR/` 1–5.jpeg | 6 slides |
+| Program | Accent Color | Static Image | Gallery Link |
+|---------|-------------|-------------|-------------|
+| Transgender Empowerment | `#E8610A` orange | `Posters/Project Uplift Poster .jpeg` | `?filter=trans` |
+| Hunger Relief | `#0D6E6E` teal | `Hunger Food Distribution/1.jpg` | `?filter=hunger` |
+| Project Gyaan (Education) | `var(--dark)` navy | `Posters/Project Gyaan Poster .jpeg` | `?filter=gyaan` |
+| Community Outreach — Old Age Homes | `#7C3AED` purple | `Old Age Homes/1.jpg` | `?filter=oldage` |
+| Nikshi Tech Talk Series (NTTS) | `#0D6E6E` teal | `Posters/NTTS Poster .jpeg` | `?filter=techtalk` |
+| CSR Initiative | `var(--dark)` navy | `Posters/CSR Poster .jpeg` | `?filter=csr` |
 
-**Poster-first rule:** Each program slideshow shows the relevant Posters/ folder image as slide 1 (except Hunger Relief and Old Age Homes which have no dedicated poster).
+**Static image structure per program:**
+```html
+<div style="border-radius:20px; overflow:hidden; aspect-ratio:4/5; box-shadow:...">
+  <img src="images/Posters/..." style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+</div>
+<a href="gallery.html?filter=gyaan" class="btn btn-outline-dark">View Photos in Gallery →</a>
+```
 
 **CSR Initiative details:**
 - `id="csr"` — anchor used in footer and index.html card link
 - Reg. No. **CSR00069983**, Ministry of Corporate Affairs, Government of India
 - Approved: **26 March 2024**, PAN: **AAHCN6111H**
-- Accent color: `#0369A1` (professional blue)
+- Accent color: `var(--dark)` (#162348) — changed from `#0369A1` to match logo
 - Buttons: "Partner With Us" → contact.html, "Support This Initiative" → donate.html
 - Images are in `images/CSR/` — filenames are `1.jpeg` through `5.jpeg` (no spaces, no URL-encoding needed)
 
 Intro text says "Six ongoing initiatives" — update if programs change.
 Also has a "Past Drives" section at the bottom (COVID ration drive, Gerizim Trust).
-Footer "Active Projects" column links to all 6 programs including `#csr`.
+Footer "Our Programs" column links to all 6 programs including `#csr`.
 
 ### gallery.html — Gallery
 **Status: Complete**
 
-Filter buttons: All Photos | Hunger Relief | Project Gyaan | Trans Community | Old Age Homes | Tech Talk Series | CSR Initiative | Gerizim Trust
+**Filter bar** is organized into three rows inside `#filter-bar`:
+1. "All Photos" button (centered)
+2. **Active Projects** label (green `var(--secondary)`) + 6 buttons with `data-group="active"` — hover turns green
+3. **Past Drives** label (orange `var(--primary)`) + 1 button with `data-group="past"` — hover turns orange
 
-| Category | `data-filter` | Count | Source |
-|----------|--------------|-------|--------|
-| Hunger Relief | `hunger` | 15 | `Hunger Food Distribution/` 1–15.jpg (no poster — starts with 1.jpg) |
-| Project Gyaan | `gyaan` | 18 | **`Posters/Project Gyaan Poster .jpeg` (1st)** + `Project Gyaan/` 1–11 + poster + `end of the year/` 1–5 |
-| Trans Community | `trans` | 18 | **`Posters/Project Uplift Poster .jpeg` (1st)** + `Trans Community/` 1–11 + poster + 15–19.jpeg |
-| Old Age Homes | `oldage` | 8 | `Old Age Homes/` 1–8.jpg (no poster) |
-| Tech Talk Series | `techtalk` | 5 | **`Posters/NTTS Poster .jpeg` (1st)** + `NTTS/` 1.jpg, 2.jpg, 3.jpg, `poster 4.jpg` |
-| CSR Initiative | `csr` | 6 | **`Posters/CSR Poster .jpeg` (1st)** + `CSR/` 1–5.jpeg |
-| Gerizim Trust | `gerizim` | 7 | `Gerizim Trust/` (spaces + parentheses — URL-encoded) |
+Hover CSS is in gallery.html's `<style>` block:
+```css
+.filter-btn[data-group="active"]:hover { background: var(--secondary) !important; ... }
+.filter-btn[data-group="past"]:hover   { background: var(--primary) !important; ... }
+```
 
-**Poster-first rule:** Each program category in the gallery starts with the relevant poster from `images/Posters/`.
+**Gallery deep-link:** Programs page links to `gallery.html?filter=X`. On load, JS reads `URLSearchParams` and clicks the matching `.filter-btn` — no hash scroll conflict.
 
-**Filter JS uses:** `document.querySelectorAll('#gallery-grid [data-filter]')` — targets both image items AND category section headers so headers hide with their category.
+**Section header badges removed:** No timestamps or `● Active` / `○ 2024` badges on any section header.
+
+| Category | `data-filter` | `data-group` | Count | Source |
+|----------|--------------|-------------|-------|--------|
+| Hunger Relief | `hunger` | `active` | 15 | `Hunger Food Distribution/` 1–15.jpg |
+| Project Gyaan | `gyaan` | `active` | 18 | `Posters/Project Gyaan Poster .jpeg` (1st) + `Project Gyaan/` 1–11 + poster + `end of the year/` 1–5 |
+| Trans Community | `trans` | `active` | 18 | `Posters/Project Uplift Poster .jpeg` (1st) + `Trans Community/` 1–11 + poster + 15–19.jpeg |
+| Old Age Homes | `oldage` | `active` | 8 | `Old Age Homes/` 1–8.jpg |
+| Tech Talk Series | `techtalk` | `active` | 5 | `Posters/NTTS Poster .jpeg` (1st) + `NTTS/` 1.jpg, 2.jpg, 3.jpg, `poster 4.jpg` |
+| CSR Initiative | `csr` | `active` | 6 | `Posters/CSR Poster .jpeg` (1st) + `CSR/` 1–5.jpeg |
+| Gerizim Trust | `gerizim` | `past` | 7 | `Gerizim Trust/` (spaces + parentheses — URL-encoded) |
+
+**Filter JS uses:** `document.querySelectorAll('#gallery-grid [data-filter]')` — targets both image items AND category section headers.
 
 **To add more photos:** Add `<img>` with correct `data-filter` inside `#gallery-grid`. Category headers also carry `data-filter`.
 
@@ -194,7 +211,7 @@ Filter buttons: All Photos | Hunger Relief | Project Gyaan | Trans Community | O
 - Razorpay button — replace `YOUR_RAZORPAY_KEY_ID` in inline `<script>` at bottom of file
 - UPI ID: `nikshifoundation@icici` (copy button included). **Drop `images/upi-qr.png`** to show QR code.
 - Bank: NIKSHI FOUNDATION FOR HUMANITY | 141705003411 | ICIC0001417 | Marathalli
-- Footer: social icons + `Nikshifoundation@gmail.com`
+- Footer: 4-column canonical footer (logo+social | Quick Links | Our Programs | Support Us)
 
 ### contact.html — Contact
 **Status: Complete and live**
@@ -203,19 +220,41 @@ Filter buttons: All Photos | Hunger Relief | Project Gyaan | Trans Community | O
 - Info cards: Address, Phone/WhatsApp, UPI/Bank, Founder
 - Social buttons section: Facebook, Instagram, WhatsApp, Email Us (with `flex-wrap:wrap`)
 - Google Maps embed — Marathalli, Bangalore
-- Footer: `Nikshifoundation@gmail.com`
+- Footer: 4-column canonical footer (logo+social | Quick Links | Our Programs | Support Us)
+
+---
+
+## Footer — Canonical Structure (all 6 pages)
+
+All pages share an identical 4-column footer:
+
+| Column | Content |
+|--------|---------|
+| 1 — Brand | Logo image + "Nikshi Foundation / For Humanity" + tagline + 4 social icons (FB, WhatsApp, IG, Email) |
+| 2 — Quick Links | Home, About Us, Our Programs, Gallery, Donate, Contact |
+| 3 — Our Programs | Project Gyaan, Tech Talk Series, Fighting for Hunger, Transgender Empowerment, CSR Initiative, Past Drives ↗ |
+| 4 — Support Us | Bank transfer details (ICICI Bank, A/C, IFSC, UPI) |
+
+Footer bottom strip: `© 2026 ... | Bangalore, Karnataka, India | +91 97425 62006`
 
 ---
 
 ## Navigation — All Pages
 
 **Desktop nav** (in order):
-Home | About Us | Programs | Gallery | Contact | Facebook | Instagram | **Donate Now**
+Home | About Us | Programs | Gallery | Contact | [FB icon] | [IG icon] | **Donate Now**
+
+Facebook and Instagram are **icon-only** in the desktop nav — no text labels. SVG icons with `aria-label` for accessibility.
 
 **Mobile menu** (hamburger):
 Home | About Us | Programs | Gallery | Contact | Instagram | Email Us | **Donate Now**
 
-**Logo text:** "Nikshi Foundation for Humanity" at `font-size: 0.9rem` (reduced from 1.1rem to fit full name). On screens ≤480px, CSS overrides to `0.78rem`.
+**Navbar scroll behaviour:**
+- Default (top of page): transparent background, white text
+- Scrolled (`scrollY > 60`): white background, nav-links → `var(--dark)` navy, logo text → `var(--dark)` navy (`!important` overrides inline `color:#fff`)
+- CSS in `style.css`: `#navbar.scrolled .nav-logo-text { color: var(--dark) !important; }`
+
+**Logo text:** "Nikshi Foundation for Humanity" at `font-size: 0.9rem`. On screens ≤480px, CSS overrides to `0.78rem`.
 
 **Social links:**
 - Facebook: `https://www.facebook.com/share/18pNZXoWaK/?mibextid=wwXIfr`
@@ -272,7 +311,7 @@ Implemented in `css/style.css` and `js/main.js` (`/* ---------- Slideshows -----
 
 **Gallery grid reflow:** 4-col → 3-col (≤1024px) → 2-col (≤640px) → 1-col (≤380px)
 
-**Program cards** use `repeat(auto-fit, minmax(260px, 1fr))` — reflow naturally.
+**Program cards (index.html)** use flexbox `justify-content:center` with `flex:0 0 calc(33.333% - 1.34rem)` per card — 3 per row, 5th card centers in its own row. Responsive via `#programs-cards` ID: 2-col at ≤820px, 1-col at ≤500px.
 
 **2-col grid stacking** is handled in `style.css` via attribute selectors targeting inline styles:
 ```css
@@ -364,21 +403,22 @@ git push origin main
 - [ ] **Custom domain CNAME** — site is live at GitHub Pages URL only; set up when ready to go live at nikshifoundation.org
 - [ ] **80G / tax exemption** — section in `donate.html` not yet added; add once certificate is obtained
 - [ ] **NGO registration number** — not yet displayed; add to `about.html` trust signals once full registration cert is available
-- [ ] **End-of-year Project Gyaan photos** — `images/Project Gyaan/end of the year/` (5 images) in gallery but not in programs.html slideshow; add slides if desired
-- [ ] **Trans Community 15–19.jpeg** — in gallery but not in programs.html slideshow; add slides if desired
 - [ ] **Hero background image** — `images/hero.jpg` optional; currently using CSS gradient fallback
 - [x] **Founder photo** — `images/founder.JPEG` uploaded, used in about.html and index.html quote avatar
 - [x] **Formspree contact form** — live with ID `xwvzbjyj`
 - [x] **Full name in nav** — all 6 pages show "Nikshi Foundation for Humanity"
 - [x] **Certificate of Appreciation** — displayed on index.html in Recognition section
-- [x] **Project Showcase (posters)** — 4 posters shown on index.html, click to open full size
+- [x] **Project Showcase removed** — 4-poster section deleted from index.html (session 5)
 - [x] **Mission text** — updated across index.html and about.html to include all beneficiary groups
-- [x] **Mobile responsive** — slideshows capped at 260px, 2-col grids stack on mobile
-- [x] **fb-float removed** — Facebook floating bubble removed from all 6 pages + CSS deleted from style.css
-- [x] **Scroll indicator removed** — "Scroll" text + vertical gradient line removed from hero on index.html
-- [x] **Founder Quote repositioned** — now 2nd section on index.html (immediately after hero)
-- [x] **Certificate above Project Showcase** — Certificate of Appreciation now appears before Project Showcase on index.html
-- [x] **Program card posters** — all 4 program cards on index.html show actual poster images instead of broken images + emojis
-- [x] **Poster-first slideshows** — programs.html: each program slideshow opens with its poster (Project Gyaan, NTTS, Hunger, Trans; Old Age Homes has no poster)
-- [x] **Poster-first gallery** — gallery.html: each program category starts with its poster image (Gyaan, Trans, Tech Talk, CSR; Hunger + Old Age Homes have no poster)
-- [x] **CSR Initiative** — full program section added to programs.html; card on index.html; CSR filter + section in gallery.html; Govt. CSR Registered trust signal on about.html; footer links updated on programs.html and index.html
+- [x] **Mobile responsive** — program cards responsive, 2-col grids stack on mobile
+- [x] **Navbar icon-only social links** — Facebook + Instagram in desktop nav show SVG icon only, no text labels (all 6 pages)
+- [x] **Navbar scroll color fix** — logo text turns navy `var(--dark)` on white background (not invisible)
+- [x] **Brand color consistency** — all blues use `var(--dark)` #162348; `--dark-alt` unified; `#0369A1` removed
+- [x] **Hero green line** — "Fight Against Hunger." colored `#5DB04A` with `white-space:nowrap` (3 lines, no wrap)
+- [x] **Gallery timestamps removed** — no `● Active` or `○ 2024` badges on section headers
+- [x] **Gallery filter bar reorganized** — two labeled rows: Active Projects (hover→green) + Past Drives (hover→orange)
+- [x] **Program cards 3-per-row** — flexbox centered layout, full poster visible via `aspect-ratio:3/4; object-fit:contain`
+- [x] **Footer standardized** — all 6 pages share identical 4-column footer
+- [x] **Programs page slideshows replaced** — each program shows static poster + "View Photos in Gallery" button
+- [x] **Gallery deep-link** — `?filter=X` query param activates filter without scroll conflict
+- [x] **CSR Initiative** — full program section, gallery filter, trust signal, footer links on all pages
