@@ -1,7 +1,7 @@
 # CLAUDE.md — Nikshi Foundation for Humanity Website
 
 Full developer reference for continuing work in a new Claude Code session.
-Last updated: 2026-05-23 (session 5).
+Last updated: 2026-05-23 (session 6).
 
 ---
 
@@ -24,7 +24,6 @@ A 6-page static website for **Nikshi Foundation for Humanity**, a Bangalore-base
 | Tailwind CSS | CDN: `https://cdn.tailwindcss.com` |
 | Google Fonts | Poppins (headings) + Inter (body) — loaded via `<link>` in each page |
 | Formspree | Contact form — **ACTIVE**, ID `xwvzbjyj` |
-| Razorpay JS SDK | Donate page — placeholder `YOUR_RAZORPAY_KEY_ID` still needs replacing |
 | Lightbox | Not yet added — gallery images open in new tab on click |
 
 ---
@@ -88,13 +87,15 @@ nikshi/
 --primary:      #F5A623   /* golden orange — CTAs, highlights */
 --primary-dark: #D98A0A
 --secondary:    #5DB04A   /* leaf green — accents, trust signals */
---dark:         #0F1E50   /* deep navy — logo background, headers, footer */
---dark-alt:     #162348   /* same as --dark — gradients use this for consistency */
+--dark:         #0F1E50   /* deep navy — exact logo background color */
+--dark-alt:     #0F1E50   /* same as --dark */
 --bg:           #F4F6F8   /* off-white — section backgrounds */
 --gray:         #6B7280   /* body text */
 ```
 
-**Color rule:** All blues/navies must use `var(--dark)` (#0F1E50). Do NOT introduce `#162348`, `#1B3068`, `#0369A1`, or any other non-logo blue. The only brand colors are navy, orange, and green.
+**Color rule:** All blues/navies must use `var(--dark)` (`#0F1E50`). Do NOT introduce `#162348`, `#1B3068`, `#0369A1`, or any other non-logo blue. The only brand colors are navy, orange, and green.
+
+**Logo image background:** All navbar `<img src="images/logo.jpeg">` elements have `background:var(--dark)` set inline so the rounded corners match the logo's embedded navy exactly.
 
 ---
 
@@ -106,26 +107,15 @@ nikshi/
 Sections (top to bottom):
 1. **Sticky nav** — hamburger on mobile, full name "Nikshi Foundation for Humanity" at 0.9rem
 2. **Hero** — centered text, location pin icon + "Bangalore, India" tagline. "Equality." white, "Empowerment." orange, "Fight Against Hunger." green (`#5DB04A`) with `white-space:nowrap`. Font size `clamp(2rem,5.5vw,4rem)`.
-3. **Founder Quote** — Shilpa Singh blockquote with avatar photo (`images/founder.JPEG`) — **2nd section, immediately after hero**
+3. **Founder Quote** — Shilpa Singh blockquote with avatar photo (`images/founder.JPEG`) — 2nd section, immediately after hero
 4. **Impact counter strip** — animated counters (meals, families, children, trans lives), JS in `main.js`
-5. **Program cards** — 5 cards in a **flexbox 3-per-row centered layout** (`id="programs-cards"`). Each card: `flex:0 0 calc(33.333% - 1.34rem)`. Image container: `aspect-ratio:3/4; object-fit:contain; background:var(--bg)` — shows full poster. Responsive: 2-col at ≤820px, 1-col at ≤500px. Images: `Posters/Project%20Gyaan%20Poster%20.jpeg`, `Posters/NTTS%20Poster%20.jpeg`, `Hunger%20Food%20Distribution/1.jpg`, `Posters/Project%20Uplift%20Poster%20.jpeg`, `Posters/CSR%20Poster%20.jpeg`
+5. **Program cards** — 5 cards in a **flexbox 3-per-row centered layout** (`id="programs-cards"`). Each card: `flex:0 0 calc(33.333% - 1.34rem)`. Image container: `height:260px; background:var(--dark); object-fit:contain` — fixed height with dark navy background so all orientations (portrait/landscape posters) display uniformly. Responsive: 2-col at ≤820px, 1-col at ≤500px. Images: `Posters/Project%20Gyaan%20Poster%20.jpeg`, `Posters/NTTS%20Poster%20.jpeg`, `Hunger%20Food%20Distribution/1.jpg`, `Posters/Project%20Uplift%20Poster%20.jpeg`, `Posters/CSR%20Poster%20.jpeg`
 6. **Certificate of Appreciation** — 2-column section (text + certificate image). Image: `images/Certificate%20of%20Appreciation%20.jpeg`
 7. **Photos from the Field** — 13-slide featured slideshow on dark `#0f172a` background, with `data-caption` captions per slide
 8. **How Your Donation Helps** — rupee impact rows + `images/Project%20Gyaan/11.jpg` photo
 9. **CTA banner** — orange background, volunteer/donate CTAs
 10. **Follow Our Journey** — Facebook + Instagram CTA buttons. No Facebook plugin embed.
 11. **Footer** — 4 columns: logo+social icons | Quick Links | Our Programs | Support Us (bank details)
-
-**Key past fixes on this page:**
-- Hero text was left-aligned — now centered
-- Hero "Fight Against Hunger." green `#5DB04A` + `white-space:nowrap` to prevent 4-line wrapping
-- Project Showcase section (4 poster cards) — **removed entirely** (session 5)
-- Program cards changed from `repeat(auto-fit,minmax(260px,1fr))` grid to flexbox 3-per-row centered
-- Program card images changed from `height:180px; object-fit:cover` to `aspect-ratio:3/4; object-fit:contain` to show full posters
-- Facebook plugin embed replaced with clean social CTA buttons
-- fb-float Facebook bubble removed
-- Scroll indicator removed from hero
-- Founder Quote moved to 2nd section
 
 ### about.html — About Us
 **Status: Complete**
@@ -136,20 +126,20 @@ Sections:
 3. Founder section — `images/founder.JPEG`; structured layout with intro, 6 award badges, LinkedIn/Facebook personal links, 3 pillar cards (Social Activist / Tech Leader & Counselling Psychologist / Model, Biker & Marathoner)
 4. Timeline of milestones
 5. Trust signals strip (dark background) — 5 items including **Govt. CSR Registered (No. CSR00069983 · MCA, India)**
-6. Footer — 4-column canonical footer (logo+social | Quick Links | Our Programs | Support Us)
+6. Footer — 4-column canonical footer
 
 ### programs.html — Programs
 **Status: Complete**
 
-Six program sections — each now shows a **static poster image** (no slideshow) + a "View Photos in Gallery →" button linking to `gallery.html?filter=X`. Nav shows full name.
+Six program sections — each shows a **static poster image** (no slideshow) + a "View Photos in Gallery →" button linking to `gallery.html?filter=X`. Nav shows full name.
 
 | Program | Accent Color | Static Image | Gallery Link |
 |---------|-------------|-------------|-------------|
-| Transgender Empowerment | `#E8610A` orange | `Posters/Project Uplift Poster .jpeg` | `?filter=trans` |
-| Hunger Relief | `#0D6E6E` teal | `Hunger Food Distribution/1.jpg` | `?filter=hunger` |
-| Project Gyaan (Education) | `var(--dark)` navy | `Posters/Project Gyaan Poster .jpeg` | `?filter=gyaan` |
+| Project Gyaan (Education) | `var(--secondary)` green | `Posters/Project Gyaan Poster .jpeg` | `?filter=gyaan` |
+| Nikshi Tech Talk Series (NTTS) | `var(--dark)` navy | `Posters/NTTS Poster .jpeg` | `?filter=techtalk` |
+| Hunger Relief | `var(--primary)` orange | `Hunger Food Distribution/1.jpg` | `?filter=hunger` |
+| Transgender Empowerment | `var(--primary)` orange | `Posters/Project Uplift Poster .jpeg` | `?filter=trans` |
 | Community Outreach — Old Age Homes | `var(--primary)` orange | `Old Age Homes/1.jpg` | `?filter=oldage` |
-| Nikshi Tech Talk Series (NTTS) | `#0D6E6E` teal | `Posters/NTTS Poster .jpeg` | `?filter=techtalk` |
 | CSR Initiative | `var(--dark)` navy | `Posters/CSR Poster .jpeg` | `?filter=csr` |
 
 **Static image structure per program:**
@@ -164,13 +154,10 @@ Six program sections — each now shows a **static poster image** (no slideshow)
 - `id="csr"` — anchor used in footer and index.html card link
 - Reg. No. **CSR00069983**, Ministry of Corporate Affairs, Government of India
 - Approved: **26 March 2024**, PAN: **AAHCN6111H**
-- Accent color: `var(--dark)` (#0F1E50) — logo navy
 - Buttons: "Partner With Us" → contact.html, "Support This Initiative" → donate.html
-- Images are in `images/CSR/` — filenames are `1.jpeg` through `5.jpeg` (no spaces, no URL-encoding needed)
 
 Intro text says "Six ongoing initiatives" — update if programs change.
 Also has a "Past Drives" section at the bottom (COVID ration drive, Gerizim Trust).
-Footer "Our Programs" column links to all 6 programs including `#csr`.
 
 ### gallery.html — Gallery
 **Status: Complete**
@@ -188,7 +175,7 @@ Hover CSS is in gallery.html's `<style>` block:
 
 **Gallery deep-link:** Programs page links to `gallery.html?filter=X`. On load, JS reads `URLSearchParams` and clicks the matching `.filter-btn` — no hash scroll conflict.
 
-**Section header badges removed:** No timestamps or `● Active` / `○ 2024` badges on any section header.
+**Section header divider colors:** All section headers use `border-bottom:2px solid var(--primary)` — no off-brand purples or blues.
 
 | Category | `data-filter` | `data-group` | Count | Source |
 |----------|--------------|-------------|-------|--------|
@@ -205,22 +192,33 @@ Hover CSS is in gallery.html's `<style>` block:
 **To add more photos:** Add `<img>` with correct `data-filter` inside `#gallery-grid`. Category headers also carry `data-filter`.
 
 ### donate.html — Donate
-**Status: Complete (no Razorpay)**
+**Status: Complete**
 
-- Razorpay removed entirely — only UPI and bank transfer options.
+No Razorpay. Layout (top to bottom):
+1. **Impact mini stats strip** — dark navy background, 4 stats (₹400/₹1k/₹2.5k/₹5k)
+2. **Centered section header** — "Ways to Donate" above the payment cards
+3. **Equal 2-column payment cards** (`id="donate-cards"`, `align-items:stretch`):
+   - **UPI card** (left): QR placeholder + UPI ID with copy button + numbered 3-step instructions + green confirmation note
+   - **Bank transfer card** (right): 6-row table + WhatsApp receipt note
+4. **Trust strip** — 3-column horizontal grid below both cards (Registered NGO / 100% Transparent / Direct Contact)
+
+Key details:
 - UPI ID: `nikshifoundation@icici` (copy button included). **Drop `images/upi-qr.png`** to show QR code.
-- Bank table: NIKSHI FOUNDATION FOR HUMANITY | 141705003411 | IFSC ICIC0001417 | **SWIFT ICICINBBXXX** | Marathalli
+- Bank table: NIKSHI FOUNDATION FOR HUMANITY | 141705003411 | IFSC ICIC0001417 | **SWIFT ICICINBBXXX** | ICICI Bank | Marathalli, Bangalore
 - WhatsApp note: "After completing your transfer, please WhatsApp us the receipt at +91 97425 62006 — we'll issue an official donation acknowledgement letter for your tax benefits."
-- Footer: 4-column canonical footer (logo+social | Quick Links | Our Programs | Support Us)
+- Responsive: `#donate-cards` stacks to 1-col at ≤768px; trust strip stacks to 1-col at ≤768px
 
 ### contact.html — Contact
 **Status: Complete and live**
 
 - Formspree form **ACTIVE** — `https://formspree.io/f/xwvzbjyj`
+- Form has **no `novalidate`** — browser native validation runs on required fields before JS fires
+- Form JS: async fetch to Formspree, shows `#form-success` (green) on `res.ok`, shows `#form-error` (red) on failure — no page reload
+- `#form-success` is `display:none` by default and only shown by JS on confirmed success
 - Info cards: Address, Phone/WhatsApp, UPI/Bank, Founder
-- Social buttons section: Facebook, Instagram, WhatsApp, Email Us (with `flex-wrap:wrap`)
+- **Follow Us** — 3 buttons only: Facebook, Instagram, Email Us (`flex-wrap:nowrap`, `white-space:nowrap`) — WhatsApp is shown in the info card above and was removed here to avoid duplication
 - Google Maps embed — Marathalli, Bangalore
-- Footer: 4-column canonical footer (logo+social | Quick Links | Our Programs | Support Us)
+- Footer: 4-column canonical footer
 
 ---
 
@@ -253,6 +251,8 @@ Home | About Us | Programs | Gallery | Contact | Instagram | Email Us | **Donate
 - Default (top of page): transparent background, white text
 - Scrolled (`scrollY > 60`): white background, nav-links → `var(--dark)` navy, logo text → `var(--dark)` navy (`!important` overrides inline `color:#fff`)
 - CSS in `style.css`: `#navbar.scrolled .nav-logo-text { color: var(--dark) !important; }`
+
+**Logo image:** All 6 pages — `<img src="images/logo.jpeg" style="... background:var(--dark);">` so rounded corners always match the embedded navy.
 
 **Logo text:** "Nikshi Foundation for Humanity" at `font-size: 0.9rem`. On screens ≤480px, CSS overrides to `0.78rem`.
 
@@ -292,9 +292,9 @@ Implemented in `css/style.css` and `js/main.js` (`/* ---------- Slideshows -----
 - Dot count must exactly match slide count or dots go out of sync
 - Auto-advances every 3800ms, pauses on hover, supports touch swipe
 - Caption comes from `data-caption` on each `.slide`
-- On mobile (≤640px), CSS caps slideshow at `max-height: 260px !important` — this prevents the 420px fixed-height slideshows on programs.html from overwhelming the screen
+- On mobile (≤640px), CSS caps slideshow at `max-height: 260px !important`
 
-**Homepage field photos slideshow** uses `aspect-ratio:16/7` instead of fixed height — this auto-scales and is under 260px on mobile anyway, so the cap doesn't hurt it.
+**Homepage field photos slideshow** uses `aspect-ratio:16/7` instead of fixed height.
 
 ---
 
@@ -305,19 +305,15 @@ Implemented in `css/style.css` and `js/main.js` (`/* ---------- Slideshows -----
 
 | Breakpoint | Rules applied |
 |-----------|--------------|
-| ≤768px | Section padding reduced, page-hero padding reduced |
-| ≤640px | Slideshows capped at 260px; 2-col program block grids stack to 1-col; program-block padding reduced |
+| ≤768px | Section padding reduced, page-hero padding reduced, donate cards stack to 1-col |
+| ≤640px | Slideshows capped at 260px; 2-col program block grids stack to 1-col |
 | ≤480px | Button padding reduced; nav logo text forced to 0.78rem |
 
 **Gallery grid reflow:** 4-col → 3-col (≤1024px) → 2-col (≤640px) → 1-col (≤380px)
 
 **Program cards (index.html)** use flexbox `justify-content:center` with `flex:0 0 calc(33.333% - 1.34rem)` per card — 3 per row, 5th card centers in its own row. Responsive via `#programs-cards` ID: 2-col at ≤820px, 1-col at ≤500px.
 
-**2-col grid stacking** is handled in `style.css` via attribute selectors targeting inline styles:
-```css
-[style*="grid-template-columns:1.5fr 1fr"],
-[style*="grid-template-columns:1fr 1.5fr"] { grid-template-columns: 1fr !important; }
-```
+**Donate cards** use `id="donate-cards"` with `grid-template-columns:1fr 1fr` — stacks to 1-col via `#donate-cards { grid-template-columns:1fr !important; }` at ≤768px.
 
 ---
 
@@ -333,6 +329,7 @@ Implemented in `css/style.css` and `js/main.js` (`/* ---------- Slideshows -----
 | NGO Name | NIKSHI FOUNDATION FOR HUMANITY |
 | Bank Account | 141705003411 |
 | IFSC | ICIC0001417 |
+| SWIFT / BIC | ICICINBBXXX |
 | Bank | ICICI Bank, Marathalli Branch |
 | UPI ID | nikshifoundation@icici |
 | Address | Bangalore, Karnataka, India |
@@ -340,8 +337,6 @@ Implemented in `css/style.css` and `js/main.js` (`/* ---------- Slideshows -----
 ---
 
 ## Foundation Mission (for copy consistency)
-
-When writing or updating mission-related text, use this as the canonical reference:
 
 > Nikshi Foundation for Humanity exists to spread smiles, education, and empowerment to every overlooked soul — transgender communities, underprivileged women, children with Down syndrome, the visually impaired, food-insecure families, and every person whose talents and heart deserve to be seen, loved, and supported.
 
@@ -354,18 +349,10 @@ When writing or updating mission-related text, use this as the canonical referen
 - Endpoint: `https://formspree.io/f/xwvzbjyj`
 - To change the receiving email: log in at formspree.io → form settings (no code change needed)
 
-### Razorpay — NOT YET ACTIVE
-- In `donate.html`, replace `YOUR_RAZORPAY_KEY_ID` in:
-  ```js
-  const RAZORPAY_KEY = 'YOUR_RAZORPAY_KEY_ID';
-  ```
-- Get key from Razorpay Dashboard → Settings → API Keys
-- Use `rzp_test_` key first, then switch to `rzp_live_` for production
-
 ### UPI QR Code — NOT YET ADDED
 - Generate QR for `nikshifoundation@icici`
 - Save as `images/upi-qr.png`
-- The `<img src="images/upi-qr.png">` in `donate.html` will show it automatically
+- The QR placeholder in `donate.html` will automatically show it once the file exists
 
 ### Custom Domain — NOT YET SET UP
 1. Create file `CNAME` in repo root containing: `nikshifoundation.org`
@@ -385,7 +372,7 @@ git push origin main
 
 **Branch:** `main` — GitHub Pages serves from root of main branch.
 
-**Commit message prefixes used in this project:**
+**Commit message prefixes:**
 - `feat:` — new section, feature, or integration
 - `fix:` — bug fix or broken layout
 - `content:` — text/copy changes only
@@ -398,27 +385,32 @@ git push origin main
 ## Known Issues / Future TODOs
 
 - [ ] **Lightbox on gallery** — images currently open in new tab; a proper lightbox (GLightbox, no jQuery) would be better UX
-- [x] **Razorpay removed** — donate.html now shows only UPI and bank transfer; no Razorpay integration
-- [ ] **UPI QR code** — `donate.html` shows placeholder box; add `images/upi-qr.png`
-- [ ] **Custom domain CNAME** — site is live at GitHub Pages URL only; set up when ready to go live at nikshifoundation.org
-- [ ] **80G / tax exemption** — section in `donate.html` not yet added; add once certificate is obtained
-- [ ] **NGO registration number** — not yet displayed; add to `about.html` trust signals once full registration cert is available
+- [ ] **UPI QR code** — `donate.html` shows placeholder; add `images/upi-qr.png`
+- [ ] **Custom domain CNAME** — site live at GitHub Pages URL only; set up when ready for nikshifoundation.org
+- [ ] **80G / tax exemption** — add to `donate.html` once certificate is obtained
+- [ ] **NGO registration number** — add to `about.html` trust signals once full cert is available
 - [ ] **Hero background image** — `images/hero.jpg` optional; currently using CSS gradient fallback
-- [x] **Founder photo** — `images/founder.JPEG` uploaded, used in about.html and index.html quote avatar
+- [x] **Razorpay removed** — donate.html shows only UPI and bank transfer
+- [x] **SWIFT code added** — ICICINBBXXX in bank table on donate.html
+- [x] **Donate page balanced** — centered header, equal-height UPI+bank 2-col, 3-col trust strip below
+- [x] **Program card posters uniform** — fixed `height:260px`, `background:var(--dark)`, `object-fit:contain` on all 5 cards; dark navy letterbox makes mixed orientations look intentional
+- [x] **Contact form fixed** — success message hidden by default; proper async fetch to Formspree; browser validation on required fields; error block shown on failure
+- [x] **Contact Follow Us** — 3 buttons (Facebook, Instagram, Email) on one line; WhatsApp removed (already in info card above)
+- [x] **Brand color consistency** — `--dark: #0F1E50` matches exact logo navy; hero gradient updated; all off-brand colors (#162348, #1B3068, #7C3AED, #5B6BF5, #8B5CF6, #0369A1) removed
+- [x] **Logo img background** — all 6 pages navbar logo has `background:var(--dark)` so rounded corners match logo navy
+- [x] **Founder photo** — `images/founder.JPEG` uploaded, used in about.html and index.html
 - [x] **Formspree contact form** — live with ID `xwvzbjyj`
 - [x] **Full name in nav** — all 6 pages show "Nikshi Foundation for Humanity"
-- [x] **Certificate of Appreciation** — displayed on index.html in Recognition section
-- [x] **Project Showcase removed** — 4-poster section deleted from index.html (session 5)
+- [x] **Certificate of Appreciation** — displayed on index.html
 - [x] **Mission text** — updated across index.html and about.html to include all beneficiary groups
-- [x] **Mobile responsive** — program cards responsive, 2-col grids stack on mobile
-- [x] **Navbar icon-only social links** — Facebook + Instagram in desktop nav show SVG icon only, no text labels (all 6 pages)
-- [x] **Navbar scroll color fix** — logo text turns navy `var(--dark)` on white background (not invisible)
-- [x] **Brand color consistency** — all blues use `var(--dark)` #0F1E50 (exact logo navy); `--dark-alt` unified; `#162348`, `#1B3068`, `#7C3AED`, `#5B6BF5`, `#8B5CF6`, `#0369A1` all removed
-- [x] **Hero green line** — "Fight Against Hunger." colored `#5DB04A` with `white-space:nowrap` (3 lines, no wrap)
-- [x] **Gallery timestamps removed** — no `● Active` or `○ 2024` badges on section headers
-- [x] **Gallery filter bar reorganized** — two labeled rows: Active Projects (hover→green) + Past Drives (hover→orange)
-- [x] **Program cards 3-per-row** — flexbox centered layout, full poster visible via `aspect-ratio:3/4; object-fit:contain`
-- [x] **Footer standardized** — all 6 pages share identical 4-column footer
-- [x] **Programs page slideshows replaced** — each program shows static poster + "View Photos in Gallery" button
+- [x] **Mobile responsive** — program cards, donate cards, 2-col grids all stack on mobile
+- [x] **Navbar icon-only social links** — Facebook + Instagram icon-only in desktop nav (all 6 pages)
+- [x] **Navbar scroll color fix** — logo text turns navy on white background
+- [x] **Hero green line** — "Fight Against Hunger." colored `#5DB04A` with `white-space:nowrap`
+- [x] **Gallery filter bar** — two labeled rows: Active Projects (hover→green) + Past Drives (hover→orange)
+- [x] **Gallery section dividers** — all use `var(--primary)` orange; no off-brand purples
 - [x] **Gallery deep-link** — `?filter=X` query param activates filter without scroll conflict
+- [x] **Footer standardized** — all 6 pages share identical 4-column footer
+- [x] **Programs page static posters** — each program shows static poster + "View Photos in Gallery" button
+- [x] **Old Age Homes accent** — uses `var(--primary)` orange (was purple `#7C3AED`)
 - [x] **CSR Initiative** — full program section, gallery filter, trust signal, footer links on all pages
