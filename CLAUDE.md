@@ -205,12 +205,12 @@ Hover CSS is in gallery.html's `<style>` block:
 **To add more photos:** Add `<img>` with correct `data-filter` inside `#gallery-grid`. Category headers also carry `data-filter`.
 
 ### donate.html — Donate
-**Status: Needs Razorpay key**
+**Status: Complete (no Razorpay)**
 
-- Amount selector: ₹400, ₹1,000, ₹2,500, ₹5,000, Custom
-- Razorpay button — replace `YOUR_RAZORPAY_KEY_ID` in inline `<script>` at bottom of file
+- Razorpay removed entirely — only UPI and bank transfer options.
 - UPI ID: `nikshifoundation@icici` (copy button included). **Drop `images/upi-qr.png`** to show QR code.
-- Bank: NIKSHI FOUNDATION FOR HUMANITY | 141705003411 | ICIC0001417 | Marathalli
+- Bank table: NIKSHI FOUNDATION FOR HUMANITY | 141705003411 | IFSC ICIC0001417 | **SWIFT ICICINBBXXX** | Marathalli
+- WhatsApp note: "After completing your transfer, please WhatsApp us the receipt at +91 97425 62006 — we'll issue an official donation acknowledgement letter for your tax benefits."
 - Footer: 4-column canonical footer (logo+social | Quick Links | Our Programs | Support Us)
 
 ### contact.html — Contact
@@ -398,7 +398,7 @@ git push origin main
 ## Known Issues / Future TODOs
 
 - [ ] **Lightbox on gallery** — images currently open in new tab; a proper lightbox (GLightbox, no jQuery) would be better UX
-- [ ] **Razorpay key** — `donate.html` uses placeholder; replace `YOUR_RAZORPAY_KEY_ID` to activate donate button
+- [x] **Razorpay removed** — donate.html now shows only UPI and bank transfer; no Razorpay integration
 - [ ] **UPI QR code** — `donate.html` shows placeholder box; add `images/upi-qr.png`
 - [ ] **Custom domain CNAME** — site is live at GitHub Pages URL only; set up when ready to go live at nikshifoundation.org
 - [ ] **80G / tax exemption** — section in `donate.html` not yet added; add once certificate is obtained
