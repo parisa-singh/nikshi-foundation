@@ -87,91 +87,96 @@
 <!-- ===== DONATE SECTION ===== -->
 <section class="section-pad" style="background:var(--bg);">
   <div class="max-w-site">
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start;">
 
-      <!-- Left: Donate form / options -->
-      <div>
-        <span class="section-label fade-in">Support Our Work</span>
-        <h2 class="section-title fade-in" data-delay="100">Ways to <span>Donate</span></h2>
-        <div class="divider fade-in" data-delay="150"></div>
+    <!-- Centered header -->
+    <div style="text-align:center; margin-bottom:3rem;">
+      <span class="section-label fade-in">Support Our Work</span>
+      <h2 class="section-title fade-in" data-delay="100" style="text-align:center;">Ways to <span>Donate</span></h2>
+      <div class="divider fade-in" data-delay="150" style="margin:0 auto;"></div>
+      <p class="fade-in" data-delay="200" style="color:var(--gray); font-size:1rem; max-width:540px; margin:1.25rem auto 0; line-height:1.8;">Choose whichever method works best for you. Every rupee goes directly to our programs on the ground.</p>
+    </div>
 
-        <!-- UPI Section -->
-        <div class="fade-in" data-delay="300" style="background:#fff; border-radius:20px; padding:2rem; box-shadow:0 4px 24px rgba(0,0,0,0.07);">
-          <div style="font-family:'Poppins',sans-serif; font-weight:700; color:var(--dark); margin-bottom:1.25rem; font-size:1rem; display:flex; align-items:center; gap:0.5rem;">
-            <span style="font-size:1.3rem;">📱</span> Pay via UPI
-          </div>
-          <div style="display:grid; grid-template-columns:auto 1fr; gap:1.5rem; align-items:center;">
-            <!-- QR placeholder -->
-            <div style="width:120px; height:120px; border:2px dashed #E5E7EB; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:0.75rem; color:var(--gray); text-align:center; padding:0.5rem; flex-shrink:0;">
-              <div>
-                <div style="font-size:1.5rem; margin-bottom:0.3rem;">📷</div>
-                <div>Add UPI QR code as<br><code>images/upi-qr.png</code></div>
-              </div>
-            </div>
-            <div>
-              <div style="font-size:0.85rem; color:var(--gray); margin-bottom:0.5rem;">UPI ID</div>
-              <div style="background:var(--bg); border-radius:10px; padding:0.75rem 1rem; font-family:'Poppins',sans-serif; font-weight:700; color:var(--dark); font-size:1rem; display:flex; align-items:center; justify-content:space-between; gap:0.5rem;">
-                nikshifoundation@icici
-                <button onclick="navigator.clipboard.writeText('nikshifoundation@icici').then(()=>{this.textContent='✓ Copied';setTimeout(()=>this.textContent='Copy',2000)})" style="background:none; border:none; cursor:pointer; color:var(--primary); font-family:'Poppins',sans-serif; font-weight:600; font-size:0.8rem;">Copy</button>
-              </div>
-              <div style="font-size:0.85rem; color:var(--gray); margin-top:0.75rem; line-height:1.6;">Scan the QR code or copy the UPI ID to pay directly from any UPI app (PhonePe, Google Pay, Paytm, BHIM).</div>
+    <!-- Two payment cards — equal columns, stretch to same height -->
+    <div id="donate-cards" style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:stretch; margin-bottom:2rem;">
+
+      <!-- UPI Card -->
+      <div class="card fade-in" style="display:flex; flex-direction:column;">
+        <div style="font-family:'Poppins',sans-serif; font-weight:700; color:var(--dark); margin-bottom:1.5rem; font-size:1rem; display:flex; align-items:center; gap:0.5rem;">
+          <span style="font-size:1.3rem;">📱</span> Pay via UPI
+        </div>
+        <!-- QR + UPI ID -->
+        <div style="text-align:center; margin-bottom:1.5rem;">
+          <div style="width:148px; height:148px; border:2px dashed #E5E7EB; border-radius:14px; display:flex; align-items:center; justify-content:center; margin:0 auto 1.1rem; background:var(--bg);">
+            <div style="text-align:center; color:var(--gray); font-size:0.75rem; padding:0.5rem; line-height:1.5;">
+              <div style="font-size:1.8rem; margin-bottom:0.35rem;">📷</div>
+              Drop <code style="font-size:0.7rem;">images/upi-qr.png</code>
             </div>
           </div>
+          <div style="background:var(--bg); border-radius:10px; padding:0.75rem 1rem; font-family:'Poppins',sans-serif; font-weight:700; color:var(--dark); font-size:0.95rem; display:flex; align-items:center; justify-content:space-between; gap:0.5rem;">
+            nikshifoundation@icici
+            <button onclick="navigator.clipboard.writeText('nikshifoundation@icici').then(()=>{this.textContent='✓ Copied';setTimeout(()=>this.textContent='Copy',2000)})" style="background:none; border:none; cursor:pointer; color:var(--primary); font-family:'Poppins',sans-serif; font-weight:600; font-size:0.8rem; flex-shrink:0;">Copy</button>
+          </div>
+        </div>
+        <!-- Steps -->
+        <div style="display:flex; flex-direction:column; gap:0.85rem; margin-bottom:1.5rem; flex:1;">
+          <div style="display:flex; gap:0.75rem; align-items:flex-start;">
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--primary); color:#fff; font-family:'Poppins',sans-serif; font-weight:700; font-size:0.75rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px;">1</div>
+            <div style="font-size:0.9rem; color:var(--gray); line-height:1.5;">Open any UPI app — PhonePe, Google Pay, Paytm, or BHIM</div>
+          </div>
+          <div style="display:flex; gap:0.75rem; align-items:flex-start;">
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--primary); color:#fff; font-family:'Poppins',sans-serif; font-weight:700; font-size:0.75rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px;">2</div>
+            <div style="font-size:0.9rem; color:var(--gray); line-height:1.5;">Scan the QR code or paste the UPI ID above into the app</div>
+          </div>
+          <div style="display:flex; gap:0.75rem; align-items:flex-start;">
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--primary); color:#fff; font-family:'Poppins',sans-serif; font-weight:700; font-size:0.75rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px;">3</div>
+            <div style="font-size:0.9rem; color:var(--gray); line-height:1.5;">Enter your donation amount and confirm the payment</div>
+          </div>
+        </div>
+        <div style="padding:0.9rem 1rem; background:#F0FDF4; border-radius:10px; font-size:0.85rem; color:#166534;">
+          ✅ Instant transfer — no bank charges for UPI payments.
         </div>
       </div>
 
-      <!-- Right: Bank Transfer + Info -->
-      <div>
-
-        <!-- Bank Transfer -->
-        <div class="card fade-in" style="margin-bottom:1.5rem;">
-          <div style="font-family:'Poppins',sans-serif; font-weight:700; color:var(--dark); margin-bottom:1.25rem; font-size:1rem; display:flex; align-items:center; gap:0.5rem;">
-            <span style="font-size:1.3rem;">🏦</span> Bank Transfer (NEFT / RTGS / IMPS)
-          </div>
-          <table class="bank-table">
-            <tr><td>Account Name</td><td>NIKSHI FOUNDATION FOR HUMANITY</td></tr>
-            <tr><td>Account Number</td><td>141705003411</td></tr>
-            <tr><td>IFSC Code</td><td>ICIC0001417</td></tr>
-            <tr><td>SWIFT / BIC</td><td>ICICINBBXXX</td></tr>
-            <tr><td>Bank</td><td>ICICI Bank</td></tr>
-            <tr><td>Branch</td><td>Marathalli, Bangalore</td></tr>
-          </table>
-          <div style="margin-top:1.25rem; padding:1rem; background:#F0FDF4; border-radius:10px; font-size:0.875rem; color:#166534; display:flex; gap:0.5rem; align-items:flex-start;">
-            <span style="flex-shrink:0;">✅</span>
-            <div>After completing your transfer, please WhatsApp us the receipt at <a href="https://wa.me/919742562006" style="color:#166534; font-weight:600;">+91 97425 62006</a> — we'll issue an official donation acknowledgement letter for your tax benefits.</div>
-          </div>
+      <!-- Bank Transfer Card -->
+      <div class="card fade-in" data-delay="100" style="display:flex; flex-direction:column;">
+        <div style="font-family:'Poppins',sans-serif; font-weight:700; color:var(--dark); margin-bottom:1.5rem; font-size:1rem; display:flex; align-items:center; gap:0.5rem;">
+          <span style="font-size:1.3rem;">🏦</span> Bank Transfer (NEFT / RTGS / IMPS)
         </div>
-
-        <!-- Why donate trust block -->
-        <div class="card fade-in" data-delay="100">
-          <div style="font-family:'Poppins',sans-serif; font-weight:700; color:var(--dark); margin-bottom:1.25rem; font-size:1rem;">Why Trust Us?</div>
-          <div style="display:flex; flex-direction:column; gap:1rem;">
-            <div class="info-card">
-              <div class="info-icon">🏛️</div>
-              <div>
-                <div style="font-family:'Poppins',sans-serif; font-weight:700; color:var(--dark); font-size:0.9rem; margin-bottom:0.25rem;">Registered NGO</div>
-                <div style="font-size:0.85rem; color:var(--gray);">Officially registered in Bangalore, Karnataka.</div>
-              </div>
-            </div>
-            <div class="info-card">
-              <div class="info-icon">📊</div>
-              <div>
-                <div style="font-family:'Poppins',sans-serif; font-weight:700; color:var(--dark); font-size:0.9rem; margin-bottom:0.25rem;">100% Transparent</div>
-                <div style="font-size:0.85rem; color:var(--gray);">Every donation is tracked and used directly for programs.</div>
-              </div>
-            </div>
-            <div class="info-card">
-              <div class="info-icon">📞</div>
-              <div>
-                <div style="font-family:'Poppins',sans-serif; font-weight:700; color:var(--dark); font-size:0.9rem; margin-bottom:0.25rem;">Direct Contact</div>
-                <div style="font-size:0.85rem; color:var(--gray);">Reach Shilpa Singh directly at <a href="tel:+919742562006" style="color:var(--primary); font-weight:600;">+91 97425 62006</a>.</div>
-              </div>
-            </div>
-          </div>
+        <table class="bank-table" style="margin-bottom:0; flex:1;">
+          <tr><td>Account Name</td><td>NIKSHI FOUNDATION FOR HUMANITY</td></tr>
+          <tr><td>Account Number</td><td>141705003411</td></tr>
+          <tr><td>IFSC Code</td><td>ICIC0001417</td></tr>
+          <tr><td>SWIFT / BIC</td><td>ICICINBBXXX</td></tr>
+          <tr><td>Bank</td><td>ICICI Bank</td></tr>
+          <tr><td>Branch</td><td>Marathalli, Bangalore</td></tr>
+        </table>
+        <div style="margin-top:1.25rem; padding:1rem; background:#F0FDF4; border-radius:10px; font-size:0.875rem; color:#166534; display:flex; gap:0.5rem; align-items:flex-start;">
+          <span style="flex-shrink:0;">✅</span>
+          <div>After completing your transfer, please WhatsApp us the receipt at <a href="https://wa.me/919742562006" style="color:#166534; font-weight:600;">+91 97425 62006</a> — we'll issue an official donation acknowledgement letter for your tax benefits.</div>
         </div>
       </div>
 
     </div>
+
+    <!-- Trust strip — 3 equal columns -->
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem;">
+      <div class="card fade-in" style="text-align:center; padding:1.75rem 1.5rem;">
+        <div style="font-size:2.2rem; margin-bottom:0.75rem;">🏛️</div>
+        <div style="font-family:'Poppins',sans-serif; font-weight:700; color:var(--dark); font-size:0.95rem; margin-bottom:0.4rem;">Registered NGO</div>
+        <div style="font-size:0.85rem; color:var(--gray); line-height:1.6;">Officially registered in Bangalore, Karnataka.</div>
+      </div>
+      <div class="card fade-in" data-delay="100" style="text-align:center; padding:1.75rem 1.5rem;">
+        <div style="font-size:2.2rem; margin-bottom:0.75rem;">📊</div>
+        <div style="font-family:'Poppins',sans-serif; font-weight:700; color:var(--dark); font-size:0.95rem; margin-bottom:0.4rem;">100% Transparent</div>
+        <div style="font-size:0.85rem; color:var(--gray); line-height:1.6;">Every donation is tracked and used directly for programs.</div>
+      </div>
+      <div class="card fade-in" data-delay="200" style="text-align:center; padding:1.75rem 1.5rem;">
+        <div style="font-size:2.2rem; margin-bottom:0.75rem;">📞</div>
+        <div style="font-family:'Poppins',sans-serif; font-weight:700; color:var(--dark); font-size:0.95rem; margin-bottom:0.4rem;">Direct Contact</div>
+        <div style="font-size:0.85rem; color:var(--gray); line-height:1.6;">Reach Shilpa Singh directly at <a href="tel:+919742562006" style="color:var(--primary); font-weight:600;">+91 97425 62006</a>.</div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -245,8 +250,8 @@
   }
   @media (min-width: 901px) { .show-mobile { display: none !important; } }
   @media (max-width: 768px) {
-    .max-w-site > div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
-    .amount-btn { font-size: 0.85rem; padding: 0.65rem 0.75rem; }
+    #donate-cards { grid-template-columns: 1fr !important; }
+    .max-w-site > div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
   }
 </style>
 </body>
