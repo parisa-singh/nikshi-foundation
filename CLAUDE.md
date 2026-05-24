@@ -88,13 +88,13 @@ nikshi/
 --primary:      #F5A623   /* golden orange — CTAs, highlights */
 --primary-dark: #D98A0A
 --secondary:    #5DB04A   /* leaf green — accents, trust signals */
---dark:         #162348   /* deep navy — logo background, headers, footer */
+--dark:         #0F1E50   /* deep navy — logo background, headers, footer */
 --dark-alt:     #162348   /* same as --dark — gradients use this for consistency */
 --bg:           #F4F6F8   /* off-white — section backgrounds */
 --gray:         #6B7280   /* body text */
 ```
 
-**Color rule:** All blues/navies must use `var(--dark)` (#162348). Do NOT introduce `#1B3068`, `#0369A1`, or any other non-logo blue. The only brand colors are navy, orange, and green.
+**Color rule:** All blues/navies must use `var(--dark)` (#0F1E50). Do NOT introduce `#162348`, `#1B3068`, `#0369A1`, or any other non-logo blue. The only brand colors are navy, orange, and green.
 
 ---
 
@@ -148,7 +148,7 @@ Six program sections — each now shows a **static poster image** (no slideshow)
 | Transgender Empowerment | `#E8610A` orange | `Posters/Project Uplift Poster .jpeg` | `?filter=trans` |
 | Hunger Relief | `#0D6E6E` teal | `Hunger Food Distribution/1.jpg` | `?filter=hunger` |
 | Project Gyaan (Education) | `var(--dark)` navy | `Posters/Project Gyaan Poster .jpeg` | `?filter=gyaan` |
-| Community Outreach — Old Age Homes | `#7C3AED` purple | `Old Age Homes/1.jpg` | `?filter=oldage` |
+| Community Outreach — Old Age Homes | `var(--primary)` orange | `Old Age Homes/1.jpg` | `?filter=oldage` |
 | Nikshi Tech Talk Series (NTTS) | `#0D6E6E` teal | `Posters/NTTS Poster .jpeg` | `?filter=techtalk` |
 | CSR Initiative | `var(--dark)` navy | `Posters/CSR Poster .jpeg` | `?filter=csr` |
 
@@ -164,7 +164,7 @@ Six program sections — each now shows a **static poster image** (no slideshow)
 - `id="csr"` — anchor used in footer and index.html card link
 - Reg. No. **CSR00069983**, Ministry of Corporate Affairs, Government of India
 - Approved: **26 March 2024**, PAN: **AAHCN6111H**
-- Accent color: `var(--dark)` (#162348) — changed from `#0369A1` to match logo
+- Accent color: `var(--dark)` (#0F1E50) — logo navy
 - Buttons: "Partner With Us" → contact.html, "Support This Initiative" → donate.html
 - Images are in `images/CSR/` — filenames are `1.jpeg` through `5.jpeg` (no spaces, no URL-encoding needed)
 
@@ -413,7 +413,7 @@ git push origin main
 - [x] **Mobile responsive** — program cards responsive, 2-col grids stack on mobile
 - [x] **Navbar icon-only social links** — Facebook + Instagram in desktop nav show SVG icon only, no text labels (all 6 pages)
 - [x] **Navbar scroll color fix** — logo text turns navy `var(--dark)` on white background (not invisible)
-- [x] **Brand color consistency** — all blues use `var(--dark)` #162348; `--dark-alt` unified; `#0369A1` removed
+- [x] **Brand color consistency** — all blues use `var(--dark)` #0F1E50 (exact logo navy); `--dark-alt` unified; `#162348`, `#1B3068`, `#7C3AED`, `#5B6BF5`, `#8B5CF6`, `#0369A1` all removed
 - [x] **Hero green line** — "Fight Against Hunger." colored `#5DB04A` with `white-space:nowrap` (3 lines, no wrap)
 - [x] **Gallery timestamps removed** — no `● Active` or `○ 2024` badges on section headers
 - [x] **Gallery filter bar reorganized** — two labeled rows: Active Projects (hover→green) + Past Drives (hover→orange)

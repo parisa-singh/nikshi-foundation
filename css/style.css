@@ -15,8 +15,8 @@
   --secondary-dark:#4A9038;
   --accent:       #F5A623;  /* same orange as primary — no yellow on this site */
   --bg:           #F4F6F8;
-  --dark:         #162348;  /* deep navy — logo background */
-  --dark-alt:     #162348;
+  --dark:         #0F1E50;  /* deep navy — logo background */
+  --dark-alt:     #0F1E50;
   --gray:         #6B7280;
   --light-gray:   #F3F4F6;
 }
@@ -158,7 +158,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #162348 0%, #1B3068 60%, #2A4A1A 100%);
+  background: linear-gradient(135deg, #0F1E50 0%, #0F1E50 60%, #2A4A1A 100%);
   overflow: hidden;
 }
 .hero::before {
