@@ -34,6 +34,7 @@ body {
   background: var(--bg);
   color: var(--dark);
   overflow-x: hidden;
+  overflow-wrap: break-word; /* global safety — prevents any text from escaping its container */
 }
 
 img { max-width: 100%; height: auto; }
@@ -660,6 +661,15 @@ footer {
   div[style*="gap:1.25rem"][style*="grid-template-columns"] {
     grid-template-columns: 1fr !important;
   }
+
+  /* Page hero subtitle: scale down from fixed 1.15rem */
+  .page-hero p { font-size: 1rem; }
+
+  /* Bank table: prevent cell text overflow on narrow screens */
+  .bank-table td { word-break: break-word; overflow-wrap: break-word; }
+
+  /* Past Drives grid: minmax(320px) overflows phones — collapse to 1-col */
+  .drives-grid { grid-template-columns: 1fr !important; }
 }
 
 @media (max-width: 640px) {
@@ -684,6 +694,24 @@ footer {
   .nav-logo-text { font-size: 0.78rem !important; }
   /* Program stats counters: 2-col instead of auto-fit on very small */
   [style*="grid-template-columns:repeat(auto-fit"] { grid-template-columns: repeat(2,1fr) !important; }
+
+  /* Hero h1: lower the clamp minimum so 320px screens don't clip "Fight Against Hunger." */
+  .hero h1 { font-size: clamp(1.5rem, 5.5vw, 4rem) !important; }
+  /* Allow the green "Fight Against Hunger." span to wrap naturally on very small screens */
+  .hero [style*="white-space:nowrap"] { white-space: normal !important; }
+
+  /* Reduce card padding — gives more room for text content on 320px screens */
+  .card { padding: 1.25rem; }
+
+  /* Narrow section horizontal padding slightly more */
+  .section-pad    { padding: 3rem 0.75rem; }
+  .section-pad-sm { padding: 2rem 0.75rem; }
+
+  /* Section description: slightly smaller on very small screens */
+  .section-desc { font-size: 0.95rem; }
+
+  /* Footer bottom text: smaller so it wraps gracefully */
+  .footer-bottom { font-size: 0.78rem; }
 }
 
 /* ---------- Placeholder image fallback ---------- */
