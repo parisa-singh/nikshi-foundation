@@ -24,7 +24,10 @@
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* prevent horizontal scroll on iOS Safari */
+}
 
 body {
   font-family: 'Inter', sans-serif;
@@ -607,8 +610,15 @@ footer {
 /* ---------- Responsive Helpers ---------- */
 @media (max-width: 768px) {
   .section-pad { padding: 3.5rem 1rem; }
-  .hero { min-height: 100svh; }
+  .hero { min-height: 100svh; padding-top: 80px; }
   .page-hero { padding: 7rem 1rem 3.5rem; }
+
+  /* ---- Center-align text blocks that go single-col on mobile ---- */
+  .section-label { text-align: center; display: block; width: 100%; }
+  .section-title  { text-align: center; }
+  .section-desc   { text-align: center; margin-left: auto; margin-right: auto; }
+  .divider        { margin-left: auto !important; margin-right: auto !important; }
+  .program-block h2 { text-align: center; }
 
   /* ---- Stack ALL 2-col inline grids (covers every page) ---- */
   /* Generic catch-all for inline grid-template-columns */

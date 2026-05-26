@@ -61,10 +61,10 @@
 <!-- ===== QUICK NAV ===== -->
 <div style="background:#fff; border-bottom:2px solid #F3F4F6; position:sticky; top:72px; z-index:100;">
   <div class="max-w-site" style="display:flex; gap:0; overflow-x:auto; -webkit-overflow-scrolling:touch;">
-    <a href="#current"  style="flex:0 0 auto; padding:1rem 1.5rem; font-family:'Poppins',sans-serif; font-weight:600; font-size:0.875rem; color:var(--primary); text-decoration:none; border-bottom:3px solid var(--primary); white-space:nowrap; display:flex; align-items:center; gap:0.4rem;">
+    <a id="qnav-current" href="#current"  style="flex:0 0 auto; padding:1rem 1.5rem; font-family:'Poppins',sans-serif; font-weight:600; font-size:0.875rem; color:var(--primary); text-decoration:none; border-bottom:3px solid var(--primary); white-space:nowrap; display:flex; align-items:center; gap:0.4rem;">
       ● Active Projects
     </a>
-    <a href="#past"     style="flex:0 0 auto; padding:1rem 1.5rem; font-family:'Poppins',sans-serif; font-weight:600; font-size:0.875rem; color:var(--gray); text-decoration:none; border-bottom:3px solid transparent; white-space:nowrap; display:flex; align-items:center; gap:0.4rem;">
+    <a id="qnav-past" href="#past"     style="flex:0 0 auto; padding:1rem 1.5rem; font-family:'Poppins',sans-serif; font-weight:600; font-size:0.875rem; color:var(--gray); text-decoration:none; border-bottom:3px solid transparent; white-space:nowrap; display:flex; align-items:center; gap:0.4rem;">
       ○ Past Drives
     </a>
   </div>
@@ -563,5 +563,30 @@
     #navbar ~ div[style*="sticky"] { top: 60px; }
   }
 </style>
+<script>
+(function() {
+  var navCurrent = document.getElementById('qnav-current');
+  var navPast    = document.getElementById('qnav-past');
+  var secCurrent = document.getElementById('current');
+  var secPast    = document.getElementById('past');
+  if (!navCurrent || !navPast) return;
+  function setActive(which) {
+    var primary = '#F5A623', gray = '#6B7280';
+    navCurrent.style.color        = which === 'current' ? primary : gray;
+    navCurrent.style.borderBottom = which === 'current' ? '3px solid #F5A623' : '3px solid transparent';
+    navPast.style.color           = which === 'past'    ? primary : gray;
+    navPast.style.borderBottom    = which === 'past'    ? '3px solid #F5A623' : '3px solid transparent';
+  }
+  navCurrent.addEventListener('click', function() { setActive('current'); });
+  navPast.addEventListener('click',    function() { setActive('past');    });
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) setActive(entry.target.id === 'past' ? 'past' : 'current');
+    });
+  }, { threshold: 0.15 });
+  if (secCurrent) observer.observe(secCurrent);
+  if (secPast)    observer.observe(secPast);
+})();
+</script>
 </body>
 </html>
