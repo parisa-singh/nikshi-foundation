@@ -1,7 +1,7 @@
 # CLAUDE.md — Nikshi Foundation for Humanity Website
 
 Full developer reference for continuing work in a new Claude Code session.
-Last updated: 2026-05-26 (session 7).
+Last updated: 2026-05-26 (session 7 — part 2).
 
 ---
 
@@ -232,7 +232,7 @@ All pages share an identical 4-column footer:
 |--------|---------|
 | 1 — Brand | Logo image + "Nikshi Foundation / For Humanity" + tagline + 4 social icons (FB, WhatsApp, IG, Email) |
 | 2 — Quick Links | Home, About Us, Our Programs, Gallery, Donate, Contact |
-| 3 — Our Programs | Project Gyaan, Tech Talk Series, Fighting for Hunger, Transgender Empowerment, CSR Initiative, Past Drives ↗ |
+| 3 — Our Programs | Project Gyaan, Tech Talk Series, Fight Against Hunger, Transgender Empowerment, CSR Initiative, Past Drives ↗ |
 | 4 — Support Us | Bank transfer details (ICICI Bank, A/C, IFSC, UPI) |
 
 Footer bottom strip: `© 2026 ... | Bangalore, Karnataka, India | +91 97425 62006`
@@ -304,12 +304,20 @@ Implemented in `css/style.css` and `js/main.js` (`/* ---------- Slideshows -----
 
 - Mobile breakpoint for hamburger nav: `max-width: 900px` (in each page's `<style>` block at bottom)
 - Global responsive CSS is in `css/style.css`
+- Global `img { max-width: 100%; height: auto; }` prevents horizontal overflow on all images
 
 | Breakpoint | Rules applied |
 |-----------|--------------|
-| ≤768px | Section padding reduced, page-hero padding reduced, donate cards stack to 1-col |
-| ≤640px | Slideshows capped at 260px; 2-col program block grids stack to 1-col |
-| ≤480px | Button padding reduced; nav logo text forced to 0.78rem |
+| ≤768px | All inline `grid-template-columns:1fr 1fr / 1fr 1.4fr / 1.5fr 1fr` grids stack to 1-col via catch-all attribute selectors; `repeat(3,1fr)` trust strips stack to 1-col; program block `aspect-ratio:4/5` images switch to `4/3 + max-height:280px` + `object-fit:contain`; contact Follow Us buttons wrap; contact form field rows stack |
+| ≤640px | Slideshows capped at 260px; program blocks padding reduced; founder photo container capped at 220×260px; ration kit inner grid stacks |
+| ≤480px | Button padding reduced; nav logo text forced to 0.78rem; auto-fit counters forced to 2-col |
+
+**Key mobile rules:**
+- Attribute-selector approach in `style.css` catches all inline `grid-template-columns` variations
+- Per-page `<style>` blocks add specifics (ID-based rules for `#donate-cards`, `#programs-cards`)
+- `about.html` founder photo changed from fixed `width:280px; height:320px` → `max-width:280px; width:100%; aspect-ratio:7/8` (responsive)
+- `contact.html` Follow Us buttons changed from `flex-wrap:nowrap` → `flex-wrap:wrap` in HTML directly
+- `programs.html` program block images switch to `object-fit:contain` on mobile so poster content is never cropped/zoomed
 
 **Gallery grid reflow:** 4-col → 3-col (≤1024px) → 2-col (≤640px) → 1-col (≤380px)
 
@@ -418,3 +426,5 @@ git push origin main
 - [x] **CSR Initiative** — full program section, gallery filter, trust signal, footer links on all pages
 - [x] **Fight for Hunger poster** — added to Posters/; used in index.html program card, programs.html static image, and gallery (1st in hunger section, 16 total)
 - [x] **Founder photo updated** — images/founder.JPEG replaced with new photo
+- [x] **"Fight Against Hunger" rename** — all 6 HTML pages + CLAUDE.md updated; was "Fighting for Hunger"
+- [x] **Mobile responsiveness overhaul** — catch-all attribute-selector grid rules in style.css; program poster images switch to `object-fit:contain` + capped height on mobile; founder photo uses `aspect-ratio` instead of fixed px; Follow Us buttons wrap on small screens; global `img { max-width:100% }` safety rule added

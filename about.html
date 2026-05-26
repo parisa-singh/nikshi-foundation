@@ -94,7 +94,7 @@
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; margin-bottom:4rem;">
 
       <div class="fade-in" style="text-align:center;">
-        <div style="width:280px; height:320px; border-radius:20px; overflow:hidden; margin:0 auto; box-shadow:0 20px 60px rgba(0,0,0,0.1); position:relative;">
+        <div style="max-width:280px; width:100%; aspect-ratio:7/8; border-radius:20px; overflow:hidden; margin:0 auto; box-shadow:0 20px 60px rgba(0,0,0,0.1); position:relative;">
           <img src="images/founder.JPEG" alt="Shilpa Singh, Founder" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';" />
           <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top,rgba(26,26,46,0.9),transparent); padding:1.5rem 1.25rem; text-align:left;">
             <div style="font-family:'Poppins',sans-serif; font-weight:700; color:#fff; font-size:1.1rem;">Shilpa Singh</div>
@@ -308,7 +308,7 @@
       <div class="footer-title">Our Programs</div>
       <a href="programs.html#project-gyaan"  class="footer-link">Project Gyaan</a>
       <a href="programs.html#tech-talk"      class="footer-link">Nikshi Tech Talk Series</a>
-      <a href="programs.html#hunger"         class="footer-link">Fighting for Hunger</a>
+      <a href="programs.html#hunger"         class="footer-link">Fight Against Hunger</a>
       <a href="programs.html#transgender"    class="footer-link">Transgender Empowerment</a>
       <a href="programs.html#csr"            class="footer-link">CSR Initiative</a>
       <a href="programs.html#past"           class="footer-link" style="color:rgba(255,255,255,0.4);">Past Drives ↗</a>
@@ -339,7 +339,10 @@
   }
   @media (min-width: 901px) { .show-mobile { display: none !important; } }
   @media (max-width: 768px) {
-    .max-w-site > div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+    .max-w-site > div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 2rem !important; }
+    /* Founder section: image above text on mobile */
+    div[style*="grid-template-columns:1fr 1fr"][style*="margin-bottom:4rem"] > div:first-child { order: 2; }
+    div[style*="grid-template-columns:1fr 1fr"][style*="margin-bottom:4rem"] > div:last-child  { order: 1; }
   }
 </style>
 </body>

@@ -166,13 +166,13 @@
       <!-- Card 3: Hunger -->
       <div class="program-card fade-in" data-delay="250" style="flex:0 0 calc(33.333% - 1.34rem);">
         <div style="height:260px; overflow:hidden; background:var(--dark); display:flex; align-items:center; justify-content:center;">
-          <img src="images/Posters/Fight%20for%20Hunger%20Poster%20.jpeg" alt="Fighting for Hunger" style="width:100%; height:100%; object-fit:contain; display:block;" loading="lazy" />
+          <img src="images/Posters/Fight%20for%20Hunger%20Poster%20.jpeg" alt="Fight Against Hunger" style="width:100%; height:100%; object-fit:contain; display:block;" loading="lazy" />
         </div>
         <div style="padding:1.5rem;">
           <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.75rem;">
             <span class="badge badge-active" style="font-size:0.65rem;">● Active</span>
           </div>
-          <h3 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:1.1rem; margin-bottom:0.6rem; color:var(--dark);">Fighting for Hunger</h3>
+          <h3 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:1.1rem; margin-bottom:0.6rem; color:var(--dark);">Fight Against Hunger</h3>
           <p style="color:var(--gray); font-size:0.9rem; line-height:1.7; margin-bottom:1.25rem;">Daily freshly cooked meals and monthly ration kits (₹400 = 40–45 meals) for food-insecure families across Bangalore.</p>
           <a href="programs.html#hunger" class="btn btn-outline-dark" style="font-size:0.82rem; padding:0.55rem 1.1rem;">Learn More &rarr;</a>
         </div>
@@ -251,13 +251,13 @@
     <div class="fade-in" data-delay="250">
       <div class="slideshow" style="border-radius:20px; overflow:hidden; aspect-ratio:16/7; min-height:240px;">
         <div class="slideshow-track">
-          <div class="slide" data-caption="Fighting for Hunger — freshly cooked meals for food-insecure families across Bangalore">
+          <div class="slide" data-caption="Fight Against Hunger — freshly cooked meals for food-insecure families across Bangalore">
             <img src="images/Hunger%20Food%20Distribution/1.jpg" alt="Hunger relief" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" />
           </div>
-          <div class="slide" data-caption="Fighting for Hunger — reaching families with nutritious ration kits">
+          <div class="slide" data-caption="Fight Against Hunger — reaching families with nutritious ration kits">
             <img src="images/Hunger%20Food%20Distribution/5.jpg" alt="Hunger relief" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" />
           </div>
-          <div class="slide" data-caption="Fighting for Hunger — community food distribution across Bangalore's streets">
+          <div class="slide" data-caption="Fight Against Hunger — community food distribution across Bangalore's streets">
             <img src="images/Hunger%20Food%20Distribution/10.jpg" alt="Hunger relief" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" />
           </div>
           <div class="slide" data-caption="Project Gyaan — teaching core subjects to students at government schools in Bangalore">
@@ -449,7 +449,7 @@
       <div class="footer-title">Our Programs</div>
       <a href="programs.html#project-gyaan"  class="footer-link">Project Gyaan</a>
       <a href="programs.html#tech-talk"      class="footer-link">Nikshi Tech Talk Series</a>
-      <a href="programs.html#hunger"         class="footer-link">Fighting for Hunger</a>
+      <a href="programs.html#hunger"         class="footer-link">Fight Against Hunger</a>
       <a href="programs.html#transgender"    class="footer-link">Transgender Empowerment</a>
       <a href="programs.html#csr"            class="footer-link">CSR Initiative</a>
       <a href="programs.html#past"           class="footer-link" style="color:rgba(255,255,255,0.4);">Past Drives ↗</a>
@@ -486,10 +486,17 @@
   @media (min-width: 901px) {
     .show-mobile { display: none !important; }
   }
-  /* Donation impact section: stack on mobile */
   @media (max-width: 768px) {
+    /* Stack all 2-col content sections */
     .max-w-site > div[style*="grid-template-columns:1fr 1fr"] {
       grid-template-columns: 1fr !important;
+      gap: 2rem !important;
+    }
+    /* Certificate image: reasonable height on mobile */
+    [aria-label="Recognition"] .max-w-site > div > div:last-child img {
+      max-height: 340px;
+      object-fit: contain;
+      width: 100%;
     }
   }
   /* Program cards responsive */
