@@ -395,7 +395,7 @@ git push origin main
 ## Known Issues / Future TODOs
 
 - [ ] **Lightbox on gallery** — images currently open in new tab; a proper lightbox (GLightbox, no jQuery) would be better UX
-- [ ] **UPI QR code** — `donate.html` shows placeholder; add `images/upi-qr.png`
+- [x] **UPI QR code** — `images/upi-qr.png` added; donate.html shows live QR image at `max-width:220px`, fully responsive
 - [ ] **Custom domain CNAME** — site live at GitHub Pages URL only; set up when ready for nikshifoundation.org
 - [ ] **80G / tax exemption** — add to `donate.html` once certificate is obtained
 - [ ] **NGO registration number** — add to `about.html` trust signals once full cert is available
