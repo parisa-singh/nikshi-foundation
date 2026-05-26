@@ -608,6 +608,14 @@ footer {
   transform: translateY(0);
 }
 
+/* ---------- Slideshow / gallery mobile swap ---------- */
+.desktop-slideshow  { display: block; }
+.mobile-gallery-link { display: none; }
+@media (max-width: 640px) {
+  .desktop-slideshow  { display: none; }
+  .mobile-gallery-link { display: block; }
+}
+
 /* ---------- Responsive Helpers ---------- */
 @media (max-width: 768px) {
   .section-pad { padding: 3.5rem 1rem; }

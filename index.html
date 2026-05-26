@@ -248,7 +248,7 @@
       <div class="divider divider-center fade-in" data-delay="150"></div>
       <p class="fade-in" data-delay="200" style="color:rgba(255,255,255,0.6); font-size:1rem; max-width:500px; margin:0 auto;">Real moments from our drives, programs, and community work across Bangalore.</p>
     </div>
-    <div class="fade-in" data-delay="250">
+    <div class="fade-in desktop-slideshow" data-delay="250">
       <div class="slideshow" style="border-radius:20px; overflow:hidden; aspect-ratio:16/7;">
         <div class="slideshow-track">
           <div class="slide" data-caption="Fight Against Hunger — freshly cooked meals for food-insecure families across Bangalore">
@@ -303,7 +303,16 @@
         </div>
       </div>
     </div>
-    <div class="fade-in" data-delay="350" style="text-align:center; margin-top:2rem;">
+
+    <!-- Mobile-only: replace slideshow with a gallery link card (shown ≤640px) -->
+    <div class="mobile-gallery-link fade-in" data-delay="250" style="text-align:center; padding:2.5rem 1.5rem; background:rgba(255,255,255,0.05); border-radius:20px; border:1px solid rgba(255,255,255,0.12);">
+      <div style="font-size:2.5rem; margin-bottom:0.75rem;">📷</div>
+      <div style="font-family:'Poppins',sans-serif; font-weight:700; color:#fff; font-size:1.1rem; margin-bottom:0.6rem;">See Our Work in Photos</div>
+      <p style="color:rgba(255,255,255,0.6); font-size:0.9rem; line-height:1.7; margin-bottom:1.5rem;">Hunger relief, education, trans empowerment, old age home visits, and more — browse our full gallery.</p>
+      <a href="gallery.html" class="btn btn-primary">Browse the Gallery &rarr;</a>
+    </div>
+
+    <div class="fade-in desktop-slideshow" data-delay="350" style="text-align:center; margin-top:2rem;">
       <a href="gallery.html" class="btn btn-primary">View Full Gallery &rarr;</a>
     </div>
   </div>
