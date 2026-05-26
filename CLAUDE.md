@@ -1,7 +1,7 @@
 # CLAUDE.md — Nikshi Foundation for Humanity Website
 
 Full developer reference for continuing work in a new Claude Code session.
-Last updated: 2026-05-23 (session 6).
+Last updated: 2026-05-26 (session 7).
 
 ---
 
@@ -51,7 +51,8 @@ nikshi/
 │   │   ├── CSR Poster .jpeg
 │   │   ├── Project Uplift Poster .jpeg
 │   │   ├── Project Gyaan Poster .jpeg
-│   │   └── NTTS Poster .jpeg
+│   │   ├── NTTS Poster .jpeg
+│   │   └── Fight for Hunger Poster .jpeg
 │   ├── Gerizim Trust/     ← 7 .jpeg files (filenames have spaces + parentheses)
 │   ├── Hunger Food Distribution/  ← 15 images: 1.jpg–15.jpg
 │   ├── NTTS/              ← 4 images: 1.jpg, 2.jpg, 3.jpg, poster 4.jpg
@@ -76,6 +77,7 @@ nikshi/
 | `Posters/Project Uplift Poster .jpeg` | `Posters/Project%20Uplift%20Poster%20.jpeg` |
 | `Posters/Project Gyaan Poster .jpeg` | `Posters/Project%20Gyaan%20Poster%20.jpeg` |
 | `Posters/NTTS Poster .jpeg` | `Posters/NTTS%20Poster%20.jpeg` |
+| `Posters/Fight for Hunger Poster .jpeg` | `Posters/Fight%20for%20Hunger%20Poster%20.jpeg` |
 | `Certificate of Appreciation .jpeg` | `Certificate%20of%20Appreciation%20.jpeg` |
 | Gerizim Trust files with `( )` | `%28` for `(`, `%29` for `)` |
 
@@ -109,7 +111,7 @@ Sections (top to bottom):
 2. **Hero** — centered text, location pin icon + "Bangalore, India" tagline. "Equality." white, "Empowerment." orange, "Fight Against Hunger." green (`#5DB04A`) with `white-space:nowrap`. Font size `clamp(2rem,5.5vw,4rem)`.
 3. **Founder Quote** — Shilpa Singh blockquote with avatar photo (`images/founder.JPEG`) — 2nd section, immediately after hero
 4. **Impact counter strip** — animated counters (meals, families, children, trans lives), JS in `main.js`
-5. **Program cards** — 5 cards in a **flexbox 3-per-row centered layout** (`id="programs-cards"`). Each card: `flex:0 0 calc(33.333% - 1.34rem)`. Image container: `height:260px; background:var(--dark); object-fit:contain` — fixed height with dark navy background so all orientations (portrait/landscape posters) display uniformly. Responsive: 2-col at ≤820px, 1-col at ≤500px. Images: `Posters/Project%20Gyaan%20Poster%20.jpeg`, `Posters/NTTS%20Poster%20.jpeg`, `Hunger%20Food%20Distribution/1.jpg`, `Posters/Project%20Uplift%20Poster%20.jpeg`, `Posters/CSR%20Poster%20.jpeg`
+5. **Program cards** — 5 cards in a **flexbox 3-per-row centered layout** (`id="programs-cards"`). Each card: `flex:0 0 calc(33.333% - 1.34rem)`. Image container: `height:260px; background:var(--dark); object-fit:contain` — fixed height with dark navy background so all orientations (portrait/landscape posters) display uniformly. Responsive: 2-col at ≤820px, 1-col at ≤500px. Images: `Posters/Project%20Gyaan%20Poster%20.jpeg`, `Posters/NTTS%20Poster%20.jpeg`, `Posters/Fight%20for%20Hunger%20Poster%20.jpeg`, `Posters/Project%20Uplift%20Poster%20.jpeg`, `Posters/CSR%20Poster%20.jpeg`
 6. **Certificate of Appreciation** — 2-column section (text + certificate image). Image: `images/Certificate%20of%20Appreciation%20.jpeg`
 7. **Photos from the Field** — 13-slide featured slideshow on dark `#0f172a` background, with `data-caption` captions per slide
 8. **How Your Donation Helps** — rupee impact rows + `images/Project%20Gyaan/11.jpg` photo
@@ -137,7 +139,7 @@ Six program sections — each shows a **static poster image** (no slideshow) + a
 |---------|-------------|-------------|-------------|
 | Project Gyaan (Education) | `var(--secondary)` green | `Posters/Project Gyaan Poster .jpeg` | `?filter=gyaan` |
 | Nikshi Tech Talk Series (NTTS) | `var(--dark)` navy | `Posters/NTTS Poster .jpeg` | `?filter=techtalk` |
-| Hunger Relief | `var(--primary)` orange | `Hunger Food Distribution/1.jpg` | `?filter=hunger` |
+| Hunger Relief | `var(--primary)` orange | `Posters/Fight for Hunger Poster .jpeg` | `?filter=hunger` |
 | Transgender Empowerment | `var(--primary)` orange | `Posters/Project Uplift Poster .jpeg` | `?filter=trans` |
 | Community Outreach — Old Age Homes | `var(--primary)` orange | `Old Age Homes/1.jpg` | `?filter=oldage` |
 | CSR Initiative | `var(--dark)` navy | `Posters/CSR Poster .jpeg` | `?filter=csr` |
@@ -179,7 +181,7 @@ Hover CSS is in gallery.html's `<style>` block:
 
 | Category | `data-filter` | `data-group` | Count | Source |
 |----------|--------------|-------------|-------|--------|
-| Hunger Relief | `hunger` | `active` | 15 | `Hunger Food Distribution/` 1–15.jpg |
+| Hunger Relief | `hunger` | `active` | 16 | `Posters/Fight for Hunger Poster .jpeg` (1st) + `Hunger Food Distribution/` 1–15.jpg |
 | Project Gyaan | `gyaan` | `active` | 18 | `Posters/Project Gyaan Poster .jpeg` (1st) + `Project Gyaan/` 1–11 + poster + `end of the year/` 1–5 |
 | Trans Community | `trans` | `active` | 18 | `Posters/Project Uplift Poster .jpeg` (1st) + `Trans Community/` 1–11 + poster + 15–19.jpeg |
 | Old Age Homes | `oldage` | `active` | 8 | `Old Age Homes/` 1–8.jpg |
@@ -414,3 +416,5 @@ git push origin main
 - [x] **Programs page static posters** — each program shows static poster + "View Photos in Gallery" button
 - [x] **Old Age Homes accent** — uses `var(--primary)` orange (was purple `#7C3AED`)
 - [x] **CSR Initiative** — full program section, gallery filter, trust signal, footer links on all pages
+- [x] **Fight for Hunger poster** — added to Posters/; used in index.html program card, programs.html static image, and gallery (1st in hunger section, 16 total)
+- [x] **Founder photo updated** — images/founder.JPEG replaced with new photo
