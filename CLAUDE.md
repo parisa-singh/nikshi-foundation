@@ -1,7 +1,7 @@
 # CLAUDE.md — Nikshi Foundation for Humanity Website
 
 Full developer reference for continuing work in a new Claude Code session.
-Last updated: 2026-05-26 (session 7 — part 2).
+Last updated: 2026-05-26 (session 7 — part 3).
 
 ---
 
@@ -428,3 +428,7 @@ git push origin main
 - [x] **Founder photo updated** — images/founder.JPEG replaced with new photo
 - [x] **"Fight Against Hunger" rename** — all 6 HTML pages + CLAUDE.md updated; was "Fighting for Hunger"
 - [x] **Mobile responsiveness overhaul** — catch-all attribute-selector grid rules in style.css; program poster images switch to `object-fit:contain` + capped height on mobile; founder photo uses `aspect-ratio` instead of fixed px; Follow Us buttons wrap on small screens; global `img { max-width:100% }` safety rule added
+- [x] **Hero navbar overlap fixed** — `.hero` gets `padding-top:80px` at ≤768px so content clears the fixed 72px navbar
+- [x] **Slideshow horizontal scroll fixed** — removed `min-height:240px` from field photos slideshow inline style (was forcing width expansion on narrow screens); `html { overflow-x:hidden }` also in place
+- [x] **Programs quick nav active state** — `id="qnav-current"` / `id="qnav-past"` added to links; IntersectionObserver script at bottom of programs.html keeps active highlight in sync on scroll and click
+- [x] **Mobile center alignment** — `.section-label`, `.section-title`, `.section-desc`, `.divider`, `.program-block h2` all center-aligned at ≤768px via style.css
