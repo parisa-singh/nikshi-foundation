@@ -1,7 +1,7 @@
 # CLAUDE.md — Nikshi Foundation for Humanity Website
 
 Full developer reference for continuing work in a new Claude Code session.
-Last updated: 2026-05-26 (session 7 — part 4).
+Last updated: 2026-05-30 (session 8 — image updates).
 
 ---
 
@@ -55,10 +55,10 @@ nikshi/
 │   │   └── Fight for Hunger Poster .jpeg
 │   ├── Gerizim Trust/     ← 7 .jpeg files (filenames have spaces + parentheses)
 │   ├── Hunger Food Distribution/  ← 15 images: 1.jpg–15.jpg
-│   ├── NTTS/              ← 4 images: 1.jpg, 2.jpg, 3.jpg, poster 4.jpg
+│   ├── NTTS/              ← 13 images: 1.jpg, 2.jpg, 3.jpg, poster 4.jpg (old) + 1.jpeg–7.jpeg, poster 2.jpeg, poster 3 .jpeg (new)
 │   ├── Old Age Homes/     ← 8 images: 1.jpg–8.jpg
-│   ├── Project Gyaan/     ← 11 images (1.jpg–11.jpg) + poster.jpg + end of the year/ (1–5.jpg)
-│   ├── Trans Community/   ← 11 .jpg (1–11) + poster.jpg + 5 .jpeg (15–19)
+│   ├── Project Gyaan/     ← 1.jpg–6.jpg + 7.jpeg–25.jpeg + poster.jpg + end of the year/ (1–5.jpg)
+│   ├── Trans Community/   ← 11 .jpg (1–11) + poster.jpg + 16 .jpeg (15–30)
 │   └── CSR/               ← 5 images: 1.jpeg–5.jpeg + Approval Letter for form CSR1.pdf
 └── .nojekyll              ← Required for GitHub Pages
 ```
@@ -73,6 +73,8 @@ nikshi/
 | `Old Age Homes/` | `Old%20Age%20Homes/` |
 | `end of the year/` | `end%20of%20the%20year/` |
 | `poster 4.jpg` | `poster%204.jpg` |
+| `NTTS/poster 2.jpeg` | `NTTS/poster%202.jpeg` |
+| `NTTS/poster 3 .jpeg` | `NTTS/poster%203%20.jpeg` |
 | `Posters/CSR Poster .jpeg` | `Posters/CSR%20Poster%20.jpeg` |
 | `Posters/Project Uplift Poster .jpeg` | `Posters/Project%20Uplift%20Poster%20.jpeg` |
 | `Posters/Project Gyaan Poster .jpeg` | `Posters/Project%20Gyaan%20Poster%20.jpeg` |
@@ -182,10 +184,10 @@ Hover CSS is in gallery.html's `<style>` block:
 | Category | `data-filter` | `data-group` | Count | Source |
 |----------|--------------|-------------|-------|--------|
 | Hunger Relief | `hunger` | `active` | 16 | `Posters/Fight for Hunger Poster .jpeg` (1st) + `Hunger Food Distribution/` 1–15.jpg |
-| Project Gyaan | `gyaan` | `active` | 18 | `Posters/Project Gyaan Poster .jpeg` (1st) + `Project Gyaan/` 1–11 + poster + `end of the year/` 1–5 |
-| Trans Community | `trans` | `active` | 18 | `Posters/Project Uplift Poster .jpeg` (1st) + `Trans Community/` 1–11 + poster + 15–19.jpeg |
+| Project Gyaan | `gyaan` | `active` | 32 | `Posters/Project Gyaan Poster .jpeg` (1st) + `Project Gyaan/` 1–6.jpg + 7–25.jpeg + poster.jpg + `end of the year/` 1–5 |
+| Trans Community | `trans` | `active` | 29 | `Posters/Project Uplift Poster .jpeg` (1st) + `Trans Community/` 1–11.jpg + poster.jpg + 15–30.jpeg |
 | Old Age Homes | `oldage` | `active` | 8 | `Old Age Homes/` 1–8.jpg |
-| Tech Talk Series | `techtalk` | `active` | 5 | `Posters/NTTS Poster .jpeg` (1st) + `NTTS/` 1.jpg, 2.jpg, 3.jpg, `poster 4.jpg` |
+| Tech Talk Series | `techtalk` | `active` | 14 | `Posters/NTTS Poster .jpeg` (1st) + `NTTS/` 1.jpg, 2.jpg, 3.jpg, `poster 4.jpg` + 1–7.jpeg, `poster 2.jpeg`, `poster 3 .jpeg` |
 | CSR Initiative | `csr` | `active` | 6 | `Posters/CSR Poster .jpeg` (1st) + `CSR/` 1–5.jpeg |
 | Gerizim Trust | `gerizim` | `past` | 7 | `Gerizim Trust/` (spaces + parentheses — URL-encoded) |
 
