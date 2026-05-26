@@ -1,7 +1,7 @@
 # CLAUDE.md — Nikshi Foundation for Humanity Website
 
 Full developer reference for continuing work in a new Claude Code session.
-Last updated: 2026-05-26 (session 7 — part 3).
+Last updated: 2026-05-26 (session 7 — part 4).
 
 ---
 
@@ -432,3 +432,7 @@ git push origin main
 - [x] **Slideshow horizontal scroll fixed** — removed `min-height:240px` from field photos slideshow inline style (was forcing width expansion on narrow screens); `html { overflow-x:hidden }` also in place
 - [x] **Programs quick nav active state** — `id="qnav-current"` / `id="qnav-past"` added to links; IntersectionObserver script at bottom of programs.html keeps active highlight in sync on scroll and click
 - [x] **Mobile center alignment** — `.section-label`, `.section-title`, `.section-desc`, `.divider`, `.program-block h2` all center-aligned at ≤768px via style.css
+- [x] **UPI QR code** — `images/upi-qr.png` added (was `upipe-qr.png` in root — moved and renamed); donate.html placeholder replaced with live `<img>` at `max-width:220px`
+- [x] **Comprehensive mobile text responsiveness** — `overflow-wrap:break-word` on body globally; hero h1 clamp min lowered to 1.5rem at ≤480px; `white-space:nowrap` override on hero span at ≤480px; `.bank-table td` gets `word-break:break-word`; `.drives-grid` forced to 1-col at ≤768px (was `minmax(320px)` — wider than phone); `.card` padding reduced to 1.25rem at ≤480px; `.page-hero p` scaled to 1rem at ≤768px; `.section-desc` 0.95rem at ≤480px; `.footer-bottom` 0.78rem at ≤480px
+- [x] **Mobile slideshow → gallery link** — on ≤640px, the "Our Work in Photos" slideshow is hidden (`.desktop-slideshow`) and replaced with a single "Browse the Gallery →" button (`.mobile-gallery-link`); "View Full Gallery" button also hidden on mobile; desktop unchanged. CSS utility classes `.desktop-slideshow` / `.mobile-gallery-link` added to `style.css`
+- [x] **About page grids stack to 1-col on mobile** — Mission/Vision/Values (`minmax(260px,1fr)`) and Social Activist/Tech Leader/Model pillar cards (`minmax(280px,1fr)`) forced to `1fr` at ≤768px; narrowed the ≤480px counter rule to only target `minmax(180px)` and `minmax(160px)` to avoid conflicts
