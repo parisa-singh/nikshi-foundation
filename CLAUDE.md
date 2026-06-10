@@ -55,10 +55,10 @@ nikshi/
 │   │   ├── Project Gyaan Poster .jpeg
 │   │   ├── NTTS Poster .jpeg
 │   │   └── Fight for Hunger Poster .jpeg
-│   ├── Gerizim Trust/     ← 7 .jpeg files (filenames have spaces + parentheses)
+│   ├── Gerizim Trust/     ← 14 .jpeg files (7 descriptive names with spaces+parentheses + new 1–7.jpeg)
 │   ├── Hunger Food Distribution/  ← 15 images: 1.jpg–15.jpg
 │   ├── NTTS/              ← 12 images: 1.jpg, 2.jpg, 3.jpg, poster 4.jpg (old) + 1.jpeg–6.jpeg, poster 2.jpeg, poster 3 .jpeg (new) — 7.jpeg removed
-│   ├── Old Age Homes/     ← 8 images: 1.jpg–8.jpg
+│   ├── Old Age Homes/     ← 9 images: 1.jpg–8.jpg + new 1.jpeg
 │   ├── Project Gyaan/     ← 1.jpg–6.jpg + 7,8,10,11,13–25.jpeg (9, 12, poster.jpg removed) + end of the year/ (1–5.jpg)
 │   ├── Trans Community/   ← 11 .jpg (1–11) + 16 .jpeg (15–30) — poster.jpg removed
 │   └── CSR/               ← 5 images: 1.jpeg–5.jpeg + Approval Letter for form CSR1.pdf
@@ -188,10 +188,10 @@ Hover CSS is in gallery.html's `<style>` block:
 | Hunger Relief | `hunger` | `active` | 16 | `Posters/Fight for Hunger Poster .jpeg` (1st) + `Hunger Food Distribution/` 1–15.jpg |
 | Project Gyaan | `gyaan` | `active` | 29 | `Posters/Project Gyaan Poster .jpeg` (1st) + `Project Gyaan/` 1–6.jpg + 7,8,10,11,13–25.jpeg + `end of the year/` 1–5 (9, 12, poster.jpg removed) |
 | Trans Community | `trans` | `active` | 28 | `Posters/Project Uplift Poster .jpeg` (1st) + `Trans Community/` 1–11.jpg + 15–30.jpeg (poster.jpg removed) |
-| Old Age Homes | `oldage` | `active` | 8 | `Old Age Homes/` 1–8.jpg |
+| Old Age Homes | `oldage` | `active` | 9 | `Old Age Homes/` 1–8.jpg + new 1.jpeg |
 | Tech Talk Series | `techtalk` | `active` | 13 | `Posters/NTTS Poster .jpeg` (1st) + `NTTS/` 1.jpg, 2.jpg, 3.jpg, `poster 4.jpg` + 1–6.jpeg, `poster 2.jpeg`, `poster 3 .jpeg` (7.jpeg removed) |
 | CSR Initiative | `csr` | `active` | 6 | `Posters/CSR Poster .jpeg` (1st) + `CSR/` 1–5.jpeg |
-| Gerizim Trust | `gerizim` | `past` | 7 | `Gerizim Trust/` (spaces + parentheses — URL-encoded) |
+| Gerizim Trust | `gerizim` | `past` | 14 | `Gerizim Trust/` 7 descriptive (spaces+parentheses — URL-encoded) + new 1–7.jpeg |
 
 **Filter JS uses:** `document.querySelectorAll('#gallery-grid [data-filter]')` — targets both image items AND category section headers.
 
