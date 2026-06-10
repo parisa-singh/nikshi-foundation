@@ -1,7 +1,7 @@
 # CLAUDE.md — Nikshi Foundation for Humanity Website
 
 Full developer reference for continuing work in a new Claude Code session.
-Last updated: 2026-06-07 (session 9 — GA4 analytics, founder.png, gallery sync).
+Last updated: 2026-06-10 (session 10 — custom-domain HTTPS fixed; +2 programs: Down Syndrome & Women Auto-Rickshaw added to gallery, programs, home cards, footers).
 
 ---
 
@@ -36,7 +36,7 @@ nikshi/
 ├── CLAUDE.md              ← this file
 ├── index.html             ← Home
 ├── about.html             ← About Us
-├── programs.html          ← Programs (6 programs)
+├── programs.html          ← Programs (8 programs)
 ├── gallery.html           ← Photo gallery with filters
 ├── donate.html            ← Donation page
 ├── contact.html           ← Contact form + map
@@ -61,7 +61,9 @@ nikshi/
 │   ├── Old Age Homes/     ← 9 images: 1.jpg–8.jpg + new 1.jpeg
 │   ├── Project Gyaan/     ← 1.jpg–6.jpg + 7,8,10,11,13–25.jpeg (9, 12, poster.jpg removed) + end of the year/ (1–5.jpg)
 │   ├── Trans Community/   ← 11 .jpg (1–11) + 16 .jpeg (15–30) — poster.jpg removed
-│   └── CSR/               ← 5 images: 1.jpeg–5.jpeg + Approval Letter for form CSR1.pdf
+│   ├── CSR/               ← 5 images: 1.jpeg–5.jpeg + Approval Letter for form CSR1.pdf
+│   ├── Down Syndrome Program/      ← 6 images: 1.jpeg–6.jpeg
+│   └── Women Auto-Rickshaw Program/ ← 9 images: 1.jpeg–9.jpeg
 └── .nojekyll              ← Required for GitHub Pages
 ```
 
@@ -73,6 +75,8 @@ nikshi/
 | `Project Gyaan/` | `Project%20Gyaan/` |
 | `Trans Community/` | `Trans%20Community/` |
 | `Old Age Homes/` | `Old%20Age%20Homes/` |
+| `Down Syndrome Program/` | `Down%20Syndrome%20Program/` |
+| `Women Auto-Rickshaw Program/` | `Women%20Auto-Rickshaw%20Program/` |
 | `end of the year/` | `end%20of%20the%20year/` |
 | `poster 4.jpg` | `poster%204.jpg` |
 | `NTTS/poster 2.jpeg` | `NTTS/poster%202.jpeg` |
@@ -137,7 +141,7 @@ Sections:
 ### programs.html — Programs
 **Status: Complete**
 
-Six program sections — each shows a **static poster image** (no slideshow) + a "View Photos in Gallery →" button linking to `gallery.html?filter=X`. Nav shows full name.
+Eight program sections — each shows a **static poster/lead image** (no slideshow) + a "View Photos in Gallery →" button linking to `gallery.html?filter=X`. Nav shows full name. (Down Syndrome & Women Auto-Rickshaw have no designed poster — they use the program folder's `1.jpeg` as the lead image.)
 
 | Program | Accent Color | Static Image | Gallery Link |
 |---------|-------------|-------------|-------------|
@@ -147,6 +151,8 @@ Six program sections — each shows a **static poster image** (no slideshow) + a
 | Transgender Empowerment | `var(--primary)` orange | `Posters/Project Uplift Poster .jpeg` | `?filter=trans` |
 | Community Outreach — Old Age Homes | `var(--primary)` orange | `Old Age Homes/1.jpg` | `?filter=oldage` |
 | CSR Initiative | `var(--dark)` navy | `Posters/CSR Poster .jpeg` | `?filter=csr` |
+| Down Syndrome Program | `var(--secondary)` green | `Down Syndrome Program/1.jpeg` | `?filter=downsyndrome` |
+| Women Auto-Rickshaw Program | `var(--primary)` orange | `Women Auto-Rickshaw Program/1.jpeg` | `?filter=womenauto` |
 
 **Static image structure per program:**
 ```html
@@ -162,7 +168,7 @@ Six program sections — each shows a **static poster image** (no slideshow) + a
 - Approved: **26 March 2024**, PAN: **AAHCN6111H**
 - Buttons: "Partner With Us" → contact.html, "Support This Initiative" → donate.html
 
-Intro text says "Six ongoing initiatives" — update if programs change.
+Intro text says "Eight ongoing initiatives" — update if programs change.
 Also has a "Past Drives" section at the bottom (COVID ration drive, Gerizim Trust).
 
 ### gallery.html — Gallery
@@ -191,6 +197,8 @@ Hover CSS is in gallery.html's `<style>` block:
 | Old Age Homes | `oldage` | `active` | 9 | `Old Age Homes/` 1–8.jpg + new 1.jpeg |
 | Tech Talk Series | `techtalk` | `active` | 13 | `Posters/NTTS Poster .jpeg` (1st) + `NTTS/` 1.jpg, 2.jpg, 3.jpg, `poster 4.jpg` + 1–6.jpeg, `poster 2.jpeg`, `poster 3 .jpeg` (7.jpeg removed) |
 | CSR Initiative | `csr` | `active` | 6 | `Posters/CSR Poster .jpeg` (1st) + `CSR/` 1–5.jpeg |
+| Down Syndrome Program | `downsyndrome` | `active` | 6 | `Down Syndrome Program/` 1–6.jpeg |
+| Women Auto-Rickshaw | `womenauto` | `active` | 9 | `Women Auto-Rickshaw Program/` 1–9.jpeg |
 | Gerizim Trust | `gerizim` | `past` | 14 | `Gerizim Trust/` 7 descriptive (spaces+parentheses — URL-encoded) + new 1–7.jpeg |
 
 **Filter JS uses:** `document.querySelectorAll('#gallery-grid [data-filter]')` — targets both image items AND category section headers.
