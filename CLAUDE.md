@@ -1,7 +1,7 @@
 # CLAUDE.md — Nikshi Foundation for Humanity Website
 
 Full developer reference for continuing work in a new Claude Code session.
-Last updated: 2026-05-30 (session 8 — image updates).
+Last updated: 2026-06-07 (session 9 — GA4 analytics, founder.png, gallery sync).
 
 ---
 
@@ -11,7 +11,7 @@ A 6-page static website for **Nikshi Foundation for Humanity**, a Bangalore-base
 
 - **GitHub repo:** `https://github.com/parisa-singh/nikshi-foundation`
 - **Live site:** `https://parisa-singh.github.io/nikshi-foundation/`
-- **Future domain:** `nikshifoundation.org` (DNS not yet pointed — add CNAME file + registrar DNS when ready)
+- **Custom domain:** `nikshifoundation.org` — **LIVE over HTTPS** (DNS pointed, CNAME committed, Let's Encrypt cert provisioned, Enforce HTTPS ON)
 - **Local path:** `C:\Users\paris\OneDrive\Documents\claude projects\nikshi\`
 
 ---
@@ -24,6 +24,7 @@ A 6-page static website for **Nikshi Foundation for Humanity**, a Bangalore-base
 | Tailwind CSS | CDN: `https://cdn.tailwindcss.com` |
 | Google Fonts | Poppins (headings) + Inter (body) — loaded via `<link>` in each page |
 | Formspree | Contact form — **ACTIVE**, ID `xwvzbjyj` |
+| Google Analytics | GA4 — **ACTIVE**, Measurement ID `G-PG4LBKPBZG`, gtag.js snippet in `<head>` of all 6 pages |
 | Lightbox | Not yet added — gallery images open in new tab on click |
 
 ---
@@ -45,7 +46,8 @@ nikshi/
 │   └── main.js            ← Nav toggle, scroll animations, counter animation, slideshows
 ├── images/
 │   ├── logo.jpeg                    ← Site logo (nav + favicon)
-│   ├── founder.JPEG                 ← Shilpa Singh photo (about.html + index.html quote avatar)
+│   ├── founder.png                  ← Shilpa Singh photo (about.html founder section)
+│   ├── circle founder.png           ← Circular crop (index.html quote avatar, 80px)
 │   ├── Certificate of Appreciation .jpeg  ← Shown in recognition section on index.html
 │   ├── Posters/
 │   │   ├── CSR Poster .jpeg
@@ -55,10 +57,10 @@ nikshi/
 │   │   └── Fight for Hunger Poster .jpeg
 │   ├── Gerizim Trust/     ← 7 .jpeg files (filenames have spaces + parentheses)
 │   ├── Hunger Food Distribution/  ← 15 images: 1.jpg–15.jpg
-│   ├── NTTS/              ← 13 images: 1.jpg, 2.jpg, 3.jpg, poster 4.jpg (old) + 1.jpeg–7.jpeg, poster 2.jpeg, poster 3 .jpeg (new)
+│   ├── NTTS/              ← 12 images: 1.jpg, 2.jpg, 3.jpg, poster 4.jpg (old) + 1.jpeg–6.jpeg, poster 2.jpeg, poster 3 .jpeg (new) — 7.jpeg removed
 │   ├── Old Age Homes/     ← 8 images: 1.jpg–8.jpg
-│   ├── Project Gyaan/     ← 1.jpg–6.jpg + 7.jpeg–25.jpeg + poster.jpg + end of the year/ (1–5.jpg)
-│   ├── Trans Community/   ← 11 .jpg (1–11) + poster.jpg + 16 .jpeg (15–30)
+│   ├── Project Gyaan/     ← 1.jpg–6.jpg + 7,8,10,11,13–25.jpeg (9, 12, poster.jpg removed) + end of the year/ (1–5.jpg)
+│   ├── Trans Community/   ← 11 .jpg (1–11) + 16 .jpeg (15–30) — poster.jpg removed
 │   └── CSR/               ← 5 images: 1.jpeg–5.jpeg + Approval Letter for form CSR1.pdf
 └── .nojekyll              ← Required for GitHub Pages
 ```
@@ -111,7 +113,7 @@ nikshi/
 Sections (top to bottom):
 1. **Sticky nav** — hamburger on mobile, full name "Nikshi Foundation for Humanity" at 0.9rem
 2. **Hero** — centered text, location pin icon + "Bangalore, India" tagline. "Equality." white, "Empowerment." orange, "Fight Against Hunger." green (`#5DB04A`) with `white-space:nowrap`. Font size `clamp(2rem,5.5vw,4rem)`.
-3. **Founder Quote** — Shilpa Singh blockquote with avatar photo (`images/founder.JPEG`) — 2nd section, immediately after hero
+3. **Founder Quote** — Shilpa Singh blockquote with circular avatar photo (`images/circle founder.png`, 80px) — 2nd section, immediately after hero
 4. **Impact counter strip** — animated counters (meals, families, children, trans lives), JS in `main.js`
 5. **Program cards** — 5 cards in a **flexbox 3-per-row centered layout** (`id="programs-cards"`). Each card: `flex:0 0 calc(33.333% - 1.34rem)`. Image container: `height:260px; background:var(--dark); object-fit:contain` — fixed height with dark navy background so all orientations (portrait/landscape posters) display uniformly. Responsive: 2-col at ≤820px, 1-col at ≤500px. Images: `Posters/Project%20Gyaan%20Poster%20.jpeg`, `Posters/NTTS%20Poster%20.jpeg`, `Posters/Fight%20for%20Hunger%20Poster%20.jpeg`, `Posters/Project%20Uplift%20Poster%20.jpeg`, `Posters/CSR%20Poster%20.jpeg`
 6. **Certificate of Appreciation** — 2-column section (text + certificate image). Image: `images/Certificate%20of%20Appreciation%20.jpeg`
@@ -127,7 +129,7 @@ Sections (top to bottom):
 Sections:
 1. Nav — full name in logo, Facebook + Instagram icon-only links
 2. **Mission / Vision / Values** cards — Mission text updated to include all beneficiary groups
-3. Founder section — `images/founder.JPEG`; structured layout with intro, 6 award badges, LinkedIn/Facebook personal links, 3 pillar cards (Social Activist / Tech Leader & Counselling Psychologist / Model, Biker & Marathoner)
+3. Founder section — `images/founder.png`; structured layout with intro, 6 award badges, LinkedIn/Facebook personal links, 3 pillar cards (Social Activist / Tech Leader & Counselling Psychologist / Model, Biker & Marathoner)
 4. Timeline of milestones
 5. Trust signals strip (dark background) — 5 items including **Govt. CSR Registered (No. CSR00069983 · MCA, India)**
 6. Footer — 4-column canonical footer
@@ -184,10 +186,10 @@ Hover CSS is in gallery.html's `<style>` block:
 | Category | `data-filter` | `data-group` | Count | Source |
 |----------|--------------|-------------|-------|--------|
 | Hunger Relief | `hunger` | `active` | 16 | `Posters/Fight for Hunger Poster .jpeg` (1st) + `Hunger Food Distribution/` 1–15.jpg |
-| Project Gyaan | `gyaan` | `active` | 32 | `Posters/Project Gyaan Poster .jpeg` (1st) + `Project Gyaan/` 1–6.jpg + 7–25.jpeg + poster.jpg + `end of the year/` 1–5 |
-| Trans Community | `trans` | `active` | 29 | `Posters/Project Uplift Poster .jpeg` (1st) + `Trans Community/` 1–11.jpg + poster.jpg + 15–30.jpeg |
+| Project Gyaan | `gyaan` | `active` | 29 | `Posters/Project Gyaan Poster .jpeg` (1st) + `Project Gyaan/` 1–6.jpg + 7,8,10,11,13–25.jpeg + `end of the year/` 1–5 (9, 12, poster.jpg removed) |
+| Trans Community | `trans` | `active` | 28 | `Posters/Project Uplift Poster .jpeg` (1st) + `Trans Community/` 1–11.jpg + 15–30.jpeg (poster.jpg removed) |
 | Old Age Homes | `oldage` | `active` | 8 | `Old Age Homes/` 1–8.jpg |
-| Tech Talk Series | `techtalk` | `active` | 14 | `Posters/NTTS Poster .jpeg` (1st) + `NTTS/` 1.jpg, 2.jpg, 3.jpg, `poster 4.jpg` + 1–7.jpeg, `poster 2.jpeg`, `poster 3 .jpeg` |
+| Tech Talk Series | `techtalk` | `active` | 13 | `Posters/NTTS Poster .jpeg` (1st) + `NTTS/` 1.jpg, 2.jpg, 3.jpg, `poster 4.jpg` + 1–6.jpeg, `poster 2.jpeg`, `poster 3 .jpeg` (7.jpeg removed) |
 | CSR Initiative | `csr` | `active` | 6 | `Posters/CSR Poster .jpeg` (1st) + `CSR/` 1–5.jpeg |
 | Gerizim Trust | `gerizim` | `past` | 7 | `Gerizim Trust/` (spaces + parentheses — URL-encoded) |
 
@@ -337,7 +339,7 @@ Implemented in `css/style.css` and `js/main.js` (`/* ---------- Slideshows -----
 | Title | Founder & Director |
 | Phone | +91 9742562006 |
 | Email | Nikshifoundation@gmail.com |
-| Founder photo | `images/founder.JPEG` ✅ uploaded |
+| Founder photo | `images/founder.png` (about.html) + `images/circle founder.png` (index.html avatar) ✅ uploaded |
 | NGO Name | NIKSHI FOUNDATION FOR HUMANITY |
 | Bank Account | 141705003411 |
 | IFSC | ICIC0001417 |
@@ -361,15 +363,20 @@ Implemented in `css/style.css` and `js/main.js` (`/* ---------- Slideshows -----
 - Endpoint: `https://formspree.io/f/xwvzbjyj`
 - To change the receiving email: log in at formspree.io → form settings (no code change needed)
 
-### UPI QR Code — NOT YET ADDED
-- Generate QR for `nikshifoundation@icici`
-- Save as `images/upi-qr.png`
-- The QR placeholder in `donate.html` will automatically show it once the file exists
+### Google Analytics (GA4) — ACTIVE
+- Measurement ID: `G-PG4LBKPBZG`
+- Standard gtag.js snippet sits in the `<head>` of all 6 HTML pages (first thing after `<head>`, before other scripts)
+- To change the property: replace `G-PG4LBKPBZG` in all 6 pages (or log in at analytics.google.com to read reports — no code change)
 
-### Custom Domain — NOT YET SET UP
-1. Create file `CNAME` in repo root containing: `nikshifoundation.org`
-2. Add DNS A records at registrar: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-3. GitHub repo Settings → Pages → Custom domain → `nikshifoundation.org` → Save → Enforce HTTPS
+### UPI QR Code — ACTIVE
+- `images/upi-qr.png` is uploaded and shown live in `donate.html` (`max-width:220px`, responsive)
+- QR encodes UPI ID `nikshifoundation@icici`
+
+### Custom Domain — LIVE (HTTPS active as of 2026-06-10)
+- `CNAME` file in repo root contains `nikshifoundation.org`
+- DNS A records at registrar point to `185.199.108–111.153`; `www` CNAMEs to `parisa-singh.github.io`
+- GitHub Pages: custom domain set, Let's Encrypt cert provisioned, **Enforce HTTPS = ON**
+- **Note:** cert provisioning was stuck for days (served the shared `*.github.io` cert → browser "not secure" warning). Fix was to **remove + re-add the custom domain** via `gh api -X PUT .../pages -f cname=''` then re-set it, which re-triggered Let's Encrypt issuance (cert approved in <1 min). If the warning ever returns, repeat that remove/re-add toggle.
 
 ---
 
@@ -397,8 +404,10 @@ git push origin main
 ## Known Issues / Future TODOs
 
 - [ ] **Lightbox on gallery** — images currently open in new tab; a proper lightbox (GLightbox, no jQuery) would be better UX
+- [x] **Google Analytics (GA4)** — gtag.js snippet with Measurement ID `G-PG4LBKPBZG` added to `<head>` of all 6 pages (commit a53a525)
+- [x] **Gallery synced after photo removals** — removed deleted images from gallery.html and updated counts: gyaan 32→29, trans 29→28, techtalk 14→13 (deleted `NTTS/7.jpeg`, `Project Gyaan/9.jpeg` & `12.jpeg` & `poster.jpg`, `Trans Community/poster.jpg`) (commit 74e5123)
 - [x] **UPI QR code** — `images/upi-qr.png` added; donate.html shows live QR image at `max-width:220px`, fully responsive
-- [ ] **Custom domain CNAME** — site live at GitHub Pages URL only; set up when ready for nikshifoundation.org
+- [x] **Custom domain HTTPS** — `nikshifoundation.org` live over HTTPS (cert provisioned, Enforce HTTPS ON, 2026-06-10); fixed stuck cert provisioning via remove/re-add of the custom domain
 - [ ] **80G / tax exemption** — add to `donate.html` once certificate is obtained
 - [ ] **NGO registration number** — add to `about.html` trust signals once full cert is available
 - [ ] **Hero background image** — `images/hero.jpg` optional; currently using CSS gradient fallback
@@ -410,7 +419,7 @@ git push origin main
 - [x] **Contact Follow Us** — 3 buttons (Facebook, Instagram, Email) on one line; WhatsApp removed (already in info card above)
 - [x] **Brand color consistency** — `--dark: #0F1E50` matches exact logo navy; hero gradient updated; all off-brand colors (#162348, #1B3068, #7C3AED, #5B6BF5, #8B5CF6, #0369A1) removed
 - [x] **Logo img background** — all 6 pages navbar logo has `background:var(--dark)` so rounded corners match logo navy
-- [x] **Founder photo** — `images/founder.JPEG` uploaded, used in about.html and index.html
+- [x] **Founder photo** — `images/founder.png` (about.html) + `images/circle founder.png` (index.html avatar) uploaded; old `founder.JPEG` removed
 - [x] **Formspree contact form** — live with ID `xwvzbjyj`
 - [x] **Full name in nav** — all 6 pages show "Nikshi Foundation for Humanity"
 - [x] **Certificate of Appreciation** — displayed on index.html
@@ -427,7 +436,7 @@ git push origin main
 - [x] **Old Age Homes accent** — uses `var(--primary)` orange (was purple `#7C3AED`)
 - [x] **CSR Initiative** — full program section, gallery filter, trust signal, footer links on all pages
 - [x] **Fight for Hunger poster** — added to Posters/; used in index.html program card, programs.html static image, and gallery (1st in hunger section, 16 total)
-- [x] **Founder photo updated** — images/founder.JPEG replaced with new photo
+- [x] **Founder photo updated** — `founder.JPEG` replaced with `founder.png` + circular `circle founder.png` for the index.html quote avatar
 - [x] **"Fight Against Hunger" rename** — all 6 HTML pages + CLAUDE.md updated; was "Fighting for Hunger"
 - [x] **Mobile responsiveness overhaul** — catch-all attribute-selector grid rules in style.css; program poster images switch to `object-fit:contain` + capped height on mobile; founder photo uses `aspect-ratio` instead of fixed px; Follow Us buttons wrap on small screens; global `img { max-width:100% }` safety rule added
 - [x] **Hero navbar overlap fixed** — `.hero` gets `padding-top:80px` at ≤768px so content clears the fixed 72px navbar
