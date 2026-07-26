@@ -1,7 +1,7 @@
 # CLAUDE.md — Nikshi Foundation for Humanity Website
 
 Full developer reference for continuing work in a new Claude Code session.
-Last updated: 2026-07-25 (session 11 — added `images/certificates/` (10 founder/org award certificates): new "🏆 Awards & Recognition" gallery category + filter, new "Honoured for Our Impact" recognition section on programs.html, and a registered-NGO CIN badge in the home hero above "Bangalore, India").
+Last updated: 2026-07-25 (session 11 — added `images/certificates/` (11 certificates incl. `Certificate of Appreciation .jpeg` as lead): new "🏆 Awards & Recognition" gallery category + filter; "Honoured for Our Impact" section on programs.html; home Recognition section reworked (single Certificate of Appreciation image + award-name pills + "+3 more"/"View More Certificates" gallery links); registered-NGO line "Registered NGO since 24th May 2021" as plain text above the hero location tagline; **CIN U85300KA2021NPL147766** added to the footer on all 6 pages + About page hero + About trust card; all recognition copy credits Nikshi Foundation, NOT the founder).
 
 ---
 
@@ -48,7 +48,7 @@ nikshi/
 │   ├── logo.jpeg                    ← Site logo (nav + favicon)
 │   ├── founder.png                  ← Shilpa Singh photo (about.html founder section)
 │   ├── circle founder.png           ← Circular crop (index.html quote avatar, 80px)
-│   ├── Certificate of Appreciation .jpeg  ← Shown in recognition section on index.html
+│   ├── (Certificate of Appreciation .jpeg MOVED into certificates/ in session 11 — no longer in images root)
 │   ├── Posters/
 │   │   ├── CSR Poster .jpeg
 │   │   ├── Project Uplift Poster .jpeg
@@ -121,11 +121,11 @@ nikshi/
 
 Sections (top to bottom):
 1. **Sticky nav** — hamburger on mobile, full name "Nikshi Foundation for Humanity" at 0.9rem
-2. **Hero** — centered text. A **registered-NGO pill** (green verified-check icon) sits directly above the location tagline: "Registered NGO since 24th May 2021". Below it: location pin icon + "Bangalore, India" tagline. (Full CIN U85300KA2021NPL147766 lives on about.html's "Registered NGO" trust-signal card, not the hero.) "Equality." white, "Empowerment." orange, "Fight Against Hunger." green (`#5DB04A`) with `white-space:nowrap`. Font size `clamp(2rem,5.5vw,4rem)`.
+2. **Hero** — centered text. Plain text line "Registered NGO since 24th May 2021" (no pill/bubble) sits directly **above** the location tagline; below it: location pin icon + "Bangalore, India". (Full CIN U85300KA2021NPL147766 is NOT in the hero — it lives in the footer of all pages + about.html hero + about.html "Registered NGO" trust card.) "Equality." white, "Empowerment." orange, "Fight Against Hunger." green (`#5DB04A`) with `white-space:nowrap`. Font size `clamp(2rem,5.5vw,4rem)`.
 3. **Founder Quote** — Shilpa Singh blockquote with circular avatar photo (`images/circle founder.png`, 80px) — 2nd section, immediately after hero
 4. **Impact counter strip** — animated counters (meals, families, children, trans lives), JS in `main.js`
 5. **Program cards** — 5 cards in a **flexbox 3-per-row centered layout** (`id="programs-cards"`). Each card: `flex:0 0 calc(33.333% - 1.34rem)`. Image container: `height:260px; background:var(--dark); object-fit:contain` — fixed height with dark navy background so all orientations (portrait/landscape posters) display uniformly. Responsive: 2-col at ≤820px, 1-col at ≤500px. Images: `Posters/Project%20Gyaan%20Poster%20.jpeg`, `Posters/NTTS%20Poster%20.jpeg`, `Posters/Fight%20for%20Hunger%20Poster%20.jpeg`, `Posters/Project%20Uplift%20Poster%20.jpeg`, `Posters/CSR%20Poster%20.jpeg`
-6. **Certificate of Appreciation** — 2-column section (text + certificate image). Image: `images/Certificate%20of%20Appreciation%20.jpeg`
+6. **Recognition — Awards & Honours** (`aria-label="Recognition"`) — 2-column section, `align-items:start` (columns top-aligned). Left: "Recognition / Awards & Honours" heading + 2 paragraphs (credit **Nikshi Foundation**, not founder) + a row of **8 award-name pills** (orange-tinted, static) followed by a navy **"+3 more →"** pill linking `gallery.html?filter=awards` (8 shown of 11). Right: single **Certificate of Appreciation** image at natural aspect ratio (`width:100%`, NO object-fit — object-fit inside a fixed-height box caused a right-align bug, avoid it) + a centered **"View More Certificates in the Gallery →"** link below it. Image: `images/certificates/Certificate%20of%20Appreciation%20.jpeg`. (An earlier certificate slideshow and a certificate grid were both tried and reverted.)
 7. **Photos from the Field** — 13-slide featured slideshow on dark `#0f172a` background, with `data-caption` captions per slide
 8. **How Your Donation Helps** — rupee impact rows + `images/Project%20Gyaan/11.jpg` photo
 9. **CTA banner** — orange background, volunteer/donate CTAs
