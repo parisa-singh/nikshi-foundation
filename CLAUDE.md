@@ -64,7 +64,7 @@ nikshi/
 │   ├── CSR/               ← 5 images: 1.jpeg–5.jpeg + Approval Letter for form CSR1.pdf
 │   ├── Down Syndrome Program/      ← 6 images: 1.jpeg–6.jpeg
 │   ├── Women Auto-Rickshaw Program/ ← 9 images: 1.jpeg–9.jpeg
-│   └── certificates/     ← 10 founder/org award certificates (.jpeg; 3 have a trailing space before .jpeg)
+│   └── certificates/     ← 11 certificates (.jpeg; 4 have a trailing space before .jpeg). `Certificate of Appreciation .jpeg` is the lead cert (shown FIRST everywhere)
 └── .nojekyll              ← Required for GitHub Pages
 ```
 
@@ -203,7 +203,7 @@ Hover CSS is in gallery.html's `<style>` block:
 | Down Syndrome Program | `downsyndrome` | `past` | 6 | `Down Syndrome Program/` 1–6.jpeg |
 | Women Auto-Rickshaw | `womenauto` | `past` | 9 | `Women Auto-Rickshaw Program/` 1–9.jpeg |
 | Gerizim Trust | `gerizim` | `past` | 14 | `Gerizim Trust/` 7 descriptive (spaces+parentheses — URL-encoded) + new 1–7.jpeg |
-| Awards & Recognition | `awards` | `awards` | 10 | `certificates/` all 10 award certificate .jpeg files |
+| Awards & Recognition | `awards` | `awards` | 11 | `certificates/` all 11 certificate .jpeg files — **`Certificate of Appreciation .jpeg` is the lead/most-important cert and must be FIRST wherever certs display (gallery, home grid, programs preview)** |
 
 **Awards & Recognition filter group** is a 3rd labeled row ("Recognition") in the filter bar with `data-group="awards"` — hover turns **navy** `var(--dark)` (CSS: `.filter-btn[data-group="awards"]:hover`). Certificate tiles use class `.gallery-item cert-item`; `.cert-item img { object-fit:contain }` + white card so full documents are readable in the grid (they'd otherwise crop square). Deep-linkable via `gallery.html?filter=awards`. These are founder/organisation honours, not a program — the programs.html "Awards & Recognition" section (`id="recognition"`) previews 6 and links here.
 
