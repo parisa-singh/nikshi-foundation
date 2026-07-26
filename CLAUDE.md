@@ -238,6 +238,7 @@ Key details:
 - Form JS: async fetch to Formspree, shows `#form-success` (green) on `res.ok`, shows `#form-error` (red) on failure — no page reload
 - `#form-success` is `display:none` by default and only shown by JS on confirmed success
 - Info cards: Address, Phone/WhatsApp, UPI/Bank, Founder
+- **Column balance:** the 2-col grid (`1fr 1.4fr`) uses `align-items:stretch`; the left info column is the taller one, so the right form `.card` is `display:flex; flex-direction:column`, the `<form>` is `flex:1`, and the message `.form-group`/`<textarea>` are `flex:1` — the textarea grows to fill the height difference so both columns are equal height with no dangling whitespace beside the form
 - **Follow Us** — 3 buttons only: Facebook, Instagram, Email Us (`flex-wrap:nowrap`, `white-space:nowrap`) — WhatsApp is shown in the info card above and was removed here to avoid duplication
 - Google Maps embed — Marathalli, Bangalore
 - Footer: 4-column canonical footer

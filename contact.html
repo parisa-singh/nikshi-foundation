@@ -69,7 +69,7 @@
 <!-- ===== CONTACT ===== -->
 <section class="section-pad" style="background:var(--bg);">
   <div class="max-w-site">
-    <div style="display:grid; grid-template-columns:1fr 1.4fr; gap:3rem; align-items:start;">
+    <div style="display:grid; grid-template-columns:1fr 1.4fr; gap:3rem; align-items:stretch;">
 
       <!-- Left: Contact info -->
       <div>
@@ -144,7 +144,7 @@
       </div>
 
       <!-- Right: Contact form -->
-      <div class="card fade-in" data-delay="150" style="padding:2.5rem;">
+      <div class="card fade-in" data-delay="150" style="padding:2.5rem; display:flex; flex-direction:column;">
         <h3 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:1.25rem; color:var(--dark); margin-bottom:0.5rem;">Send Us a Message</h3>
         <p style="font-size:0.9rem; color:var(--gray); margin-bottom:2rem; line-height:1.6;">Fill in the form and we'll respond as soon as possible.</p>
 
@@ -153,7 +153,7 @@
           Sign up free at formspree.io → New Form → copy the form ID
           Example: action="https://formspree.io/f/abcdefgh"
         -->
-        <form action="https://formspree.io/f/xwvzbjyj" method="POST" id="contact-form">
+        <form action="https://formspree.io/f/xwvzbjyj" method="POST" id="contact-form" style="flex:1; display:flex; flex-direction:column;">
 
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-bottom:1.25rem;">
             <div class="form-group">
@@ -185,9 +185,9 @@
             </div>
           </div>
 
-          <div class="form-group" style="margin-bottom:1.25rem;">
+          <div class="form-group" style="margin-bottom:1.25rem; flex:1;">
             <label class="form-label" for="message">Message <span style="color:var(--primary);">*</span></label>
-            <textarea id="message" name="message" class="form-textarea" maxlength="1000" placeholder="Tell us how you'd like to get involved or ask us anything..." required></textarea>
+            <textarea id="message" name="message" class="form-textarea" maxlength="1000" placeholder="Tell us how you'd like to get involved or ask us anything..." required style="flex:1;"></textarea>
             <div style="text-align:right; font-size:0.8rem; color:var(--gray); margin-top:0.25rem;" id="char-count">0/1000</div>
           </div>
 
