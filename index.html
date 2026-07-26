@@ -273,11 +273,10 @@
           </div>
           <div class="slide-caption"><div class="slide-caption-text"></div></div>
         </div>
+        <div class="fade-in" data-delay="250" style="text-align:center; margin-top:1.5rem;">
+          <a href="gallery.html?filter=awards" class="btn btn-outline-dark">View All Certificates in the Gallery &rarr;</a>
+        </div>
       </div>
-    </div>
-
-    <div class="fade-in" data-delay="200" style="text-align:center; margin-top:3rem;">
-      <a href="gallery.html?filter=awards" class="btn btn-outline-dark">View All Certificates in the Gallery &rarr;</a>
     </div>
   </div>
 </section>
@@ -503,9 +502,10 @@
 
 <!-- Responsive helpers -->
 <style>
-  /* Recognition — certificate slideshow on home page (documents: show full, white bg) */
+  /* Recognition — certificate slideshow on home page (documents: show full, centered, white bg) */
   #cert-slideshow { background: #fff; }
-  #cert-slideshow .slide img { object-fit: contain; padding: 16px; }
+  #cert-slideshow .slide { display: flex; align-items: center; justify-content: center; background: #fff; padding: 16px; }
+  #cert-slideshow .slide img { width: 100%; height: 100%; object-fit: contain; object-position: center; padding: 0; margin: 0 auto; }
   @media (max-width: 900px) {
     .hidden-mobile { display: none !important; }
     .show-mobile   { display: flex !important; }
