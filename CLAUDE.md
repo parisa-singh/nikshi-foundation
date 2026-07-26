@@ -1,7 +1,7 @@
 # CLAUDE.md — Nikshi Foundation for Humanity Website
 
 Full developer reference for continuing work in a new Claude Code session.
-Last updated: 2026-06-10 (session 10 — custom-domain HTTPS fixed; +2 programs: Down Syndrome & Women Auto-Rickshaw added to gallery, programs, home cards, footers).
+Last updated: 2026-07-25 (session 11 — added `images/certificates/` (10 founder/org award certificates): new "🏆 Awards & Recognition" gallery category + filter, new "Honoured for Our Impact" recognition section on programs.html, and a registered-NGO CIN badge in the home hero above "Bangalore, India").
 
 ---
 
@@ -63,7 +63,8 @@ nikshi/
 │   ├── Trans Community/   ← 11 .jpg (1–11) + 16 .jpeg (15–30) — poster.jpg removed
 │   ├── CSR/               ← 5 images: 1.jpeg–5.jpeg + Approval Letter for form CSR1.pdf
 │   ├── Down Syndrome Program/      ← 6 images: 1.jpeg–6.jpeg
-│   └── Women Auto-Rickshaw Program/ ← 9 images: 1.jpeg–9.jpeg
+│   ├── Women Auto-Rickshaw Program/ ← 9 images: 1.jpeg–9.jpeg
+│   └── certificates/     ← 10 founder/org award certificates (.jpeg; 3 have a trailing space before .jpeg)
 └── .nojekyll              ← Required for GitHub Pages
 ```
 
@@ -77,6 +78,10 @@ nikshi/
 | `Old Age Homes/` | `Old%20Age%20Homes/` |
 | `Down Syndrome Program/` | `Down%20Syndrome%20Program/` |
 | `Women Auto-Rickshaw Program/` | `Women%20Auto-Rickshaw%20Program/` |
+| `certificates/` (folder, lowercase) | `certificates/` |
+| `certificates/Lead India DBA Power Woman .jpeg` (trailing space) | `certificates/Lead%20India%20DBA%20Power%20Woman%20.jpeg` |
+| `certificates/Max Life Insurance Corona Warrior .jpeg` (trailing space) | `certificates/Max%20Life%20Insurance%20Corona%20Warrior%20.jpeg` |
+| `certificates/Women Achievers Award 2022 .jpeg` (trailing space) | `certificates/Women%20Achievers%20Award%202022%20.jpeg` |
 | `end of the year/` | `end%20of%20the%20year/` |
 | `poster 4.jpg` | `poster%204.jpg` |
 | `NTTS/poster 2.jpeg` | `NTTS/poster%202.jpeg` |
@@ -116,7 +121,7 @@ nikshi/
 
 Sections (top to bottom):
 1. **Sticky nav** — hamburger on mobile, full name "Nikshi Foundation for Humanity" at 0.9rem
-2. **Hero** — centered text, location pin icon + "Bangalore, India" tagline. "Equality." white, "Empowerment." orange, "Fight Against Hunger." green (`#5DB04A`) with `white-space:nowrap`. Font size `clamp(2rem,5.5vw,4rem)`.
+2. **Hero** — centered text. A **registered-NGO pill** (green verified-check icon) sits directly above the location tagline: "NIKSHI FOUNDATION FOR HUMANITY (CIN: U85300KA2021NPL147766) — a registered Non-Government Organization". Below it: location pin icon + "Bangalore, India" tagline. "Equality." white, "Empowerment." orange, "Fight Against Hunger." green (`#5DB04A`) with `white-space:nowrap`. Font size `clamp(2rem,5.5vw,4rem)`.
 3. **Founder Quote** — Shilpa Singh blockquote with circular avatar photo (`images/circle founder.png`, 80px) — 2nd section, immediately after hero
 4. **Impact counter strip** — animated counters (meals, families, children, trans lives), JS in `main.js`
 5. **Program cards** — 5 cards in a **flexbox 3-per-row centered layout** (`id="programs-cards"`). Each card: `flex:0 0 calc(33.333% - 1.34rem)`. Image container: `height:260px; background:var(--dark); object-fit:contain` — fixed height with dark navy background so all orientations (portrait/landscape posters) display uniformly. Responsive: 2-col at ≤820px, 1-col at ≤500px. Images: `Posters/Project%20Gyaan%20Poster%20.jpeg`, `Posters/NTTS%20Poster%20.jpeg`, `Posters/Fight%20for%20Hunger%20Poster%20.jpeg`, `Posters/Project%20Uplift%20Poster%20.jpeg`, `Posters/CSR%20Poster%20.jpeg`
@@ -198,6 +203,9 @@ Hover CSS is in gallery.html's `<style>` block:
 | Down Syndrome Program | `downsyndrome` | `past` | 6 | `Down Syndrome Program/` 1–6.jpeg |
 | Women Auto-Rickshaw | `womenauto` | `past` | 9 | `Women Auto-Rickshaw Program/` 1–9.jpeg |
 | Gerizim Trust | `gerizim` | `past` | 14 | `Gerizim Trust/` 7 descriptive (spaces+parentheses — URL-encoded) + new 1–7.jpeg |
+| Awards & Recognition | `awards` | `awards` | 10 | `certificates/` all 10 award certificate .jpeg files |
+
+**Awards & Recognition filter group** is a 3rd labeled row ("Recognition") in the filter bar with `data-group="awards"` — hover turns **navy** `var(--dark)` (CSS: `.filter-btn[data-group="awards"]:hover`). Certificate tiles use class `.gallery-item cert-item`; `.cert-item img { object-fit:contain }` + white card so full documents are readable in the grid (they'd otherwise crop square). Deep-linkable via `gallery.html?filter=awards`. These are founder/organisation honours, not a program — the programs.html "Awards & Recognition" section (`id="recognition"`) previews 6 and links here.
 
 **Filter JS uses:** `document.querySelectorAll('#gallery-grid [data-filter]')` — targets both image items AND category section headers.
 
@@ -347,6 +355,9 @@ Implemented in `css/style.css` and `js/main.js` (`/* ---------- Slideshows -----
 | Email | Nikshifoundation@gmail.com |
 | Founder photo | `images/founder.png` (about.html) + `images/circle founder.png` (index.html avatar) ✅ uploaded |
 | NGO Name | NIKSHI FOUNDATION FOR HUMANITY |
+| CIN | U85300KA2021NPL147766 (registered Non-Government Organization) |
+| Registered since | 24 May 2021 (2021-05-24) — not yet displayed on site; date on hand if needed |
+| CSR Reg. No. | CSR00069983 (MCA, Govt. of India) |
 | Bank Account | 141705003411 |
 | IFSC | ICIC0001417 |
 | SWIFT / BIC | ICICINBBXXX |
