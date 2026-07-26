@@ -205,6 +205,8 @@ Hover CSS is in gallery.html's `<style>` block:
 | Gerizim Trust | `gerizim` | `past` | 14 | `Gerizim Trust/` 7 descriptive (spaces+parentheses — URL-encoded) + new 1–7.jpeg |
 | Awards & Recognition | `awards` | `awards` | 11 | `certificates/` all 11 certificate .jpeg files — **`Certificate of Appreciation .jpeg` is the lead/most-important cert and must be FIRST wherever certs display (gallery, home grid, programs preview)** |
 
+**Recognition credit rule:** all Awards/Recognition copy (home, programs, gallery note, cert captions) credits **Nikshi Foundation for Humanity** — NOT founder Shilpa Singh. Do not write "awarded to founder Shilpa Singh" or highlight her name in recognition contexts; the org is the recipient. (The about.html "Meet Our Founder" bio is the only place her personal awards are listed, and it has no recognition-credit sentence.)
+
 **Awards & Recognition filter group** is a 3rd labeled row ("Recognition") in the filter bar with `data-group="awards"` — hover turns **navy** `var(--dark)` (CSS: `.filter-btn[data-group="awards"]:hover`). Certificate tiles use class `.gallery-item cert-item`; `.cert-item img { object-fit:contain }` + white card so full documents are readable in the grid (they'd otherwise crop square). Deep-linkable via `gallery.html?filter=awards`. These are founder/organisation honours, not a program — the programs.html "Awards & Recognition" section (`id="recognition"`) previews 6 and links here.
 
 **Filter JS uses:** `document.querySelectorAll('#gallery-grid [data-filter]')` — targets both image items AND category section headers.
